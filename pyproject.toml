@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pwmsim"
+version = "0.0.1"
+description = "Small, dependency-free PWM simulation helpers"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "pwmsim", email = "dev@pwmsim.com" }]
+classifiers = [
+  "Development Status :: 2 - Pre-Alpha",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Topic :: Scientific/Engineering",
+]
+
+[project.urls]
+Homepage = "https://pwmsim.com"
+Repository = "https://github.com/pwmsim/pwmsim"
+Issues = "https://github.com/pwmsim/pwmsim/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
