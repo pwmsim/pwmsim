@@ -42,7 +42,6 @@ source and no source is published here.** What is here instead:
 - **Issues** — bug reports, model requests, feature requests.
 - **Discussions** — "can it do this circuit?", questions, and ideas before
   they become issues.
-- **Release notes** — in [`releases/`](releases/).
 
 The counterweight to closed source is no lock-in: your project files and
 exported netlists are yours, in formats other tools open.
