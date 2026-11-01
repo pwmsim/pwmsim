@@ -3,7 +3,7 @@
   "version": 1,
   "document": {
     "format": "volta-schematic",
-    "version": 73,
+    "version": 74,
     "title": "SEPIC — Peak Current Mode with PI Loop",
     "tran": "1m",
     "fidelity": "ideal",

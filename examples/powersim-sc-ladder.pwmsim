@@ -3,7 +3,7 @@
   "version": 1,
   "document": {
     "format": "volta-schematic",
-    "version": 73,
+    "version": 74,
     "title": "2:1 Switched-Capacitor Ladder",
     "tran": "1m",
     "fidelity": "ideal",

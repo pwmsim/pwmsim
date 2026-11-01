@@ -3,7 +3,7 @@
   "version": 1,
   "document": {
     "format": "volta-schematic",
-    "version": 73,
+    "version": 74,
     "title": "Active-Clamp Flyback — PI Regulation",
     "tran": "3m",
     "fidelity": "ideal",

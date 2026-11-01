@@ -3,7 +3,7 @@
   "version": 1,
   "document": {
     "format": "volta-schematic",
-    "version": 73,
+    "version": 74,
     "title": "Four-Phase Buck — Peak Current Mode",
     "tran": "300u",
     "fidelity": "ideal",

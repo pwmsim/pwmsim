@@ -3,7 +3,7 @@
   "version": 1,
   "document": {
     "format": "volta-schematic",
-    "version": 73,
+    "version": 74,
     "title": "2:1 Resonant Switched-Capacitor Ladder — Fixed Phase",
     "tran": "10m",
     "fidelity": "ideal",
