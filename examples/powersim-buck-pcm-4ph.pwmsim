@@ -1,0 +1,932 @@
+{
+  "format": "volta-project",
+  "version": 1,
+  "document": {
+    "format": "volta-schematic",
+    "version": 73,
+    "title": "Four-Phase Buck — Peak Current Mode",
+    "tran": "300u",
+    "fidelity": "ideal",
+    "counters": {
+      "V": 1,
+      "GND": 7,
+      "S": 4,
+      "D": 4,
+      "L": 4,
+      "LBL": 6,
+      "C": 1,
+      "R": 2,
+      "PWM": 4
+    },
+    "components": [
+      {
+        "id": "b4p-vin",
+        "type": "vdc",
+        "refdes": "V1",
+        "x": 40,
+        "y": 100,
+        "rot": 0,
+        "props": {
+          "value": "5",
+          "rser": ""
+        }
+      },
+      {
+        "id": "b4p-ground-in",
+        "type": "ground",
+        "refdes": "GND1",
+        "x": 40,
+        "y": 180,
+        "rot": 0,
+        "props": {}
+      },
+      {
+        "id": "b4p-s1",
+        "type": "gswitch",
+        "refdes": "S1",
+        "x": 140,
+        "y": 100,
+        "rot": 0,
+        "props": {
+          "ron": "10m",
+          "roff": "100meg",
+          "vt": "0.5",
+          "vh": "0"
+        }
+      },
+      {
+        "id": "b4p-s1-gate",
+        "type": "gate_pcm_pi",
+        "refdes": "PWM1",
+        "x": 170,
+        "y": 80,
+        "rot": 0,
+        "props": {
+          "fsw": "2meg",
+          "sense": "L1",
+          "icmd0": "0",
+          "mc": "40k",
+          "dmax": "0.95",
+          "ref": "1",
+          "kp": "6",
+          "ki": "188.5k",
+          "imin": "0",
+          "imax": "5",
+          "ref1": "",
+          "rtstep": "",
+          "phase": "0"
+        }
+      },
+      {
+        "id": "b4p-d1",
+        "type": "diode",
+        "refdes": "D1",
+        "x": 260,
+        "y": 160,
+        "rot": 270,
+        "props": {
+          "vfwd": "0",
+          "ron": "10u",
+          "roff": "100meg",
+          "model": "ideal",
+          "is": "",
+          "n": "",
+          "tt": "",
+          "cjo": "",
+          "rs": "",
+          "bv": "",
+          "vj": "",
+          "m": "",
+          "ibv": "",
+          "nbv": "",
+          "ibvl": "",
+          "nbvl": "",
+          "ikf": "",
+          "isr": "",
+          "nr": "",
+          "itol": "",
+          "epsilon": "",
+          "nser": ""
+        }
+      },
+      {
+        "id": "b4p-ground1",
+        "type": "ground",
+        "refdes": "GND2",
+        "x": 260,
+        "y": 180,
+        "rot": 0,
+        "props": {}
+      },
+      {
+        "id": "b4p-l1",
+        "type": "inductor",
+        "refdes": "L1",
+        "x": 300,
+        "y": 100,
+        "rot": 0,
+        "props": {
+          "value": "10u",
+          "ic": "",
+          "pwl": "",
+          "rser": "",
+          "rpar": "",
+          "cpar": ""
+        }
+      },
+      {
+        "id": "b4p-sw1-label",
+        "type": "netlabel",
+        "refdes": "LBL2",
+        "x": 210,
+        "y": 100,
+        "rot": 0,
+        "props": {
+          "name": "sw1",
+          "global": "",
+          "display": ""
+        }
+      },
+      {
+        "id": "b4p-s2",
+        "type": "gswitch",
+        "refdes": "S2",
+        "x": 140,
+        "y": 260,
+        "rot": 0,
+        "props": {
+          "ron": "10m",
+          "roff": "100meg",
+          "vt": "0.5",
+          "vh": "0"
+        }
+      },
+      {
+        "id": "b4p-s2-gate",
+        "type": "gate_pcm_pi",
+        "refdes": "PWM2",
+        "x": 170,
+        "y": 240,
+        "rot": 0,
+        "props": {
+          "fsw": "2meg",
+          "sense": "L2",
+          "icmd0": "0",
+          "mc": "40k",
+          "dmax": "0.95",
+          "ref": "1",
+          "kp": "6",
+          "ki": "188.5k",
+          "imin": "0",
+          "imax": "5",
+          "ref1": "",
+          "rtstep": "",
+          "phase": "0.25"
+        }
+      },
+      {
+        "id": "b4p-d2",
+        "type": "diode",
+        "refdes": "D2",
+        "x": 260,
+        "y": 320,
+        "rot": 270,
+        "props": {
+          "vfwd": "0",
+          "ron": "10u",
+          "roff": "100meg",
+          "model": "ideal",
+          "is": "",
+          "n": "",
+          "tt": "",
+          "cjo": "",
+          "rs": "",
+          "bv": "",
+          "vj": "",
+          "m": "",
+          "ibv": "",
+          "nbv": "",
+          "ibvl": "",
+          "nbvl": "",
+          "ikf": "",
+          "isr": "",
+          "nr": "",
+          "itol": "",
+          "epsilon": "",
+          "nser": ""
+        }
+      },
+      {
+        "id": "b4p-ground2",
+        "type": "ground",
+        "refdes": "GND3",
+        "x": 260,
+        "y": 340,
+        "rot": 0,
+        "props": {}
+      },
+      {
+        "id": "b4p-l2",
+        "type": "inductor",
+        "refdes": "L2",
+        "x": 300,
+        "y": 260,
+        "rot": 0,
+        "props": {
+          "value": "10u",
+          "ic": "",
+          "pwl": "",
+          "rser": "",
+          "rpar": "",
+          "cpar": ""
+        }
+      },
+      {
+        "id": "b4p-sw2-label",
+        "type": "netlabel",
+        "refdes": "LBL3",
+        "x": 210,
+        "y": 260,
+        "rot": 0,
+        "props": {
+          "name": "sw2",
+          "global": "",
+          "display": ""
+        }
+      },
+      {
+        "id": "b4p-s3",
+        "type": "gswitch",
+        "refdes": "S3",
+        "x": 140,
+        "y": 420,
+        "rot": 0,
+        "props": {
+          "ron": "10m",
+          "roff": "100meg",
+          "vt": "0.5",
+          "vh": "0"
+        }
+      },
+      {
+        "id": "b4p-s3-gate",
+        "type": "gate_pcm_pi",
+        "refdes": "PWM3",
+        "x": 170,
+        "y": 400,
+        "rot": 0,
+        "props": {
+          "fsw": "2meg",
+          "sense": "L3",
+          "icmd0": "0",
+          "mc": "40k",
+          "dmax": "0.95",
+          "ref": "1",
+          "kp": "6",
+          "ki": "188.5k",
+          "imin": "0",
+          "imax": "5",
+          "ref1": "",
+          "rtstep": "",
+          "phase": "0.5"
+        }
+      },
+      {
+        "id": "b4p-d3",
+        "type": "diode",
+        "refdes": "D3",
+        "x": 260,
+        "y": 480,
+        "rot": 270,
+        "props": {
+          "vfwd": "0",
+          "ron": "10u",
+          "roff": "100meg",
+          "model": "ideal",
+          "is": "",
+          "n": "",
+          "tt": "",
+          "cjo": "",
+          "rs": "",
+          "bv": "",
+          "vj": "",
+          "m": "",
+          "ibv": "",
+          "nbv": "",
+          "ibvl": "",
+          "nbvl": "",
+          "ikf": "",
+          "isr": "",
+          "nr": "",
+          "itol": "",
+          "epsilon": "",
+          "nser": ""
+        }
+      },
+      {
+        "id": "b4p-ground3",
+        "type": "ground",
+        "refdes": "GND4",
+        "x": 260,
+        "y": 500,
+        "rot": 0,
+        "props": {}
+      },
+      {
+        "id": "b4p-l3",
+        "type": "inductor",
+        "refdes": "L3",
+        "x": 300,
+        "y": 420,
+        "rot": 0,
+        "props": {
+          "value": "10u",
+          "ic": "",
+          "pwl": "",
+          "rser": "",
+          "rpar": "",
+          "cpar": ""
+        }
+      },
+      {
+        "id": "b4p-sw3-label",
+        "type": "netlabel",
+        "refdes": "LBL4",
+        "x": 210,
+        "y": 420,
+        "rot": 0,
+        "props": {
+          "name": "sw3",
+          "global": "",
+          "display": ""
+        }
+      },
+      {
+        "id": "b4p-s4",
+        "type": "gswitch",
+        "refdes": "S4",
+        "x": 140,
+        "y": 580,
+        "rot": 0,
+        "props": {
+          "ron": "10m",
+          "roff": "100meg",
+          "vt": "0.5",
+          "vh": "0"
+        }
+      },
+      {
+        "id": "b4p-s4-gate",
+        "type": "gate_pcm_pi",
+        "refdes": "PWM4",
+        "x": 170,
+        "y": 560,
+        "rot": 0,
+        "props": {
+          "fsw": "2meg",
+          "sense": "L4",
+          "icmd0": "0",
+          "mc": "40k",
+          "dmax": "0.95",
+          "ref": "1",
+          "kp": "6",
+          "ki": "188.5k",
+          "imin": "0",
+          "imax": "5",
+          "ref1": "",
+          "rtstep": "",
+          "phase": "0.75"
+        }
+      },
+      {
+        "id": "b4p-d4",
+        "type": "diode",
+        "refdes": "D4",
+        "x": 260,
+        "y": 640,
+        "rot": 270,
+        "props": {
+          "vfwd": "0",
+          "ron": "10u",
+          "roff": "100meg",
+          "model": "ideal",
+          "is": "",
+          "n": "",
+          "tt": "",
+          "cjo": "",
+          "rs": "",
+          "bv": "",
+          "vj": "",
+          "m": "",
+          "ibv": "",
+          "nbv": "",
+          "ibvl": "",
+          "nbvl": "",
+          "ikf": "",
+          "isr": "",
+          "nr": "",
+          "itol": "",
+          "epsilon": "",
+          "nser": ""
+        }
+      },
+      {
+        "id": "b4p-ground4",
+        "type": "ground",
+        "refdes": "GND5",
+        "x": 260,
+        "y": 660,
+        "rot": 0,
+        "props": {}
+      },
+      {
+        "id": "b4p-l4",
+        "type": "inductor",
+        "refdes": "L4",
+        "x": 300,
+        "y": 580,
+        "rot": 0,
+        "props": {
+          "value": "10u",
+          "ic": "",
+          "pwl": "",
+          "rser": "",
+          "rpar": "",
+          "cpar": ""
+        }
+      },
+      {
+        "id": "b4p-sw4-label",
+        "type": "netlabel",
+        "refdes": "LBL5",
+        "x": 210,
+        "y": 580,
+        "rot": 0,
+        "props": {
+          "name": "sw4",
+          "global": "",
+          "display": ""
+        }
+      },
+      {
+        "id": "b4p-capacitor",
+        "type": "capacitor",
+        "refdes": "C1",
+        "x": 520,
+        "y": 100,
+        "rot": 0,
+        "props": {
+          "value": "88u",
+          "ic": "",
+          "pwl": "",
+          "lser": "",
+          "rser": "",
+          "rpar": "",
+          "cpar": ""
+        }
+      },
+      {
+        "id": "b4p-c-esr",
+        "type": "resistor",
+        "refdes": "R2",
+        "x": 520,
+        "y": 150,
+        "rot": 90,
+        "props": {
+          "value": "0.25m",
+          "pwl": ""
+        }
+      },
+      {
+        "id": "b4p-ground-c",
+        "type": "ground",
+        "refdes": "GND6",
+        "x": 520,
+        "y": 220,
+        "rot": 0,
+        "props": {}
+      },
+      {
+        "id": "b4p-load",
+        "type": "resistor",
+        "refdes": "R1",
+        "x": 600,
+        "y": 110,
+        "rot": 90,
+        "props": {
+          "value": "0.25",
+          "pwl": ""
+        }
+      },
+      {
+        "id": "b4p-ground-r",
+        "type": "ground",
+        "refdes": "GND7",
+        "x": 600,
+        "y": 180,
+        "rot": 0,
+        "props": {}
+      },
+      {
+        "id": "b4p-in-label",
+        "type": "netlabel",
+        "refdes": "LBL1",
+        "x": 50,
+        "y": 100,
+        "rot": 0,
+        "props": {
+          "name": "in",
+          "global": "",
+          "display": ""
+        }
+      },
+      {
+        "id": "b4p-out-label",
+        "type": "netlabel",
+        "refdes": "LBL6",
+        "x": 450,
+        "y": 100,
+        "rot": 0,
+        "props": {
+          "name": "out",
+          "global": "",
+          "display": ""
+        }
+      }
+    ],
+    "wires": [
+      {
+        "id": "w1",
+        "points": [
+          [
+            40,
+            100
+          ],
+          [
+            140,
+            100
+          ]
+        ]
+      },
+      {
+        "id": "w2",
+        "points": [
+          [
+            40,
+            160
+          ],
+          [
+            40,
+            180
+          ]
+        ]
+      },
+      {
+        "id": "w3",
+        "points": [
+          [
+            100,
+            100
+          ],
+          [
+            100,
+            580
+          ]
+        ]
+      },
+      {
+        "id": "w4",
+        "points": [
+          [
+            420,
+            60
+          ],
+          [
+            420,
+            580
+          ]
+        ]
+      },
+      {
+        "id": "w5",
+        "points": [
+          [
+            200,
+            100
+          ],
+          [
+            300,
+            100
+          ]
+        ]
+      },
+      {
+        "id": "w6",
+        "points": [
+          [
+            260,
+            160
+          ],
+          [
+            260,
+            180
+          ]
+        ]
+      },
+      {
+        "id": "w7",
+        "points": [
+          [
+            360,
+            100
+          ],
+          [
+            420,
+            100
+          ]
+        ]
+      },
+      {
+        "id": "w8",
+        "points": [
+          [
+            170,
+            60
+          ],
+          [
+            420,
+            60
+          ]
+        ]
+      },
+      {
+        "id": "w9",
+        "points": [
+          [
+            100,
+            260
+          ],
+          [
+            140,
+            260
+          ]
+        ]
+      },
+      {
+        "id": "w10",
+        "points": [
+          [
+            200,
+            260
+          ],
+          [
+            300,
+            260
+          ]
+        ]
+      },
+      {
+        "id": "w11",
+        "points": [
+          [
+            260,
+            320
+          ],
+          [
+            260,
+            340
+          ]
+        ]
+      },
+      {
+        "id": "w12",
+        "points": [
+          [
+            360,
+            260
+          ],
+          [
+            420,
+            260
+          ]
+        ]
+      },
+      {
+        "id": "w13",
+        "points": [
+          [
+            170,
+            220
+          ],
+          [
+            420,
+            220
+          ]
+        ]
+      },
+      {
+        "id": "w14",
+        "points": [
+          [
+            100,
+            420
+          ],
+          [
+            140,
+            420
+          ]
+        ]
+      },
+      {
+        "id": "w15",
+        "points": [
+          [
+            200,
+            420
+          ],
+          [
+            300,
+            420
+          ]
+        ]
+      },
+      {
+        "id": "w16",
+        "points": [
+          [
+            260,
+            480
+          ],
+          [
+            260,
+            500
+          ]
+        ]
+      },
+      {
+        "id": "w17",
+        "points": [
+          [
+            360,
+            420
+          ],
+          [
+            420,
+            420
+          ]
+        ]
+      },
+      {
+        "id": "w18",
+        "points": [
+          [
+            170,
+            380
+          ],
+          [
+            420,
+            380
+          ]
+        ]
+      },
+      {
+        "id": "w19",
+        "points": [
+          [
+            100,
+            580
+          ],
+          [
+            140,
+            580
+          ]
+        ]
+      },
+      {
+        "id": "w20",
+        "points": [
+          [
+            200,
+            580
+          ],
+          [
+            300,
+            580
+          ]
+        ]
+      },
+      {
+        "id": "w21",
+        "points": [
+          [
+            260,
+            640
+          ],
+          [
+            260,
+            660
+          ]
+        ]
+      },
+      {
+        "id": "w22",
+        "points": [
+          [
+            360,
+            580
+          ],
+          [
+            420,
+            580
+          ]
+        ]
+      },
+      {
+        "id": "w23",
+        "points": [
+          [
+            170,
+            540
+          ],
+          [
+            420,
+            540
+          ]
+        ]
+      },
+      {
+        "id": "w24",
+        "points": [
+          [
+            420,
+            100
+          ],
+          [
+            600,
+            100
+          ]
+        ]
+      },
+      {
+        "id": "w25",
+        "points": [
+          [
+            520,
+            210
+          ],
+          [
+            520,
+            220
+          ]
+        ]
+      },
+      {
+        "id": "w26",
+        "points": [
+          [
+            600,
+            170
+          ],
+          [
+            600,
+            180
+          ]
+        ]
+      },
+      {
+        "id": "w27",
+        "points": [
+          [
+            520,
+            140
+          ],
+          [
+            520,
+            150
+          ]
+        ]
+      },
+      {
+        "id": "w28",
+        "points": [
+          [
+            600,
+            100
+          ],
+          [
+            600,
+            110
+          ]
+        ]
+      }
+    ]
+  },
+  "analyses": {
+    "mode": "transient",
+    "periods": 2,
+    "measurements": [],
+    "sweep": null,
+    "sweepSignal": "",
+    "sweepMetric": "average"
+  }
+}

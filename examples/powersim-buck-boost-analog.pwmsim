@@ -1,0 +1,1875 @@
+{
+  "format": "volta-project",
+  "version": 1,
+  "document": {
+    "format": "volta-schematic",
+    "version": 73,
+    "title": "Four-Switch Buck-Boost — Analog Type III Loop",
+    "tran": "3m",
+    "fidelity": "ideal",
+    "counters": {
+      "V": 6,
+      "S": 4,
+      "D": 8,
+      "L": 2,
+      "C": 5,
+      "R": 7,
+      "GND": 31,
+      "LBL": 44,
+      "G": 2,
+      "LIM": 2,
+      "A": 4,
+      "DLY": 4
+    },
+    "components": [
+      {
+        "id": "bbv-vin",
+        "type": "vdc",
+        "refdes": "V1",
+        "x": 40,
+        "y": 160,
+        "rot": 0,
+        "props": {
+          "value": "3.5",
+          "rser": ""
+        }
+      },
+      {
+        "id": "bbv-s1",
+        "type": "gswitch",
+        "refdes": "S1",
+        "x": 180,
+        "y": 40,
+        "rot": 90,
+        "props": {
+          "ron": "10m",
+          "roff": "100meg",
+          "vt": "0.5",
+          "vh": "0"
+        }
+      },
+      {
+        "id": "bbv-s2",
+        "type": "gswitch",
+        "refdes": "S2",
+        "x": 180,
+        "y": 160,
+        "rot": 90,
+        "props": {
+          "ron": "10m",
+          "roff": "100meg",
+          "vt": "0.5",
+          "vh": "0"
+        }
+      },
+      {
+        "id": "bbv-d1",
+        "type": "diode",
+        "refdes": "D1",
+        "x": 130,
+        "y": 100,
+        "rot": 270,
+        "props": {
+          "vfwd": "0",
+          "ron": "10u",
+          "roff": "100meg",
+          "model": "ideal",
+          "is": "",
+          "n": "",
+          "tt": "",
+          "cjo": "",
+          "rs": "",
+          "bv": "",
+          "vj": "",
+          "m": "",
+          "ibv": "",
+          "nbv": "",
+          "ibvl": "",
+          "nbvl": "",
+          "ikf": "",
+          "isr": "",
+          "nr": "",
+          "itol": "",
+          "epsilon": "",
+          "nser": ""
+        }
+      },
+      {
+        "id": "bbv-d2",
+        "type": "diode",
+        "refdes": "D2",
+        "x": 130,
+        "y": 250,
+        "rot": 270,
+        "props": {
+          "vfwd": "0",
+          "ron": "10u",
+          "roff": "100meg",
+          "model": "ideal",
+          "is": "",
+          "n": "",
+          "tt": "",
+          "cjo": "",
+          "rs": "",
+          "bv": "",
+          "vj": "",
+          "m": "",
+          "ibv": "",
+          "nbv": "",
+          "ibvl": "",
+          "nbvl": "",
+          "ikf": "",
+          "isr": "",
+          "nr": "",
+          "itol": "",
+          "epsilon": "",
+          "nser": ""
+        }
+      },
+      {
+        "id": "bbv-inductor",
+        "type": "inductor",
+        "refdes": "L1",
+        "x": 300,
+        "y": 130,
+        "rot": 0,
+        "props": {
+          "value": "10u",
+          "ic": "",
+          "pwl": "",
+          "rser": "10m",
+          "rpar": "",
+          "cpar": ""
+        }
+      },
+      {
+        "id": "bbv-s3",
+        "type": "gswitch",
+        "refdes": "S3",
+        "x": 480,
+        "y": 40,
+        "rot": 90,
+        "props": {
+          "ron": "10m",
+          "roff": "100meg",
+          "vt": "0.5",
+          "vh": "0"
+        }
+      },
+      {
+        "id": "bbv-s4",
+        "type": "gswitch",
+        "refdes": "S4",
+        "x": 480,
+        "y": 160,
+        "rot": 90,
+        "props": {
+          "ron": "10m",
+          "roff": "100meg",
+          "vt": "0.5",
+          "vh": "0"
+        }
+      },
+      {
+        "id": "bbv-d3",
+        "type": "diode",
+        "refdes": "D3",
+        "x": 430,
+        "y": 100,
+        "rot": 270,
+        "props": {
+          "vfwd": "0",
+          "ron": "10u",
+          "roff": "100meg",
+          "model": "ideal",
+          "is": "",
+          "n": "",
+          "tt": "",
+          "cjo": "",
+          "rs": "",
+          "bv": "",
+          "vj": "",
+          "m": "",
+          "ibv": "",
+          "nbv": "",
+          "ibvl": "",
+          "nbvl": "",
+          "ikf": "",
+          "isr": "",
+          "nr": "",
+          "itol": "",
+          "epsilon": "",
+          "nser": ""
+        }
+      },
+      {
+        "id": "bbv-d4",
+        "type": "diode",
+        "refdes": "D4",
+        "x": 430,
+        "y": 250,
+        "rot": 270,
+        "props": {
+          "vfwd": "0",
+          "ron": "10u",
+          "roff": "100meg",
+          "model": "ideal",
+          "is": "",
+          "n": "",
+          "tt": "",
+          "cjo": "",
+          "rs": "",
+          "bv": "",
+          "vj": "",
+          "m": "",
+          "ibv": "",
+          "nbv": "",
+          "ibvl": "",
+          "nbvl": "",
+          "ikf": "",
+          "isr": "",
+          "nr": "",
+          "itol": "",
+          "epsilon": "",
+          "nser": ""
+        }
+      },
+      {
+        "id": "bbv-capacitor",
+        "type": "capacitor",
+        "refdes": "C1",
+        "x": 580,
+        "y": 130,
+        "rot": 0,
+        "props": {
+          "value": "22u",
+          "ic": "",
+          "pwl": "",
+          "lser": "",
+          "rser": "1m",
+          "rpar": "",
+          "cpar": ""
+        }
+      },
+      {
+        "id": "bbv-load",
+        "type": "resistor",
+        "refdes": "R1",
+        "x": 660,
+        "y": 160,
+        "rot": 90,
+        "props": {
+          "value": "3.3",
+          "pwl": ""
+        }
+      },
+      {
+        "id": "bbv-gnd-1",
+        "type": "ground",
+        "refdes": "GND1",
+        "x": 40,
+        "y": 280,
+        "rot": 0,
+        "props": {}
+      },
+      {
+        "id": "bbv-lbl-2",
+        "type": "netlabel",
+        "refdes": "LBL2",
+        "x": 80,
+        "y": 40,
+        "rot": 0,
+        "props": {
+          "name": "in",
+          "global": "",
+          "display": ""
+        }
+      },
+      {
+        "id": "bbv-lbl-3",
+        "type": "netlabel",
+        "refdes": "LBL3",
+        "x": 560,
+        "y": 40,
+        "rot": 0,
+        "props": {
+          "name": "out",
+          "global": "",
+          "display": ""
+        }
+      },
+      {
+        "id": "bbv-lbl-4",
+        "type": "netlabel",
+        "refdes": "LBL4",
+        "x": 220,
+        "y": 130,
+        "rot": 0,
+        "props": {
+          "name": "sw1",
+          "global": "",
+          "display": ""
+        }
+      },
+      {
+        "id": "bbv-lbl-5",
+        "type": "netlabel",
+        "refdes": "LBL5",
+        "x": 380,
+        "y": 130,
+        "rot": 0,
+        "props": {
+          "name": "sw2",
+          "global": "",
+          "display": ""
+        }
+      },
+      {
+        "id": "bbv-lbl-6",
+        "type": "netlabel",
+        "refdes": "LBL6",
+        "x": 200,
+        "y": 70,
+        "rot": 0,
+        "props": {
+          "name": "g1",
+          "global": "",
+          "display": ""
+        }
+      },
+      {
+        "id": "bbv-lbl-7",
+        "type": "netlabel",
+        "refdes": "LBL7",
+        "x": 200,
+        "y": 190,
+        "rot": 0,
+        "props": {
+          "name": "g2",
+          "global": "",
+          "display": ""
+        }
+      },
+      {
+        "id": "bbv-lbl-8",
+        "type": "netlabel",
+        "refdes": "LBL8",
+        "x": 500,
+        "y": 70,
+        "rot": 0,
+        "props": {
+          "name": "g3",
+          "global": "",
+          "display": ""
+        }
+      },
+      {
+        "id": "bbv-lbl-9",
+        "type": "netlabel",
+        "refdes": "LBL9",
+        "x": 500,
+        "y": 190,
+        "rot": 0,
+        "props": {
+          "name": "g4",
+          "global": "",
+          "display": ""
+        }
+      },
+      {
+        "id": "bbv-ref",
+        "type": "vpwl",
+        "refdes": "V2",
+        "x": 60,
+        "y": 450,
+        "rot": 0,
+        "props": {
+          "points": "0 0 1u 0 2.001m 3.3",
+          "rser": ""
+        }
+      },
+      {
+        "id": "bbv-gnd-10",
+        "type": "ground",
+        "refdes": "GND10",
+        "x": 60,
+        "y": 510,
+        "rot": 0,
+        "props": {}
+      },
+      {
+        "id": "bbv-g1",
+        "type": "vccs",
+        "refdes": "G1",
+        "x": 120,
+        "y": 400,
+        "rot": 0,
+        "props": {
+          "gain": "1"
+        }
+      },
+      {
+        "id": "bbv-gnd-11",
+        "type": "ground",
+        "refdes": "GND11",
+        "x": 160,
+        "y": 460,
+        "rot": 0,
+        "props": {}
+      },
+      {
+        "id": "bbv-lbl-12",
+        "type": "netlabel",
+        "refdes": "LBL12",
+        "x": 40,
+        "y": 410,
+        "rot": 0,
+        "props": {
+          "name": "out",
+          "global": "",
+          "display": ""
+        }
+      },
+      {
+        "id": "bbv-r5",
+        "type": "resistor",
+        "refdes": "R5",
+        "x": 220,
+        "y": 400,
+        "rot": 90,
+        "props": {
+          "value": "100k",
+          "pwl": ""
+        }
+      },
+      {
+        "id": "bbv-gnd-13",
+        "type": "ground",
+        "refdes": "GND13",
+        "x": 220,
+        "y": 460,
+        "rot": 0,
+        "props": {}
+      },
+      {
+        "id": "bbv-r4",
+        "type": "resistor",
+        "refdes": "R4",
+        "x": 300,
+        "y": 400,
+        "rot": 90,
+        "props": {
+          "value": "0.3000009",
+          "pwl": ""
+        }
+      },
+      {
+        "id": "bbv-c4",
+        "type": "capacitor",
+        "refdes": "C4",
+        "x": 300,
+        "y": 460,
+        "rot": 0,
+        "props": {
+          "value": "176.838u",
+          "ic": "",
+          "pwl": "",
+          "lser": "",
+          "rser": "",
+          "rpar": "",
+          "cpar": ""
+        }
+      },
+      {
+        "id": "bbv-gnd-14",
+        "type": "ground",
+        "refdes": "GND14",
+        "x": 300,
+        "y": 500,
+        "rot": 0,
+        "props": {}
+      },
+      {
+        "id": "bbv-c5",
+        "type": "capacitor",
+        "refdes": "C5",
+        "x": 380,
+        "y": 400,
+        "rot": 0,
+        "props": {
+          "value": "2.652574u",
+          "ic": "",
+          "pwl": "",
+          "lser": "",
+          "rser": "",
+          "rpar": "",
+          "cpar": ""
+        }
+      },
+      {
+        "id": "bbv-gnd-15",
+        "type": "ground",
+        "refdes": "GND15",
+        "x": 380,
+        "y": 440,
+        "rot": 0,
+        "props": {}
+      },
+      {
+        "id": "bbv-d5",
+        "type": "diode",
+        "refdes": "D5",
+        "x": 460,
+        "y": 400,
+        "rot": 270,
+        "props": {
+          "vfwd": "10n",
+          "ron": "1u",
+          "roff": "1g",
+          "model": "ideal",
+          "is": "",
+          "n": "",
+          "tt": "",
+          "cjo": "",
+          "rs": "",
+          "bv": "",
+          "vj": "",
+          "m": "",
+          "ibv": "",
+          "nbv": "",
+          "ibvl": "",
+          "nbvl": "",
+          "ikf": "",
+          "isr": "",
+          "nr": "",
+          "itol": "",
+          "epsilon": "",
+          "nser": ""
+        }
+      },
+      {
+        "id": "bbv-d6",
+        "type": "diode",
+        "refdes": "D6",
+        "x": 460,
+        "y": 460,
+        "rot": 270,
+        "props": {
+          "vfwd": "10n",
+          "ron": "1u",
+          "roff": "1g",
+          "model": "ideal",
+          "is": "",
+          "n": "",
+          "tt": "",
+          "cjo": "",
+          "rs": "",
+          "bv": "",
+          "vj": "",
+          "m": "",
+          "ibv": "",
+          "nbv": "",
+          "ibvl": "",
+          "nbvl": "",
+          "ikf": "",
+          "isr": "",
+          "nr": "",
+          "itol": "",
+          "epsilon": "",
+          "nser": ""
+        }
+      },
+      {
+        "id": "bbv-gnd-16",
+        "type": "ground",
+        "refdes": "GND16",
+        "x": 460,
+        "y": 460,
+        "rot": 0,
+        "props": {}
+      },
+      {
+        "id": "bbv-vh",
+        "type": "vdc",
+        "refdes": "V3",
+        "x": 1140,
+        "y": 340,
+        "rot": 0,
+        "props": {
+          "value": "5",
+          "rser": ""
+        }
+      },
+      {
+        "id": "bbv-gnd-17",
+        "type": "ground",
+        "refdes": "GND17",
+        "x": 1140,
+        "y": 400,
+        "rot": 0,
+        "props": {}
+      },
+      {
+        "id": "bbv-g2",
+        "type": "vccs",
+        "refdes": "G2",
+        "x": 600,
+        "y": 400,
+        "rot": 0,
+        "props": {
+          "gain": "1"
+        }
+      },
+      {
+        "id": "bbv-gnd-18",
+        "type": "ground",
+        "refdes": "GND18",
+        "x": 640,
+        "y": 460,
+        "rot": 0,
+        "props": {}
+      },
+      {
+        "id": "bbv-gnd-19",
+        "type": "ground",
+        "refdes": "GND19",
+        "x": 580,
+        "y": 410,
+        "rot": 0,
+        "props": {}
+      },
+      {
+        "id": "bbv-r7",
+        "type": "resistor",
+        "refdes": "R7",
+        "x": 700,
+        "y": 400,
+        "rot": 90,
+        "props": {
+          "value": "42",
+          "pwl": ""
+        }
+      },
+      {
+        "id": "bbv-gnd-20",
+        "type": "ground",
+        "refdes": "GND20",
+        "x": 700,
+        "y": 460,
+        "rot": 0,
+        "props": {}
+      },
+      {
+        "id": "bbv-l2",
+        "type": "inductor",
+        "refdes": "L2",
+        "x": 780,
+        "y": 400,
+        "rot": 90,
+        "props": {
+          "value": "31.831u",
+          "ic": "",
+          "pwl": "",
+          "rser": "1",
+          "rpar": "",
+          "cpar": ""
+        }
+      },
+      {
+        "id": "bbv-gnd-21",
+        "type": "ground",
+        "refdes": "GND21",
+        "x": 780,
+        "y": 460,
+        "rot": 0,
+        "props": {}
+      },
+      {
+        "id": "bbv-d7",
+        "type": "diode",
+        "refdes": "D7",
+        "x": 860,
+        "y": 400,
+        "rot": 270,
+        "props": {
+          "vfwd": "10n",
+          "ron": "1u",
+          "roff": "1g",
+          "model": "ideal",
+          "is": "",
+          "n": "",
+          "tt": "",
+          "cjo": "",
+          "rs": "",
+          "bv": "",
+          "vj": "",
+          "m": "",
+          "ibv": "",
+          "nbv": "",
+          "ibvl": "",
+          "nbvl": "",
+          "ikf": "",
+          "isr": "",
+          "nr": "",
+          "itol": "",
+          "epsilon": "",
+          "nser": ""
+        }
+      },
+      {
+        "id": "bbv-d8",
+        "type": "diode",
+        "refdes": "D8",
+        "x": 860,
+        "y": 460,
+        "rot": 270,
+        "props": {
+          "vfwd": "10n",
+          "ron": "1u",
+          "roff": "1g",
+          "model": "ideal",
+          "is": "",
+          "n": "",
+          "tt": "",
+          "cjo": "",
+          "rs": "",
+          "bv": "",
+          "vj": "",
+          "m": "",
+          "ibv": "",
+          "nbv": "",
+          "ibvl": "",
+          "nbvl": "",
+          "ikf": "",
+          "isr": "",
+          "nr": "",
+          "itol": "",
+          "epsilon": "",
+          "nser": ""
+        }
+      },
+      {
+        "id": "bbv-gnd-22",
+        "type": "ground",
+        "refdes": "GND22",
+        "x": 860,
+        "y": 460,
+        "rot": 0,
+        "props": {}
+      },
+      {
+        "id": "bbv-lbl-23",
+        "type": "netlabel",
+        "refdes": "LBL23",
+        "x": 500,
+        "y": 400,
+        "rot": 0,
+        "props": {
+          "name": "a",
+          "global": "",
+          "display": ""
+        }
+      },
+      {
+        "id": "bbv-lbl-24",
+        "type": "netlabel",
+        "refdes": "LBL24",
+        "x": 660,
+        "y": 400,
+        "rot": 0,
+        "props": {
+          "name": "ve",
+          "global": "",
+          "display": ""
+        }
+      },
+      {
+        "id": "bbv-lim1",
+        "type": "limiter",
+        "refdes": "LIM1",
+        "x": 960,
+        "y": 370,
+        "rot": 0,
+        "props": {
+          "low": "0",
+          "high": "1",
+          "gain": "1",
+          "hysteresis": "0",
+          "pins": "signal"
+        }
+      },
+      {
+        "id": "bbv-lim2",
+        "type": "limiter",
+        "refdes": "LIM2",
+        "x": 960,
+        "y": 470,
+        "rot": 0,
+        "props": {
+          "low": "0",
+          "high": "1",
+          "gain": "1",
+          "hysteresis": "0",
+          "pins": "all"
+        }
+      },
+      {
+        "id": "bbv-offset",
+        "type": "vdc",
+        "refdes": "V4",
+        "x": 970,
+        "y": 560,
+        "rot": 0,
+        "props": {
+          "value": "0.9",
+          "rser": ""
+        }
+      },
+      {
+        "id": "bbv-gnd-25",
+        "type": "ground",
+        "refdes": "GND25",
+        "x": 970,
+        "y": 620,
+        "rot": 0,
+        "props": {}
+      },
+      {
+        "id": "bbv-gnd-26",
+        "type": "ground",
+        "refdes": "GND26",
+        "x": 990,
+        "y": 530,
+        "rot": 0,
+        "props": {}
+      },
+      {
+        "id": "bbv-lbl-27",
+        "type": "netlabel",
+        "refdes": "LBL27",
+        "x": 1060,
+        "y": 400,
+        "rot": 0,
+        "props": {
+          "name": "duty1",
+          "global": "",
+          "display": ""
+        }
+      },
+      {
+        "id": "bbv-lbl-28",
+        "type": "netlabel",
+        "refdes": "LBL28",
+        "x": 1060,
+        "y": 500,
+        "rot": 0,
+        "props": {
+          "name": "duty2",
+          "global": "",
+          "display": ""
+        }
+      },
+      {
+        "id": "bbv-saw1",
+        "type": "vpulse",
+        "refdes": "V5",
+        "x": 60,
+        "y": 680,
+        "rot": 0,
+        "props": {
+          "v1": "0",
+          "v2": "0.99",
+          "td": "10n",
+          "tr": "990n",
+          "tf": "1n",
+          "ton": "0",
+          "tperiod": "1u",
+          "ncycles": "",
+          "rser": ""
+        }
+      },
+      {
+        "id": "bbv-gnd-29",
+        "type": "ground",
+        "refdes": "GND29",
+        "x": 60,
+        "y": 740,
+        "rot": 0,
+        "props": {}
+      },
+      {
+        "id": "bbv-lbl-30",
+        "type": "netlabel",
+        "refdes": "LBL30",
+        "x": 60,
+        "y": 680,
+        "rot": 0,
+        "props": {
+          "name": "saw1",
+          "global": "",
+          "display": ""
+        }
+      },
+      {
+        "id": "bbv-saw2",
+        "type": "vpulse",
+        "refdes": "V6",
+        "x": 60,
+        "y": 820,
+        "rot": 0,
+        "props": {
+          "v1": "0",
+          "v2": "0.99",
+          "td": "510n",
+          "tr": "990n",
+          "tf": "1n",
+          "ton": "0",
+          "tperiod": "1u",
+          "ncycles": "",
+          "rser": ""
+        }
+      },
+      {
+        "id": "bbv-gnd-31",
+        "type": "ground",
+        "refdes": "GND31",
+        "x": 60,
+        "y": 880,
+        "rot": 0,
+        "props": {}
+      },
+      {
+        "id": "bbv-lbl-32",
+        "type": "netlabel",
+        "refdes": "LBL32",
+        "x": 60,
+        "y": 820,
+        "rot": 0,
+        "props": {
+          "name": "saw2",
+          "global": "",
+          "display": ""
+        }
+      },
+      {
+        "id": "bbv-a1",
+        "type": "comparator",
+        "refdes": "A1",
+        "x": 280,
+        "y": 640,
+        "rot": 0,
+        "props": {
+          "threshold": "0",
+          "low": "0",
+          "high": "1",
+          "hysteresis": "0",
+          "initial": "",
+          "start": "",
+          "pins": "signal"
+        }
+      },
+      {
+        "id": "bbv-a2",
+        "type": "comparator",
+        "refdes": "A2",
+        "x": 280,
+        "y": 740,
+        "rot": 0,
+        "props": {
+          "threshold": "0",
+          "low": "0",
+          "high": "1",
+          "hysteresis": "0",
+          "initial": "",
+          "start": "",
+          "pins": "signal"
+        }
+      },
+      {
+        "id": "bbv-dly1",
+        "type": "delay",
+        "refdes": "DLY1",
+        "x": 400,
+        "y": 640,
+        "rot": 0,
+        "props": {
+          "td": "10n",
+          "threshold": "0.5",
+          "low": "0",
+          "high": "1",
+          "initial": "0",
+          "tdfall": "1p",
+          "ramp": "",
+          "rampfall": "",
+          "pins": "signal"
+        }
+      },
+      {
+        "id": "bbv-dly2",
+        "type": "delay",
+        "refdes": "DLY2",
+        "x": 400,
+        "y": 740,
+        "rot": 0,
+        "props": {
+          "td": "10n",
+          "threshold": "0.5",
+          "low": "0",
+          "high": "1",
+          "initial": "0",
+          "tdfall": "1p",
+          "ramp": "",
+          "rampfall": "",
+          "pins": "signal"
+        }
+      },
+      {
+        "id": "bbv-lbl-33",
+        "type": "netlabel",
+        "refdes": "LBL33",
+        "x": 200,
+        "y": 660,
+        "rot": 0,
+        "props": {
+          "name": "duty1",
+          "global": "",
+          "display": ""
+        }
+      },
+      {
+        "id": "bbv-lbl-34",
+        "type": "netlabel",
+        "refdes": "LBL34",
+        "x": 200,
+        "y": 680,
+        "rot": 0,
+        "props": {
+          "name": "saw1",
+          "global": "",
+          "display": ""
+        }
+      },
+      {
+        "id": "bbv-lbl-35",
+        "type": "netlabel",
+        "refdes": "LBL35",
+        "x": 200,
+        "y": 760,
+        "rot": 0,
+        "props": {
+          "name": "saw1",
+          "global": "",
+          "display": ""
+        }
+      },
+      {
+        "id": "bbv-lbl-36",
+        "type": "netlabel",
+        "refdes": "LBL36",
+        "x": 200,
+        "y": 780,
+        "rot": 0,
+        "props": {
+          "name": "duty1",
+          "global": "",
+          "display": ""
+        }
+      },
+      {
+        "id": "bbv-lbl-37",
+        "type": "netlabel",
+        "refdes": "LBL37",
+        "x": 440,
+        "y": 670,
+        "rot": 0,
+        "props": {
+          "name": "g1",
+          "global": "",
+          "display": ""
+        }
+      },
+      {
+        "id": "bbv-lbl-38",
+        "type": "netlabel",
+        "refdes": "LBL38",
+        "x": 440,
+        "y": 770,
+        "rot": 0,
+        "props": {
+          "name": "g2",
+          "global": "",
+          "display": ""
+        }
+      },
+      {
+        "id": "bbv-a3",
+        "type": "comparator",
+        "refdes": "A3",
+        "x": 680,
+        "y": 640,
+        "rot": 0,
+        "props": {
+          "threshold": "0",
+          "low": "0",
+          "high": "1",
+          "hysteresis": "0",
+          "initial": "",
+          "start": "",
+          "pins": "signal"
+        }
+      },
+      {
+        "id": "bbv-a4",
+        "type": "comparator",
+        "refdes": "A4",
+        "x": 680,
+        "y": 740,
+        "rot": 0,
+        "props": {
+          "threshold": "0",
+          "low": "0",
+          "high": "1",
+          "hysteresis": "0",
+          "initial": "",
+          "start": "",
+          "pins": "signal"
+        }
+      },
+      {
+        "id": "bbv-dly3",
+        "type": "delay",
+        "refdes": "DLY3",
+        "x": 800,
+        "y": 640,
+        "rot": 0,
+        "props": {
+          "td": "10n",
+          "threshold": "0.5",
+          "low": "0",
+          "high": "1",
+          "initial": "0",
+          "tdfall": "1p",
+          "ramp": "",
+          "rampfall": "",
+          "pins": "signal"
+        }
+      },
+      {
+        "id": "bbv-dly4",
+        "type": "delay",
+        "refdes": "DLY4",
+        "x": 800,
+        "y": 740,
+        "rot": 0,
+        "props": {
+          "td": "10n",
+          "threshold": "0.5",
+          "low": "0",
+          "high": "1",
+          "initial": "0",
+          "tdfall": "1p",
+          "ramp": "",
+          "rampfall": "",
+          "pins": "signal"
+        }
+      },
+      {
+        "id": "bbv-lbl-39",
+        "type": "netlabel",
+        "refdes": "LBL39",
+        "x": 600,
+        "y": 660,
+        "rot": 0,
+        "props": {
+          "name": "duty2",
+          "global": "",
+          "display": ""
+        }
+      },
+      {
+        "id": "bbv-lbl-40",
+        "type": "netlabel",
+        "refdes": "LBL40",
+        "x": 600,
+        "y": 680,
+        "rot": 0,
+        "props": {
+          "name": "saw2",
+          "global": "",
+          "display": ""
+        }
+      },
+      {
+        "id": "bbv-lbl-41",
+        "type": "netlabel",
+        "refdes": "LBL41",
+        "x": 600,
+        "y": 760,
+        "rot": 0,
+        "props": {
+          "name": "saw2",
+          "global": "",
+          "display": ""
+        }
+      },
+      {
+        "id": "bbv-lbl-42",
+        "type": "netlabel",
+        "refdes": "LBL42",
+        "x": 600,
+        "y": 780,
+        "rot": 0,
+        "props": {
+          "name": "duty2",
+          "global": "",
+          "display": ""
+        }
+      },
+      {
+        "id": "bbv-lbl-43",
+        "type": "netlabel",
+        "refdes": "LBL43",
+        "x": 840,
+        "y": 670,
+        "rot": 0,
+        "props": {
+          "name": "g4",
+          "global": "",
+          "display": ""
+        }
+      },
+      {
+        "id": "bbv-lbl-44",
+        "type": "netlabel",
+        "refdes": "LBL44",
+        "x": 840,
+        "y": 770,
+        "rot": 0,
+        "props": {
+          "name": "g3",
+          "global": "",
+          "display": ""
+        }
+      }
+    ],
+    "wires": [
+      {
+        "id": "w1",
+        "points": [
+          [
+            40,
+            100
+          ],
+          [
+            40,
+            40
+          ],
+          [
+            180,
+            40
+          ]
+        ]
+      },
+      {
+        "id": "w2",
+        "points": [
+          [
+            180,
+            100
+          ],
+          [
+            180,
+            160
+          ]
+        ]
+      },
+      {
+        "id": "w3",
+        "points": [
+          [
+            130,
+            100
+          ],
+          [
+            180,
+            100
+          ]
+        ]
+      },
+      {
+        "id": "w4",
+        "points": [
+          [
+            130,
+            160
+          ],
+          [
+            180,
+            160
+          ]
+        ]
+      },
+      {
+        "id": "w5",
+        "points": [
+          [
+            40,
+            220
+          ],
+          [
+            40,
+            280
+          ],
+          [
+            660,
+            280
+          ]
+        ]
+      },
+      {
+        "id": "w6",
+        "points": [
+          [
+            130,
+            250
+          ],
+          [
+            130,
+            280
+          ]
+        ]
+      },
+      {
+        "id": "w7",
+        "points": [
+          [
+            180,
+            220
+          ],
+          [
+            180,
+            280
+          ]
+        ]
+      },
+      {
+        "id": "w8",
+        "points": [
+          [
+            180,
+            130
+          ],
+          [
+            300,
+            130
+          ]
+        ]
+      },
+      {
+        "id": "w9",
+        "points": [
+          [
+            360,
+            130
+          ],
+          [
+            480,
+            130
+          ]
+        ]
+      },
+      {
+        "id": "w10",
+        "points": [
+          [
+            480,
+            100
+          ],
+          [
+            480,
+            160
+          ]
+        ]
+      },
+      {
+        "id": "w11",
+        "points": [
+          [
+            430,
+            100
+          ],
+          [
+            480,
+            100
+          ]
+        ]
+      },
+      {
+        "id": "w12",
+        "points": [
+          [
+            430,
+            160
+          ],
+          [
+            480,
+            160
+          ]
+        ]
+      },
+      {
+        "id": "w13",
+        "points": [
+          [
+            430,
+            40
+          ],
+          [
+            660,
+            40
+          ],
+          [
+            660,
+            100
+          ]
+        ]
+      },
+      {
+        "id": "w14",
+        "points": [
+          [
+            430,
+            250
+          ],
+          [
+            430,
+            280
+          ]
+        ]
+      },
+      {
+        "id": "w15",
+        "points": [
+          [
+            480,
+            220
+          ],
+          [
+            480,
+            280
+          ]
+        ]
+      },
+      {
+        "id": "w16",
+        "points": [
+          [
+            580,
+            40
+          ],
+          [
+            580,
+            130
+          ]
+        ]
+      },
+      {
+        "id": "w17",
+        "points": [
+          [
+            580,
+            170
+          ],
+          [
+            580,
+            280
+          ]
+        ]
+      },
+      {
+        "id": "w18",
+        "points": [
+          [
+            660,
+            220
+          ],
+          [
+            660,
+            280
+          ]
+        ]
+      },
+      {
+        "id": "w19",
+        "points": [
+          [
+            60,
+            450
+          ],
+          [
+            120,
+            450
+          ]
+        ]
+      },
+      {
+        "id": "w20",
+        "points": [
+          [
+            40,
+            410
+          ],
+          [
+            120,
+            410
+          ]
+        ]
+      },
+      {
+        "id": "w21",
+        "points": [
+          [
+            160,
+            400
+          ],
+          [
+            460,
+            400
+          ]
+        ]
+      },
+      {
+        "id": "w22",
+        "points": [
+          [
+            460,
+            340
+          ],
+          [
+            1140,
+            340
+          ]
+        ]
+      },
+      {
+        "id": "w23",
+        "points": [
+          [
+            460,
+            400
+          ],
+          [
+            560,
+            400
+          ],
+          [
+            560,
+            450
+          ],
+          [
+            600,
+            450
+          ]
+        ]
+      },
+      {
+        "id": "w24",
+        "points": [
+          [
+            580,
+            410
+          ],
+          [
+            600,
+            410
+          ]
+        ]
+      },
+      {
+        "id": "w25",
+        "points": [
+          [
+            640,
+            400
+          ],
+          [
+            960,
+            400
+          ]
+        ]
+      },
+      {
+        "id": "w26",
+        "points": [
+          [
+            920,
+            400
+          ],
+          [
+            920,
+            500
+          ],
+          [
+            960,
+            500
+          ]
+        ]
+      },
+      {
+        "id": "w27",
+        "points": [
+          [
+            970,
+            530
+          ],
+          [
+            970,
+            560
+          ]
+        ]
+      },
+      {
+        "id": "w28",
+        "points": [
+          [
+            1000,
+            400
+          ],
+          [
+            1060,
+            400
+          ]
+        ]
+      },
+      {
+        "id": "w29",
+        "points": [
+          [
+            1000,
+            500
+          ],
+          [
+            1060,
+            500
+          ]
+        ]
+      },
+      {
+        "id": "w30",
+        "points": [
+          [
+            200,
+            660
+          ],
+          [
+            280,
+            660
+          ]
+        ]
+      },
+      {
+        "id": "w31",
+        "points": [
+          [
+            200,
+            680
+          ],
+          [
+            280,
+            680
+          ]
+        ]
+      },
+      {
+        "id": "w32",
+        "points": [
+          [
+            320,
+            670
+          ],
+          [
+            400,
+            670
+          ]
+        ]
+      },
+      {
+        "id": "w33",
+        "points": [
+          [
+            200,
+            760
+          ],
+          [
+            280,
+            760
+          ]
+        ]
+      },
+      {
+        "id": "w34",
+        "points": [
+          [
+            200,
+            780
+          ],
+          [
+            280,
+            780
+          ]
+        ]
+      },
+      {
+        "id": "w35",
+        "points": [
+          [
+            320,
+            770
+          ],
+          [
+            400,
+            770
+          ]
+        ]
+      },
+      {
+        "id": "w36",
+        "points": [
+          [
+            600,
+            660
+          ],
+          [
+            680,
+            660
+          ]
+        ]
+      },
+      {
+        "id": "w37",
+        "points": [
+          [
+            600,
+            680
+          ],
+          [
+            680,
+            680
+          ]
+        ]
+      },
+      {
+        "id": "w38",
+        "points": [
+          [
+            720,
+            670
+          ],
+          [
+            800,
+            670
+          ]
+        ]
+      },
+      {
+        "id": "w39",
+        "points": [
+          [
+            600,
+            760
+          ],
+          [
+            680,
+            760
+          ]
+        ]
+      },
+      {
+        "id": "w40",
+        "points": [
+          [
+            600,
+            780
+          ],
+          [
+            680,
+            780
+          ]
+        ]
+      },
+      {
+        "id": "w41",
+        "points": [
+          [
+            720,
+            770
+          ],
+          [
+            800,
+            770
+          ]
+        ]
+      },
+      {
+        "id": "w42",
+        "points": [
+          [
+            40,
+            100
+          ],
+          [
+            40,
+            160
+          ]
+        ]
+      },
+      {
+        "id": "w43",
+        "points": [
+          [
+            130,
+            160
+          ],
+          [
+            130,
+            190
+          ]
+        ]
+      },
+      {
+        "id": "w44",
+        "points": [
+          [
+            430,
+            160
+          ],
+          [
+            430,
+            190
+          ]
+        ]
+      },
+      {
+        "id": "w45",
+        "points": [
+          [
+            660,
+            100
+          ],
+          [
+            660,
+            160
+          ]
+        ]
+      }
+    ]
+  },
+  "analyses": {
+    "mode": "transient",
+    "periods": 2,
+    "measurements": [],
+    "sweep": null,
+    "sweepSignal": "",
+    "sweepMetric": "average"
+  }
+}

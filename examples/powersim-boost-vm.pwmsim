@@ -1,0 +1,382 @@
+{
+  "format": "volta-project",
+  "version": 1,
+  "document": {
+    "format": "volta-schematic",
+    "version": 73,
+    "title": "Boost — PI Regulation",
+    "tran": "5m",
+    "fidelity": "ideal",
+    "counters": {
+      "V": 1,
+      "L": 1,
+      "S": 1,
+      "D": 1,
+      "C": 1,
+      "R": 3,
+      "GND": 1,
+      "LBL": 4,
+      "PWM": 1
+    },
+    "components": [
+      {
+        "id": "vmo-vin",
+        "type": "vdc",
+        "refdes": "V1",
+        "x": 60,
+        "y": 150,
+        "rot": 0,
+        "props": {
+          "value": "2.5",
+          "rser": ""
+        }
+      },
+      {
+        "id": "vmo-inductor",
+        "type": "inductor",
+        "refdes": "L1",
+        "x": 140,
+        "y": 100,
+        "rot": 0,
+        "props": {
+          "value": "10u",
+          "ic": "",
+          "pwl": "",
+          "rser": "",
+          "rpar": "",
+          "cpar": ""
+        }
+      },
+      {
+        "id": "vmo-switch",
+        "type": "gswitch",
+        "refdes": "S1",
+        "x": 260,
+        "y": 160,
+        "rot": 270,
+        "props": {
+          "ron": "10m",
+          "roff": "100meg",
+          "vt": "0.5",
+          "vh": "0"
+        }
+      },
+      {
+        "id": "vmo-switch-gate",
+        "type": "gate_pi",
+        "refdes": "PWM1",
+        "x": 240,
+        "y": 130,
+        "rot": 270,
+        "props": {
+          "fsw": "1meg",
+          "duty0": "0.25",
+          "phase": "0",
+          "ref": "3.3",
+          "ref1": "",
+          "rtstep": "",
+          "kp": "0.01",
+          "ki": "628",
+          "dmin": "0",
+          "dmax": "0.7",
+          "deadtime": ""
+        }
+      },
+      {
+        "id": "vmo-diode",
+        "type": "diode",
+        "refdes": "D1",
+        "x": 340,
+        "y": 100,
+        "rot": 0,
+        "props": {
+          "vfwd": "0",
+          "ron": "10m",
+          "roff": "1gig",
+          "model": "ideal",
+          "is": "",
+          "n": "",
+          "tt": "",
+          "cjo": "",
+          "rs": "",
+          "bv": "",
+          "vj": "",
+          "m": "",
+          "ibv": "",
+          "nbv": "",
+          "ibvl": "",
+          "nbvl": "",
+          "ikf": "",
+          "isr": "",
+          "nr": "",
+          "itol": "",
+          "epsilon": "",
+          "nser": ""
+        }
+      },
+      {
+        "id": "vmo-capacitor",
+        "type": "capacitor",
+        "refdes": "C1",
+        "x": 480,
+        "y": 100,
+        "rot": 0,
+        "props": {
+          "value": "22u",
+          "ic": "",
+          "pwl": "",
+          "lser": "",
+          "rser": "",
+          "rpar": "",
+          "cpar": ""
+        }
+      },
+      {
+        "id": "vmo-c-esr",
+        "type": "resistor",
+        "refdes": "R3",
+        "x": 480,
+        "y": 170,
+        "rot": 90,
+        "props": {
+          "value": "1m",
+          "pwl": ""
+        }
+      },
+      {
+        "id": "vmo-load",
+        "type": "resistor",
+        "refdes": "R1",
+        "x": 560,
+        "y": 150,
+        "rot": 90,
+        "props": {
+          "value": "3.3",
+          "pwl": ""
+        }
+      },
+      {
+        "id": "vmo-ground",
+        "type": "ground",
+        "refdes": "GND1",
+        "x": 60,
+        "y": 260,
+        "rot": 0,
+        "props": {}
+      },
+      {
+        "id": "vmo-in-label",
+        "type": "netlabel",
+        "refdes": "LBL1",
+        "x": 70,
+        "y": 100,
+        "rot": 0,
+        "props": {
+          "name": "in",
+          "global": "",
+          "display": ""
+        }
+      },
+      {
+        "id": "vmo-sw-label",
+        "type": "netlabel",
+        "refdes": "LBL2",
+        "x": 230,
+        "y": 100,
+        "rot": 0,
+        "props": {
+          "name": "sw",
+          "global": "",
+          "display": ""
+        }
+      },
+      {
+        "id": "vmo-out-label",
+        "type": "netlabel",
+        "refdes": "LBL3",
+        "x": 440,
+        "y": 100,
+        "rot": 0,
+        "props": {
+          "name": "out",
+          "global": "",
+          "display": ""
+        }
+      },
+      {
+        "id": "vmo-fb-label",
+        "type": "netlabel",
+        "refdes": "LBL4",
+        "x": 200,
+        "y": 200,
+        "rot": 0,
+        "props": {
+          "name": "out",
+          "global": "",
+          "display": ""
+        }
+      }
+    ],
+    "wires": [
+      {
+        "id": "w1",
+        "points": [
+          [
+            60,
+            100
+          ],
+          [
+            140,
+            100
+          ]
+        ]
+      },
+      {
+        "id": "w2",
+        "points": [
+          [
+            200,
+            100
+          ],
+          [
+            340,
+            100
+          ]
+        ]
+      },
+      {
+        "id": "w3",
+        "points": [
+          [
+            400,
+            100
+          ],
+          [
+            560,
+            100
+          ]
+        ]
+      },
+      {
+        "id": "w4",
+        "points": [
+          [
+            220,
+            130
+          ],
+          [
+            200,
+            130
+          ],
+          [
+            200,
+            200
+          ]
+        ]
+      },
+      {
+        "id": "w5",
+        "points": [
+          [
+            480,
+            230
+          ],
+          [
+            480,
+            260
+          ]
+        ]
+      },
+      {
+        "id": "w6",
+        "points": [
+          [
+            560,
+            210
+          ],
+          [
+            560,
+            260
+          ]
+        ]
+      },
+      {
+        "id": "w7",
+        "points": [
+          [
+            60,
+            210
+          ],
+          [
+            60,
+            260
+          ],
+          [
+            560,
+            260
+          ]
+        ]
+      },
+      {
+        "id": "w8",
+        "points": [
+          [
+            260,
+            160
+          ],
+          [
+            260,
+            260
+          ]
+        ]
+      },
+      {
+        "id": "w9",
+        "points": [
+          [
+            60,
+            100
+          ],
+          [
+            60,
+            150
+          ]
+        ]
+      },
+      {
+        "id": "w10",
+        "points": [
+          [
+            480,
+            140
+          ],
+          [
+            480,
+            170
+          ]
+        ]
+      },
+      {
+        "id": "w11",
+        "points": [
+          [
+            560,
+            100
+          ],
+          [
+            560,
+            150
+          ]
+        ]
+      }
+    ]
+  },
+  "analyses": {
+    "mode": "transient",
+    "periods": 2,
+    "measurements": [],
+    "sweep": null,
+    "sweepSignal": "",
+    "sweepMetric": "average"
+  }
+}

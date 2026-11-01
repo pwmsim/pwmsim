@@ -1,0 +1,590 @@
+{
+  "format": "volta-project",
+  "version": 1,
+  "document": {
+    "format": "volta-schematic",
+    "version": 73,
+    "title": "2:1 Resonant Switched-Capacitor Ladder — Fixed Phase",
+    "tran": "10m",
+    "fidelity": "ideal",
+    "counters": {
+      "V": 1,
+      "S": 4,
+      "D": 4,
+      "L": 1,
+      "C": 2,
+      "R": 1,
+      "GND": 1,
+      "LBL": 4,
+      "PWM": 4
+    },
+    "components": [
+      {
+        "id": "srl-vin",
+        "type": "vdc",
+        "refdes": "V1",
+        "x": 40,
+        "y": 170,
+        "rot": 0,
+        "props": {
+          "value": "10",
+          "rser": ""
+        }
+      },
+      {
+        "id": "srl-s1",
+        "type": "gswitch",
+        "refdes": "S1",
+        "x": 280,
+        "y": 40,
+        "rot": 90,
+        "props": {
+          "ron": "100m",
+          "roff": "100meg",
+          "vt": "0.5",
+          "vh": "0"
+        }
+      },
+      {
+        "id": "srl-s1-gate",
+        "type": "gate_pwm",
+        "refdes": "PWM1",
+        "x": 300,
+        "y": 70,
+        "rot": 90,
+        "props": {
+          "fsw": "200k",
+          "duty": "0.5",
+          "phase": "0",
+          "deadtime": "10n"
+        }
+      },
+      {
+        "id": "srl-s2",
+        "type": "gswitch",
+        "refdes": "S2",
+        "x": 280,
+        "y": 100,
+        "rot": 90,
+        "props": {
+          "ron": "100m",
+          "roff": "100meg",
+          "vt": "0.5",
+          "vh": "0"
+        }
+      },
+      {
+        "id": "srl-s2-gate",
+        "type": "gate_comp",
+        "refdes": "PWM2",
+        "x": 300,
+        "y": 130,
+        "rot": 90,
+        "props": {
+          "master": "S1",
+          "deadtime": "10n"
+        }
+      },
+      {
+        "id": "srl-s3",
+        "type": "gswitch",
+        "refdes": "S3",
+        "x": 280,
+        "y": 160,
+        "rot": 90,
+        "props": {
+          "ron": "100m",
+          "roff": "100meg",
+          "vt": "0.5",
+          "vh": "0"
+        }
+      },
+      {
+        "id": "srl-s3-gate",
+        "type": "gate_pwm",
+        "refdes": "PWM3",
+        "x": 300,
+        "y": 190,
+        "rot": 90,
+        "props": {
+          "fsw": "200k",
+          "duty": "0.5",
+          "phase": "0.1157",
+          "deadtime": "10n"
+        }
+      },
+      {
+        "id": "srl-s4",
+        "type": "gswitch",
+        "refdes": "S4",
+        "x": 280,
+        "y": 220,
+        "rot": 90,
+        "props": {
+          "ron": "100m",
+          "roff": "100meg",
+          "vt": "0.5",
+          "vh": "0"
+        }
+      },
+      {
+        "id": "srl-s4-gate",
+        "type": "gate_comp",
+        "refdes": "PWM4",
+        "x": 300,
+        "y": 250,
+        "rot": 90,
+        "props": {
+          "master": "S3",
+          "deadtime": "10n"
+        }
+      },
+      {
+        "id": "srl-d1",
+        "type": "diode",
+        "refdes": "D1",
+        "x": 210,
+        "y": 100,
+        "rot": 270,
+        "props": {
+          "vfwd": "0",
+          "ron": "10u",
+          "roff": "100meg",
+          "model": "ideal",
+          "is": "",
+          "n": "",
+          "tt": "",
+          "cjo": "",
+          "rs": "",
+          "bv": "",
+          "vj": "",
+          "m": "",
+          "ibv": "",
+          "nbv": "",
+          "ibvl": "",
+          "nbvl": "",
+          "ikf": "",
+          "isr": "",
+          "nr": "",
+          "itol": "",
+          "epsilon": "",
+          "nser": ""
+        }
+      },
+      {
+        "id": "srl-d2",
+        "type": "diode",
+        "refdes": "D2",
+        "x": 210,
+        "y": 160,
+        "rot": 270,
+        "props": {
+          "vfwd": "0",
+          "ron": "10u",
+          "roff": "100meg",
+          "model": "ideal",
+          "is": "",
+          "n": "",
+          "tt": "",
+          "cjo": "",
+          "rs": "",
+          "bv": "",
+          "vj": "",
+          "m": "",
+          "ibv": "",
+          "nbv": "",
+          "ibvl": "",
+          "nbvl": "",
+          "ikf": "",
+          "isr": "",
+          "nr": "",
+          "itol": "",
+          "epsilon": "",
+          "nser": ""
+        }
+      },
+      {
+        "id": "srl-d3",
+        "type": "diode",
+        "refdes": "D3",
+        "x": 210,
+        "y": 220,
+        "rot": 270,
+        "props": {
+          "vfwd": "0",
+          "ron": "10u",
+          "roff": "100meg",
+          "model": "ideal",
+          "is": "",
+          "n": "",
+          "tt": "",
+          "cjo": "",
+          "rs": "",
+          "bv": "",
+          "vj": "",
+          "m": "",
+          "ibv": "",
+          "nbv": "",
+          "ibvl": "",
+          "nbvl": "",
+          "ikf": "",
+          "isr": "",
+          "nr": "",
+          "itol": "",
+          "epsilon": "",
+          "nser": ""
+        }
+      },
+      {
+        "id": "srl-d4",
+        "type": "diode",
+        "refdes": "D4",
+        "x": 210,
+        "y": 280,
+        "rot": 270,
+        "props": {
+          "vfwd": "0",
+          "ron": "10u",
+          "roff": "100meg",
+          "model": "ideal",
+          "is": "",
+          "n": "",
+          "tt": "",
+          "cjo": "",
+          "rs": "",
+          "bv": "",
+          "vj": "",
+          "m": "",
+          "ibv": "",
+          "nbv": "",
+          "ibvl": "",
+          "nbvl": "",
+          "ikf": "",
+          "isr": "",
+          "nr": "",
+          "itol": "",
+          "epsilon": "",
+          "nser": ""
+        }
+      },
+      {
+        "id": "srl-resonant-l",
+        "type": "inductor",
+        "refdes": "L1",
+        "x": 100,
+        "y": 110,
+        "rot": 90,
+        "props": {
+          "value": "4.7u",
+          "ic": "",
+          "pwl": "",
+          "rser": "10m",
+          "rpar": "",
+          "cpar": ""
+        }
+      },
+      {
+        "id": "srl-flying",
+        "type": "capacitor",
+        "refdes": "C2",
+        "x": 100,
+        "y": 170,
+        "rot": 0,
+        "props": {
+          "value": "2.2u",
+          "ic": "",
+          "pwl": "",
+          "lser": "",
+          "rser": "5m",
+          "rpar": "",
+          "cpar": ""
+        }
+      },
+      {
+        "id": "srl-capacitor",
+        "type": "capacitor",
+        "refdes": "C1",
+        "x": 440,
+        "y": 210,
+        "rot": 0,
+        "props": {
+          "value": "22u",
+          "ic": "",
+          "pwl": "",
+          "lser": "",
+          "rser": "3m",
+          "rpar": "",
+          "cpar": ""
+        }
+      },
+      {
+        "id": "srl-load",
+        "type": "resistor",
+        "refdes": "R1",
+        "x": 520,
+        "y": 200,
+        "rot": 90,
+        "props": {
+          "value": "20",
+          "pwl": ""
+        }
+      },
+      {
+        "id": "srl-ground",
+        "type": "ground",
+        "refdes": "GND1",
+        "x": 40,
+        "y": 300,
+        "rot": 0,
+        "props": {}
+      },
+      {
+        "id": "srl-in-label",
+        "type": "netlabel",
+        "refdes": "LBL1",
+        "x": 130,
+        "y": 40,
+        "rot": 0,
+        "props": {
+          "name": "in",
+          "global": "",
+          "display": ""
+        }
+      },
+      {
+        "id": "srl-sw1-label",
+        "type": "netlabel",
+        "refdes": "LBL2",
+        "x": 130,
+        "y": 100,
+        "rot": 0,
+        "props": {
+          "name": "sw1",
+          "global": "",
+          "display": ""
+        }
+      },
+      {
+        "id": "srl-sw3-label",
+        "type": "netlabel",
+        "refdes": "LBL3",
+        "x": 130,
+        "y": 220,
+        "rot": 0,
+        "props": {
+          "name": "sw3",
+          "global": "",
+          "display": ""
+        }
+      },
+      {
+        "id": "srl-out-label",
+        "type": "netlabel",
+        "refdes": "LBL4",
+        "x": 480,
+        "y": 160,
+        "rot": 0,
+        "props": {
+          "name": "out",
+          "global": "",
+          "display": ""
+        }
+      }
+    ],
+    "wires": [
+      {
+        "id": "w1",
+        "points": [
+          [
+            40,
+            100
+          ],
+          [
+            40,
+            40
+          ],
+          [
+            280,
+            40
+          ]
+        ]
+      },
+      {
+        "id": "w2",
+        "points": [
+          [
+            210,
+            100
+          ],
+          [
+            100,
+            100
+          ],
+          [
+            100,
+            110
+          ]
+        ]
+      },
+      {
+        "id": "w3",
+        "points": [
+          [
+            210,
+            100
+          ],
+          [
+            280,
+            100
+          ]
+        ]
+      },
+      {
+        "id": "w4",
+        "points": [
+          [
+            100,
+            210
+          ],
+          [
+            100,
+            220
+          ],
+          [
+            280,
+            220
+          ]
+        ]
+      },
+      {
+        "id": "w5",
+        "points": [
+          [
+            210,
+            160
+          ],
+          [
+            520,
+            160
+          ]
+        ]
+      },
+      {
+        "id": "w6",
+        "points": [
+          [
+            210,
+            280
+          ],
+          [
+            210,
+            300
+          ]
+        ]
+      },
+      {
+        "id": "w7",
+        "points": [
+          [
+            280,
+            280
+          ],
+          [
+            280,
+            300
+          ]
+        ]
+      },
+      {
+        "id": "w8",
+        "points": [
+          [
+            440,
+            160
+          ],
+          [
+            440,
+            210
+          ]
+        ]
+      },
+      {
+        "id": "w9",
+        "points": [
+          [
+            440,
+            250
+          ],
+          [
+            440,
+            300
+          ]
+        ]
+      },
+      {
+        "id": "w10",
+        "points": [
+          [
+            520,
+            260
+          ],
+          [
+            520,
+            300
+          ]
+        ]
+      },
+      {
+        "id": "w11",
+        "points": [
+          [
+            40,
+            230
+          ],
+          [
+            40,
+            300
+          ],
+          [
+            520,
+            300
+          ]
+        ]
+      },
+      {
+        "id": "w12",
+        "points": [
+          [
+            40,
+            100
+          ],
+          [
+            40,
+            170
+          ]
+        ]
+      },
+      {
+        "id": "w13",
+        "points": [
+          [
+            520,
+            160
+          ],
+          [
+            520,
+            200
+          ]
+        ]
+      }
+    ]
+  },
+  "analyses": {
+    "mode": "transient",
+    "periods": 2,
+    "measurements": [],
+    "sweep": null,
+    "sweepSignal": "",
+    "sweepMetric": "average"
+  }
+}

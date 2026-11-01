@@ -1,0 +1,1230 @@
+{
+  "format": "volta-project",
+  "version": 1,
+  "document": {
+    "format": "volta-schematic",
+    "version": 73,
+    "title": "CLLC Resonant Converter — Fixed Phases",
+    "tran": "1m",
+    "fidelity": "ideal",
+    "counters": {
+      "V": 1,
+      "R": 5,
+      "GND": 2,
+      "S": 8,
+      "D": 8,
+      "LBL": 9,
+      "C": 3,
+      "L": 4,
+      "K": 1,
+      "PWM": 8
+    },
+    "components": [
+      {
+        "id": "cllc-vin",
+        "type": "vdc",
+        "refdes": "V1",
+        "x": 40,
+        "y": 150,
+        "rot": 0,
+        "props": {
+          "value": "400",
+          "rser": ""
+        }
+      },
+      {
+        "id": "cllc-isolation",
+        "type": "resistor",
+        "refdes": "R1",
+        "x": 40,
+        "y": 300,
+        "rot": 90,
+        "props": {
+          "value": "1gig",
+          "pwl": ""
+        }
+      },
+      {
+        "id": "cllc-ground",
+        "type": "ground",
+        "refdes": "GND1",
+        "x": 40,
+        "y": 360,
+        "rot": 0,
+        "props": {}
+      },
+      {
+        "id": "cllc-s1",
+        "type": "gswitch",
+        "refdes": "S1",
+        "x": 140,
+        "y": 60,
+        "rot": 90,
+        "props": {
+          "ron": "10m",
+          "roff": "100meg",
+          "vt": "0.5",
+          "vh": "0"
+        }
+      },
+      {
+        "id": "cllc-s1-gate",
+        "type": "gate_pwm",
+        "refdes": "PWM1",
+        "x": 160,
+        "y": 90,
+        "rot": 90,
+        "props": {
+          "fsw": "150k",
+          "duty": "0.5",
+          "phase": "0",
+          "deadtime": "100n"
+        }
+      },
+      {
+        "id": "cllc-s2",
+        "type": "gswitch",
+        "refdes": "S2",
+        "x": 140,
+        "y": 240,
+        "rot": 90,
+        "props": {
+          "ron": "10m",
+          "roff": "100meg",
+          "vt": "0.5",
+          "vh": "0"
+        }
+      },
+      {
+        "id": "cllc-s2-gate",
+        "type": "gate_comp",
+        "refdes": "PWM2",
+        "x": 160,
+        "y": 270,
+        "rot": 90,
+        "props": {
+          "master": "S1",
+          "deadtime": "100n"
+        }
+      },
+      {
+        "id": "cllc-d1",
+        "type": "diode",
+        "refdes": "D1",
+        "x": 70,
+        "y": 120,
+        "rot": 270,
+        "props": {
+          "vfwd": "0",
+          "ron": "10u",
+          "roff": "100meg",
+          "model": "ideal",
+          "is": "",
+          "n": "",
+          "tt": "",
+          "cjo": "",
+          "rs": "",
+          "bv": "",
+          "vj": "",
+          "m": "",
+          "ibv": "",
+          "nbv": "",
+          "ibvl": "",
+          "nbvl": "",
+          "ikf": "",
+          "isr": "",
+          "nr": "",
+          "itol": "",
+          "epsilon": "",
+          "nser": ""
+        }
+      },
+      {
+        "id": "cllc-d2",
+        "type": "diode",
+        "refdes": "D2",
+        "x": 70,
+        "y": 300,
+        "rot": 270,
+        "props": {
+          "vfwd": "0",
+          "ron": "10u",
+          "roff": "100meg",
+          "model": "ideal",
+          "is": "",
+          "n": "",
+          "tt": "",
+          "cjo": "",
+          "rs": "",
+          "bv": "",
+          "vj": "",
+          "m": "",
+          "ibv": "",
+          "nbv": "",
+          "ibvl": "",
+          "nbvl": "",
+          "ikf": "",
+          "isr": "",
+          "nr": "",
+          "itol": "",
+          "epsilon": "",
+          "nser": ""
+        }
+      },
+      {
+        "id": "cllc-sw1-label",
+        "type": "netlabel",
+        "refdes": "LBL1",
+        "x": 140,
+        "y": 180,
+        "rot": 0,
+        "props": {
+          "name": "sw1",
+          "global": "",
+          "display": ""
+        }
+      },
+      {
+        "id": "cllc-s3",
+        "type": "gswitch",
+        "refdes": "S3",
+        "x": 380,
+        "y": 60,
+        "rot": 90,
+        "props": {
+          "ron": "10m",
+          "roff": "100meg",
+          "vt": "0.5",
+          "vh": "0"
+        }
+      },
+      {
+        "id": "cllc-s3-gate",
+        "type": "gate_pwm",
+        "refdes": "PWM3",
+        "x": 400,
+        "y": 90,
+        "rot": 90,
+        "props": {
+          "fsw": "150k",
+          "duty": "0.5",
+          "phase": "0.125",
+          "deadtime": "100n"
+        }
+      },
+      {
+        "id": "cllc-s4",
+        "type": "gswitch",
+        "refdes": "S4",
+        "x": 380,
+        "y": 240,
+        "rot": 90,
+        "props": {
+          "ron": "10m",
+          "roff": "100meg",
+          "vt": "0.5",
+          "vh": "0"
+        }
+      },
+      {
+        "id": "cllc-s4-gate",
+        "type": "gate_comp",
+        "refdes": "PWM4",
+        "x": 400,
+        "y": 270,
+        "rot": 90,
+        "props": {
+          "master": "S3",
+          "deadtime": "100n"
+        }
+      },
+      {
+        "id": "cllc-d3",
+        "type": "diode",
+        "refdes": "D3",
+        "x": 310,
+        "y": 120,
+        "rot": 270,
+        "props": {
+          "vfwd": "0",
+          "ron": "10u",
+          "roff": "100meg",
+          "model": "ideal",
+          "is": "",
+          "n": "",
+          "tt": "",
+          "cjo": "",
+          "rs": "",
+          "bv": "",
+          "vj": "",
+          "m": "",
+          "ibv": "",
+          "nbv": "",
+          "ibvl": "",
+          "nbvl": "",
+          "ikf": "",
+          "isr": "",
+          "nr": "",
+          "itol": "",
+          "epsilon": "",
+          "nser": ""
+        }
+      },
+      {
+        "id": "cllc-d4",
+        "type": "diode",
+        "refdes": "D4",
+        "x": 310,
+        "y": 300,
+        "rot": 270,
+        "props": {
+          "vfwd": "0",
+          "ron": "10u",
+          "roff": "100meg",
+          "model": "ideal",
+          "is": "",
+          "n": "",
+          "tt": "",
+          "cjo": "",
+          "rs": "",
+          "bv": "",
+          "vj": "",
+          "m": "",
+          "ibv": "",
+          "nbv": "",
+          "ibvl": "",
+          "nbvl": "",
+          "ikf": "",
+          "isr": "",
+          "nr": "",
+          "itol": "",
+          "epsilon": "",
+          "nser": ""
+        }
+      },
+      {
+        "id": "cllc-sw2-label",
+        "type": "netlabel",
+        "refdes": "LBL2",
+        "x": 380,
+        "y": 180,
+        "rot": 0,
+        "props": {
+          "name": "sw2",
+          "global": "",
+          "display": ""
+        }
+      },
+      {
+        "id": "cllc-s5",
+        "type": "gswitch",
+        "refdes": "S5",
+        "x": 1240,
+        "y": 60,
+        "rot": 90,
+        "props": {
+          "ron": "10m",
+          "roff": "100meg",
+          "vt": "0.5",
+          "vh": "0"
+        }
+      },
+      {
+        "id": "cllc-s5-gate",
+        "type": "gate_pwm",
+        "refdes": "PWM5",
+        "x": 1260,
+        "y": 90,
+        "rot": 90,
+        "props": {
+          "fsw": "150k",
+          "duty": "0.5",
+          "phase": "0.25",
+          "deadtime": "100n"
+        }
+      },
+      {
+        "id": "cllc-s6",
+        "type": "gswitch",
+        "refdes": "S6",
+        "x": 1240,
+        "y": 240,
+        "rot": 90,
+        "props": {
+          "ron": "10m",
+          "roff": "100meg",
+          "vt": "0.5",
+          "vh": "0"
+        }
+      },
+      {
+        "id": "cllc-s6-gate",
+        "type": "gate_comp",
+        "refdes": "PWM6",
+        "x": 1260,
+        "y": 270,
+        "rot": 90,
+        "props": {
+          "master": "S5",
+          "deadtime": "100n"
+        }
+      },
+      {
+        "id": "cllc-d5",
+        "type": "diode",
+        "refdes": "D5",
+        "x": 1170,
+        "y": 120,
+        "rot": 270,
+        "props": {
+          "vfwd": "0",
+          "ron": "10u",
+          "roff": "100meg",
+          "model": "ideal",
+          "is": "",
+          "n": "",
+          "tt": "",
+          "cjo": "",
+          "rs": "",
+          "bv": "",
+          "vj": "",
+          "m": "",
+          "ibv": "",
+          "nbv": "",
+          "ibvl": "",
+          "nbvl": "",
+          "ikf": "",
+          "isr": "",
+          "nr": "",
+          "itol": "",
+          "epsilon": "",
+          "nser": ""
+        }
+      },
+      {
+        "id": "cllc-d6",
+        "type": "diode",
+        "refdes": "D6",
+        "x": 1170,
+        "y": 300,
+        "rot": 270,
+        "props": {
+          "vfwd": "0",
+          "ron": "10u",
+          "roff": "100meg",
+          "model": "ideal",
+          "is": "",
+          "n": "",
+          "tt": "",
+          "cjo": "",
+          "rs": "",
+          "bv": "",
+          "vj": "",
+          "m": "",
+          "ibv": "",
+          "nbv": "",
+          "ibvl": "",
+          "nbvl": "",
+          "ikf": "",
+          "isr": "",
+          "nr": "",
+          "itol": "",
+          "epsilon": "",
+          "nser": ""
+        }
+      },
+      {
+        "id": "cllc-sw3-label",
+        "type": "netlabel",
+        "refdes": "LBL3",
+        "x": 1240,
+        "y": 180,
+        "rot": 0,
+        "props": {
+          "name": "sw3",
+          "global": "",
+          "display": ""
+        }
+      },
+      {
+        "id": "cllc-s7",
+        "type": "gswitch",
+        "refdes": "S7",
+        "x": 1470,
+        "y": 60,
+        "rot": 90,
+        "props": {
+          "ron": "10m",
+          "roff": "100meg",
+          "vt": "0.5",
+          "vh": "0"
+        }
+      },
+      {
+        "id": "cllc-s7-gate",
+        "type": "gate_pwm",
+        "refdes": "PWM7",
+        "x": 1490,
+        "y": 90,
+        "rot": 90,
+        "props": {
+          "fsw": "150k",
+          "duty": "0.5",
+          "phase": "0.375",
+          "deadtime": "100n"
+        }
+      },
+      {
+        "id": "cllc-s8",
+        "type": "gswitch",
+        "refdes": "S8",
+        "x": 1470,
+        "y": 240,
+        "rot": 90,
+        "props": {
+          "ron": "10m",
+          "roff": "100meg",
+          "vt": "0.5",
+          "vh": "0"
+        }
+      },
+      {
+        "id": "cllc-s8-gate",
+        "type": "gate_comp",
+        "refdes": "PWM8",
+        "x": 1490,
+        "y": 270,
+        "rot": 90,
+        "props": {
+          "master": "S7",
+          "deadtime": "100n"
+        }
+      },
+      {
+        "id": "cllc-d7",
+        "type": "diode",
+        "refdes": "D7",
+        "x": 1400,
+        "y": 120,
+        "rot": 270,
+        "props": {
+          "vfwd": "0",
+          "ron": "10u",
+          "roff": "100meg",
+          "model": "ideal",
+          "is": "",
+          "n": "",
+          "tt": "",
+          "cjo": "",
+          "rs": "",
+          "bv": "",
+          "vj": "",
+          "m": "",
+          "ibv": "",
+          "nbv": "",
+          "ibvl": "",
+          "nbvl": "",
+          "ikf": "",
+          "isr": "",
+          "nr": "",
+          "itol": "",
+          "epsilon": "",
+          "nser": ""
+        }
+      },
+      {
+        "id": "cllc-d8",
+        "type": "diode",
+        "refdes": "D8",
+        "x": 1400,
+        "y": 300,
+        "rot": 270,
+        "props": {
+          "vfwd": "0",
+          "ron": "10u",
+          "roff": "100meg",
+          "model": "ideal",
+          "is": "",
+          "n": "",
+          "tt": "",
+          "cjo": "",
+          "rs": "",
+          "bv": "",
+          "vj": "",
+          "m": "",
+          "ibv": "",
+          "nbv": "",
+          "ibvl": "",
+          "nbvl": "",
+          "ikf": "",
+          "isr": "",
+          "nr": "",
+          "itol": "",
+          "epsilon": "",
+          "nser": ""
+        }
+      },
+      {
+        "id": "cllc-sw4-label",
+        "type": "netlabel",
+        "refdes": "LBL4",
+        "x": 1470,
+        "y": 180,
+        "rot": 0,
+        "props": {
+          "name": "sw4",
+          "global": "",
+          "display": ""
+        }
+      },
+      {
+        "id": "cllc-cr1",
+        "type": "capacitor",
+        "refdes": "C1",
+        "x": 520,
+        "y": 140,
+        "rot": 270,
+        "props": {
+          "value": "80n",
+          "ic": "",
+          "pwl": "",
+          "lser": "",
+          "rser": "",
+          "rpar": "",
+          "cpar": ""
+        }
+      },
+      {
+        "id": "cllc-tank-esr",
+        "type": "resistor",
+        "refdes": "R2",
+        "x": 560,
+        "y": 140,
+        "rot": 0,
+        "props": {
+          "value": "11m",
+          "pwl": ""
+        }
+      },
+      {
+        "id": "cllc-lr1",
+        "type": "inductor",
+        "refdes": "L1",
+        "x": 640,
+        "y": 140,
+        "rot": 0,
+        "props": {
+          "value": "15u",
+          "ic": "",
+          "pwl": "",
+          "rser": "",
+          "rpar": "",
+          "cpar": ""
+        }
+      },
+      {
+        "id": "cllc-primary",
+        "type": "inductor",
+        "refdes": "L2",
+        "x": 760,
+        "y": 240,
+        "rot": 270,
+        "props": {
+          "value": "50u",
+          "ic": "",
+          "pwl": "",
+          "rser": "",
+          "rpar": "",
+          "cpar": ""
+        }
+      },
+      {
+        "id": "cllc-secondary",
+        "type": "inductor",
+        "refdes": "L3",
+        "x": 880,
+        "y": 240,
+        "rot": 270,
+        "props": {
+          "value": "30u",
+          "ic": "",
+          "pwl": "",
+          "rser": "",
+          "rpar": "",
+          "cpar": ""
+        }
+      },
+      {
+        "id": "cllc-transformer",
+        "type": "coupling",
+        "refdes": "K1",
+        "x": 820,
+        "y": 140,
+        "rot": 0,
+        "props": {
+          "la": "L2",
+          "lb": "L3",
+          "k": "0.999"
+        }
+      },
+      {
+        "id": "cllc-lr2",
+        "type": "inductor",
+        "refdes": "L4",
+        "x": 900,
+        "y": 140,
+        "rot": 0,
+        "props": {
+          "value": "15u",
+          "ic": "",
+          "pwl": "",
+          "rser": "",
+          "rpar": "",
+          "cpar": ""
+        }
+      },
+      {
+        "id": "cllc-secondary-esr",
+        "type": "resistor",
+        "refdes": "R3",
+        "x": 980,
+        "y": 140,
+        "rot": 0,
+        "props": {
+          "value": "11m",
+          "pwl": ""
+        }
+      },
+      {
+        "id": "cllc-cr2",
+        "type": "capacitor",
+        "refdes": "C2",
+        "x": 1060,
+        "y": 140,
+        "rot": 270,
+        "props": {
+          "value": "115n",
+          "ic": "",
+          "pwl": "",
+          "lser": "",
+          "rser": "",
+          "rpar": "",
+          "cpar": ""
+        }
+      },
+      {
+        "id": "cllc-output-cap",
+        "type": "capacitor",
+        "refdes": "C3",
+        "x": 1630,
+        "y": 60,
+        "rot": 0,
+        "props": {
+          "value": "1000u",
+          "ic": "300",
+          "pwl": "",
+          "lser": "",
+          "rser": "",
+          "rpar": "",
+          "cpar": ""
+        }
+      },
+      {
+        "id": "cllc-output-esr",
+        "type": "resistor",
+        "refdes": "R4",
+        "x": 1630,
+        "y": 170,
+        "rot": 90,
+        "props": {
+          "value": "30m",
+          "pwl": ""
+        }
+      },
+      {
+        "id": "cllc-load",
+        "type": "resistor",
+        "refdes": "R5",
+        "x": 1710,
+        "y": 150,
+        "rot": 90,
+        "props": {
+          "value": "100",
+          "pwl": ""
+        }
+      },
+      {
+        "id": "cllc-ground-out",
+        "type": "ground",
+        "refdes": "GND2",
+        "x": 1710,
+        "y": 300,
+        "rot": 0,
+        "props": {}
+      },
+      {
+        "id": "cllc-tank-sw1",
+        "type": "netlabel",
+        "refdes": "LBL5",
+        "x": 480,
+        "y": 140,
+        "rot": 0,
+        "props": {
+          "name": "sw1",
+          "global": "",
+          "display": ""
+        }
+      },
+      {
+        "id": "cllc-tank-sw2",
+        "type": "netlabel",
+        "refdes": "LBL6",
+        "x": 760,
+        "y": 270,
+        "rot": 0,
+        "props": {
+          "name": "sw2",
+          "global": "",
+          "display": ""
+        }
+      },
+      {
+        "id": "cllc-tank-sw3",
+        "type": "netlabel",
+        "refdes": "LBL7",
+        "x": 1140,
+        "y": 140,
+        "rot": 0,
+        "props": {
+          "name": "sw3",
+          "global": "",
+          "display": ""
+        }
+      },
+      {
+        "id": "cllc-tank-sw4",
+        "type": "netlabel",
+        "refdes": "LBL8",
+        "x": 880,
+        "y": 270,
+        "rot": 0,
+        "props": {
+          "name": "sw4",
+          "global": "",
+          "display": ""
+        }
+      },
+      {
+        "id": "cllc-out-label",
+        "type": "netlabel",
+        "refdes": "LBL9",
+        "x": 1670,
+        "y": 60,
+        "rot": 0,
+        "props": {
+          "name": "out",
+          "global": "",
+          "display": ""
+        }
+      }
+    ],
+    "wires": [
+      {
+        "id": "w1",
+        "points": [
+          [
+            40,
+            150
+          ],
+          [
+            40,
+            60
+          ],
+          [
+            380,
+            60
+          ]
+        ]
+      },
+      {
+        "id": "w2",
+        "points": [
+          [
+            40,
+            210
+          ],
+          [
+            40,
+            300
+          ],
+          [
+            380,
+            300
+          ]
+        ]
+      },
+      {
+        "id": "w3",
+        "points": [
+          [
+            140,
+            120
+          ],
+          [
+            140,
+            240
+          ]
+        ]
+      },
+      {
+        "id": "w4",
+        "points": [
+          [
+            70,
+            120
+          ],
+          [
+            140,
+            120
+          ]
+        ]
+      },
+      {
+        "id": "w5",
+        "points": [
+          [
+            70,
+            240
+          ],
+          [
+            140,
+            240
+          ]
+        ]
+      },
+      {
+        "id": "w6",
+        "points": [
+          [
+            380,
+            120
+          ],
+          [
+            380,
+            240
+          ]
+        ]
+      },
+      {
+        "id": "w7",
+        "points": [
+          [
+            310,
+            120
+          ],
+          [
+            380,
+            120
+          ]
+        ]
+      },
+      {
+        "id": "w8",
+        "points": [
+          [
+            310,
+            240
+          ],
+          [
+            380,
+            240
+          ]
+        ]
+      },
+      {
+        "id": "w9",
+        "points": [
+          [
+            1240,
+            120
+          ],
+          [
+            1240,
+            240
+          ]
+        ]
+      },
+      {
+        "id": "w10",
+        "points": [
+          [
+            1170,
+            120
+          ],
+          [
+            1240,
+            120
+          ]
+        ]
+      },
+      {
+        "id": "w11",
+        "points": [
+          [
+            1170,
+            240
+          ],
+          [
+            1240,
+            240
+          ]
+        ]
+      },
+      {
+        "id": "w12",
+        "points": [
+          [
+            1470,
+            120
+          ],
+          [
+            1470,
+            240
+          ]
+        ]
+      },
+      {
+        "id": "w13",
+        "points": [
+          [
+            1400,
+            120
+          ],
+          [
+            1470,
+            120
+          ]
+        ]
+      },
+      {
+        "id": "w14",
+        "points": [
+          [
+            1400,
+            240
+          ],
+          [
+            1470,
+            240
+          ]
+        ]
+      },
+      {
+        "id": "w15",
+        "points": [
+          [
+            480,
+            140
+          ],
+          [
+            520,
+            140
+          ]
+        ]
+      },
+      {
+        "id": "w16",
+        "points": [
+          [
+            620,
+            140
+          ],
+          [
+            640,
+            140
+          ]
+        ]
+      },
+      {
+        "id": "w17",
+        "points": [
+          [
+            700,
+            140
+          ],
+          [
+            760,
+            140
+          ],
+          [
+            760,
+            180
+          ]
+        ]
+      },
+      {
+        "id": "w18",
+        "points": [
+          [
+            760,
+            240
+          ],
+          [
+            760,
+            270
+          ]
+        ]
+      },
+      {
+        "id": "w19",
+        "points": [
+          [
+            880,
+            180
+          ],
+          [
+            880,
+            140
+          ],
+          [
+            900,
+            140
+          ]
+        ]
+      },
+      {
+        "id": "w20",
+        "points": [
+          [
+            960,
+            140
+          ],
+          [
+            980,
+            140
+          ]
+        ]
+      },
+      {
+        "id": "w21",
+        "points": [
+          [
+            1040,
+            140
+          ],
+          [
+            1060,
+            140
+          ]
+        ]
+      },
+      {
+        "id": "w22",
+        "points": [
+          [
+            1100,
+            140
+          ],
+          [
+            1140,
+            140
+          ]
+        ]
+      },
+      {
+        "id": "w23",
+        "points": [
+          [
+            880,
+            240
+          ],
+          [
+            880,
+            270
+          ]
+        ]
+      },
+      {
+        "id": "w24",
+        "points": [
+          [
+            1170,
+            60
+          ],
+          [
+            1710,
+            60
+          ],
+          [
+            1710,
+            60
+          ]
+        ]
+      },
+      {
+        "id": "w25",
+        "points": [
+          [
+            1630,
+            230
+          ],
+          [
+            1630,
+            300
+          ]
+        ]
+      },
+      {
+        "id": "w26",
+        "points": [
+          [
+            1710,
+            210
+          ],
+          [
+            1710,
+            300
+          ],
+          [
+            1170,
+            300
+          ]
+        ]
+      },
+      {
+        "id": "w27",
+        "points": [
+          [
+            1630,
+            100
+          ],
+          [
+            1630,
+            170
+          ]
+        ]
+      },
+      {
+        "id": "w28",
+        "points": [
+          [
+            1710,
+            60
+          ],
+          [
+            1710,
+            150
+          ]
+        ]
+      }
+    ]
+  },
+  "analyses": {
+    "mode": "transient",
+    "periods": 2,
+    "measurements": [],
+    "sweep": null,
+    "sweepSignal": "",
+    "sweepMetric": "average"
+  }
+}

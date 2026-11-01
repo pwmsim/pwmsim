@@ -1,0 +1,1098 @@
+{
+  "format": "volta-project",
+  "version": 1,
+  "document": {
+    "format": "volta-schematic",
+    "version": 73,
+    "title": "Dual Active Bridge — Phase Shift",
+    "tran": "1m",
+    "fidelity": "ideal",
+    "counters": {
+      "V": 2,
+      "R": 3,
+      "GND": 2,
+      "S": 8,
+      "D": 8,
+      "LBL": 9,
+      "L": 3,
+      "K": 1,
+      "PWM": 8
+    },
+    "components": [
+      {
+        "id": "dab-vin",
+        "type": "vdc",
+        "refdes": "V1",
+        "x": 40,
+        "y": 150,
+        "rot": 0,
+        "props": {
+          "value": "400",
+          "rser": ""
+        }
+      },
+      {
+        "id": "dab-isolation",
+        "type": "resistor",
+        "refdes": "R1",
+        "x": 40,
+        "y": 300,
+        "rot": 90,
+        "props": {
+          "value": "1gig",
+          "pwl": ""
+        }
+      },
+      {
+        "id": "dab-ground",
+        "type": "ground",
+        "refdes": "GND1",
+        "x": 40,
+        "y": 360,
+        "rot": 0,
+        "props": {}
+      },
+      {
+        "id": "dab-s1",
+        "type": "gswitch",
+        "refdes": "S1",
+        "x": 140,
+        "y": 60,
+        "rot": 90,
+        "props": {
+          "ron": "10m",
+          "roff": "100meg",
+          "vt": "0.5",
+          "vh": "0"
+        }
+      },
+      {
+        "id": "dab-s1-gate",
+        "type": "gate_pwm",
+        "refdes": "PWM1",
+        "x": 160,
+        "y": 90,
+        "rot": 90,
+        "props": {
+          "fsw": "150k",
+          "duty": "0.5",
+          "phase": "0",
+          "deadtime": "10n"
+        }
+      },
+      {
+        "id": "dab-s2",
+        "type": "gswitch",
+        "refdes": "S2",
+        "x": 140,
+        "y": 240,
+        "rot": 90,
+        "props": {
+          "ron": "10m",
+          "roff": "100meg",
+          "vt": "0.5",
+          "vh": "0"
+        }
+      },
+      {
+        "id": "dab-s2-gate",
+        "type": "gate_comp",
+        "refdes": "PWM2",
+        "x": 160,
+        "y": 270,
+        "rot": 90,
+        "props": {
+          "master": "S1",
+          "deadtime": "10n"
+        }
+      },
+      {
+        "id": "dab-d1",
+        "type": "diode",
+        "refdes": "D1",
+        "x": 70,
+        "y": 120,
+        "rot": 270,
+        "props": {
+          "vfwd": "0",
+          "ron": "10u",
+          "roff": "100meg",
+          "model": "ideal",
+          "is": "",
+          "n": "",
+          "tt": "",
+          "cjo": "",
+          "rs": "",
+          "bv": "",
+          "vj": "",
+          "m": "",
+          "ibv": "",
+          "nbv": "",
+          "ibvl": "",
+          "nbvl": "",
+          "ikf": "",
+          "isr": "",
+          "nr": "",
+          "itol": "",
+          "epsilon": "",
+          "nser": ""
+        }
+      },
+      {
+        "id": "dab-d2",
+        "type": "diode",
+        "refdes": "D2",
+        "x": 70,
+        "y": 300,
+        "rot": 270,
+        "props": {
+          "vfwd": "0",
+          "ron": "10u",
+          "roff": "100meg",
+          "model": "ideal",
+          "is": "",
+          "n": "",
+          "tt": "",
+          "cjo": "",
+          "rs": "",
+          "bv": "",
+          "vj": "",
+          "m": "",
+          "ibv": "",
+          "nbv": "",
+          "ibvl": "",
+          "nbvl": "",
+          "ikf": "",
+          "isr": "",
+          "nr": "",
+          "itol": "",
+          "epsilon": "",
+          "nser": ""
+        }
+      },
+      {
+        "id": "dab-sw1-label",
+        "type": "netlabel",
+        "refdes": "LBL1",
+        "x": 140,
+        "y": 180,
+        "rot": 0,
+        "props": {
+          "name": "sw1",
+          "global": "",
+          "display": ""
+        }
+      },
+      {
+        "id": "dab-s3",
+        "type": "gswitch",
+        "refdes": "S3",
+        "x": 380,
+        "y": 60,
+        "rot": 90,
+        "props": {
+          "ron": "10m",
+          "roff": "100meg",
+          "vt": "0.5",
+          "vh": "0"
+        }
+      },
+      {
+        "id": "dab-s3-gate",
+        "type": "gate_pwm",
+        "refdes": "PWM3",
+        "x": 400,
+        "y": 90,
+        "rot": 90,
+        "props": {
+          "fsw": "150k",
+          "duty": "0.5",
+          "phase": "0.5",
+          "deadtime": "10n"
+        }
+      },
+      {
+        "id": "dab-s4",
+        "type": "gswitch",
+        "refdes": "S4",
+        "x": 380,
+        "y": 240,
+        "rot": 90,
+        "props": {
+          "ron": "10m",
+          "roff": "100meg",
+          "vt": "0.5",
+          "vh": "0"
+        }
+      },
+      {
+        "id": "dab-s4-gate",
+        "type": "gate_comp",
+        "refdes": "PWM4",
+        "x": 400,
+        "y": 270,
+        "rot": 90,
+        "props": {
+          "master": "S3",
+          "deadtime": "10n"
+        }
+      },
+      {
+        "id": "dab-d3",
+        "type": "diode",
+        "refdes": "D3",
+        "x": 310,
+        "y": 120,
+        "rot": 270,
+        "props": {
+          "vfwd": "0",
+          "ron": "10u",
+          "roff": "100meg",
+          "model": "ideal",
+          "is": "",
+          "n": "",
+          "tt": "",
+          "cjo": "",
+          "rs": "",
+          "bv": "",
+          "vj": "",
+          "m": "",
+          "ibv": "",
+          "nbv": "",
+          "ibvl": "",
+          "nbvl": "",
+          "ikf": "",
+          "isr": "",
+          "nr": "",
+          "itol": "",
+          "epsilon": "",
+          "nser": ""
+        }
+      },
+      {
+        "id": "dab-d4",
+        "type": "diode",
+        "refdes": "D4",
+        "x": 310,
+        "y": 300,
+        "rot": 270,
+        "props": {
+          "vfwd": "0",
+          "ron": "10u",
+          "roff": "100meg",
+          "model": "ideal",
+          "is": "",
+          "n": "",
+          "tt": "",
+          "cjo": "",
+          "rs": "",
+          "bv": "",
+          "vj": "",
+          "m": "",
+          "ibv": "",
+          "nbv": "",
+          "ibvl": "",
+          "nbvl": "",
+          "ikf": "",
+          "isr": "",
+          "nr": "",
+          "itol": "",
+          "epsilon": "",
+          "nser": ""
+        }
+      },
+      {
+        "id": "dab-sw2-label",
+        "type": "netlabel",
+        "refdes": "LBL2",
+        "x": 380,
+        "y": 180,
+        "rot": 0,
+        "props": {
+          "name": "sw2",
+          "global": "",
+          "display": ""
+        }
+      },
+      {
+        "id": "dab-s5",
+        "type": "gswitch",
+        "refdes": "S5",
+        "x": 1080,
+        "y": 60,
+        "rot": 90,
+        "props": {
+          "ron": "10m",
+          "roff": "100meg",
+          "vt": "0.5",
+          "vh": "0"
+        }
+      },
+      {
+        "id": "dab-s5-gate",
+        "type": "gate_pwm",
+        "refdes": "PWM5",
+        "x": 1100,
+        "y": 90,
+        "rot": 90,
+        "props": {
+          "fsw": "150k",
+          "duty": "0.5",
+          "phase": "0.125",
+          "deadtime": "10n"
+        }
+      },
+      {
+        "id": "dab-s6",
+        "type": "gswitch",
+        "refdes": "S6",
+        "x": 1080,
+        "y": 240,
+        "rot": 90,
+        "props": {
+          "ron": "10m",
+          "roff": "100meg",
+          "vt": "0.5",
+          "vh": "0"
+        }
+      },
+      {
+        "id": "dab-s6-gate",
+        "type": "gate_comp",
+        "refdes": "PWM6",
+        "x": 1100,
+        "y": 270,
+        "rot": 90,
+        "props": {
+          "master": "S5",
+          "deadtime": "10n"
+        }
+      },
+      {
+        "id": "dab-d5",
+        "type": "diode",
+        "refdes": "D5",
+        "x": 1010,
+        "y": 120,
+        "rot": 270,
+        "props": {
+          "vfwd": "0",
+          "ron": "10u",
+          "roff": "100meg",
+          "model": "ideal",
+          "is": "",
+          "n": "",
+          "tt": "",
+          "cjo": "",
+          "rs": "",
+          "bv": "",
+          "vj": "",
+          "m": "",
+          "ibv": "",
+          "nbv": "",
+          "ibvl": "",
+          "nbvl": "",
+          "ikf": "",
+          "isr": "",
+          "nr": "",
+          "itol": "",
+          "epsilon": "",
+          "nser": ""
+        }
+      },
+      {
+        "id": "dab-d6",
+        "type": "diode",
+        "refdes": "D6",
+        "x": 1010,
+        "y": 300,
+        "rot": 270,
+        "props": {
+          "vfwd": "0",
+          "ron": "10u",
+          "roff": "100meg",
+          "model": "ideal",
+          "is": "",
+          "n": "",
+          "tt": "",
+          "cjo": "",
+          "rs": "",
+          "bv": "",
+          "vj": "",
+          "m": "",
+          "ibv": "",
+          "nbv": "",
+          "ibvl": "",
+          "nbvl": "",
+          "ikf": "",
+          "isr": "",
+          "nr": "",
+          "itol": "",
+          "epsilon": "",
+          "nser": ""
+        }
+      },
+      {
+        "id": "dab-sw3-label",
+        "type": "netlabel",
+        "refdes": "LBL3",
+        "x": 1080,
+        "y": 180,
+        "rot": 0,
+        "props": {
+          "name": "sw3",
+          "global": "",
+          "display": ""
+        }
+      },
+      {
+        "id": "dab-s7",
+        "type": "gswitch",
+        "refdes": "S7",
+        "x": 1320,
+        "y": 60,
+        "rot": 90,
+        "props": {
+          "ron": "10m",
+          "roff": "100meg",
+          "vt": "0.5",
+          "vh": "0"
+        }
+      },
+      {
+        "id": "dab-s7-gate",
+        "type": "gate_pwm",
+        "refdes": "PWM7",
+        "x": 1340,
+        "y": 90,
+        "rot": 90,
+        "props": {
+          "fsw": "150k",
+          "duty": "0.5",
+          "phase": "0.625",
+          "deadtime": "10n"
+        }
+      },
+      {
+        "id": "dab-s8",
+        "type": "gswitch",
+        "refdes": "S8",
+        "x": 1320,
+        "y": 240,
+        "rot": 90,
+        "props": {
+          "ron": "10m",
+          "roff": "100meg",
+          "vt": "0.5",
+          "vh": "0"
+        }
+      },
+      {
+        "id": "dab-s8-gate",
+        "type": "gate_comp",
+        "refdes": "PWM8",
+        "x": 1340,
+        "y": 270,
+        "rot": 90,
+        "props": {
+          "master": "S7",
+          "deadtime": "10n"
+        }
+      },
+      {
+        "id": "dab-d7",
+        "type": "diode",
+        "refdes": "D7",
+        "x": 1250,
+        "y": 120,
+        "rot": 270,
+        "props": {
+          "vfwd": "0",
+          "ron": "10u",
+          "roff": "100meg",
+          "model": "ideal",
+          "is": "",
+          "n": "",
+          "tt": "",
+          "cjo": "",
+          "rs": "",
+          "bv": "",
+          "vj": "",
+          "m": "",
+          "ibv": "",
+          "nbv": "",
+          "ibvl": "",
+          "nbvl": "",
+          "ikf": "",
+          "isr": "",
+          "nr": "",
+          "itol": "",
+          "epsilon": "",
+          "nser": ""
+        }
+      },
+      {
+        "id": "dab-d8",
+        "type": "diode",
+        "refdes": "D8",
+        "x": 1250,
+        "y": 300,
+        "rot": 270,
+        "props": {
+          "vfwd": "0",
+          "ron": "10u",
+          "roff": "100meg",
+          "model": "ideal",
+          "is": "",
+          "n": "",
+          "tt": "",
+          "cjo": "",
+          "rs": "",
+          "bv": "",
+          "vj": "",
+          "m": "",
+          "ibv": "",
+          "nbv": "",
+          "ibvl": "",
+          "nbvl": "",
+          "ikf": "",
+          "isr": "",
+          "nr": "",
+          "itol": "",
+          "epsilon": "",
+          "nser": ""
+        }
+      },
+      {
+        "id": "dab-sw4-label",
+        "type": "netlabel",
+        "refdes": "LBL4",
+        "x": 1320,
+        "y": 180,
+        "rot": 0,
+        "props": {
+          "name": "sw4",
+          "global": "",
+          "display": ""
+        }
+      },
+      {
+        "id": "dab-tank-esr",
+        "type": "resistor",
+        "refdes": "R2",
+        "x": 520,
+        "y": 140,
+        "rot": 0,
+        "props": {
+          "value": "11m",
+          "pwl": ""
+        }
+      },
+      {
+        "id": "dab-tank",
+        "type": "inductor",
+        "refdes": "L1",
+        "x": 600,
+        "y": 140,
+        "rot": 0,
+        "props": {
+          "value": "15u",
+          "ic": "",
+          "pwl": "",
+          "rser": "",
+          "rpar": "",
+          "cpar": ""
+        }
+      },
+      {
+        "id": "dab-primary",
+        "type": "inductor",
+        "refdes": "L2",
+        "x": 720,
+        "y": 240,
+        "rot": 270,
+        "props": {
+          "value": "50u",
+          "ic": "",
+          "pwl": "",
+          "rser": "",
+          "rpar": "",
+          "cpar": ""
+        }
+      },
+      {
+        "id": "dab-secondary",
+        "type": "inductor",
+        "refdes": "L3",
+        "x": 840,
+        "y": 240,
+        "rot": 270,
+        "props": {
+          "value": "50u",
+          "ic": "",
+          "pwl": "",
+          "rser": "",
+          "rpar": "",
+          "cpar": ""
+        }
+      },
+      {
+        "id": "dab-transformer",
+        "type": "coupling",
+        "refdes": "K1",
+        "x": 780,
+        "y": 140,
+        "rot": 0,
+        "props": {
+          "la": "L2",
+          "lb": "L3",
+          "k": "1"
+        }
+      },
+      {
+        "id": "dab-secondary-esr",
+        "type": "resistor",
+        "refdes": "R3",
+        "x": 860,
+        "y": 140,
+        "rot": 0,
+        "props": {
+          "value": "1m",
+          "pwl": ""
+        }
+      },
+      {
+        "id": "dab-vout",
+        "type": "vdc",
+        "refdes": "V2",
+        "x": 1480,
+        "y": 190,
+        "rot": 0,
+        "props": {
+          "value": "350",
+          "rser": ""
+        }
+      },
+      {
+        "id": "dab-ground-out",
+        "type": "ground",
+        "refdes": "GND2",
+        "x": 1480,
+        "y": 300,
+        "rot": 0,
+        "props": {}
+      },
+      {
+        "id": "dab-tank-sw1",
+        "type": "netlabel",
+        "refdes": "LBL5",
+        "x": 490,
+        "y": 140,
+        "rot": 0,
+        "props": {
+          "name": "sw1",
+          "global": "",
+          "display": ""
+        }
+      },
+      {
+        "id": "dab-tank-sw2",
+        "type": "netlabel",
+        "refdes": "LBL6",
+        "x": 720,
+        "y": 270,
+        "rot": 0,
+        "props": {
+          "name": "sw2",
+          "global": "",
+          "display": ""
+        }
+      },
+      {
+        "id": "dab-tank-sw3",
+        "type": "netlabel",
+        "refdes": "LBL7",
+        "x": 950,
+        "y": 140,
+        "rot": 0,
+        "props": {
+          "name": "sw3",
+          "global": "",
+          "display": ""
+        }
+      },
+      {
+        "id": "dab-tank-sw4",
+        "type": "netlabel",
+        "refdes": "LBL8",
+        "x": 840,
+        "y": 270,
+        "rot": 0,
+        "props": {
+          "name": "sw4",
+          "global": "",
+          "display": ""
+        }
+      },
+      {
+        "id": "dab-out-label",
+        "type": "netlabel",
+        "refdes": "LBL9",
+        "x": 1440,
+        "y": 60,
+        "rot": 0,
+        "props": {
+          "name": "out",
+          "global": "",
+          "display": ""
+        }
+      }
+    ],
+    "wires": [
+      {
+        "id": "w1",
+        "points": [
+          [
+            40,
+            150
+          ],
+          [
+            40,
+            60
+          ],
+          [
+            380,
+            60
+          ]
+        ]
+      },
+      {
+        "id": "w2",
+        "points": [
+          [
+            40,
+            210
+          ],
+          [
+            40,
+            300
+          ],
+          [
+            380,
+            300
+          ]
+        ]
+      },
+      {
+        "id": "w3",
+        "points": [
+          [
+            140,
+            120
+          ],
+          [
+            140,
+            240
+          ]
+        ]
+      },
+      {
+        "id": "w4",
+        "points": [
+          [
+            70,
+            120
+          ],
+          [
+            140,
+            120
+          ]
+        ]
+      },
+      {
+        "id": "w5",
+        "points": [
+          [
+            70,
+            240
+          ],
+          [
+            140,
+            240
+          ]
+        ]
+      },
+      {
+        "id": "w6",
+        "points": [
+          [
+            380,
+            120
+          ],
+          [
+            380,
+            240
+          ]
+        ]
+      },
+      {
+        "id": "w7",
+        "points": [
+          [
+            310,
+            120
+          ],
+          [
+            380,
+            120
+          ]
+        ]
+      },
+      {
+        "id": "w8",
+        "points": [
+          [
+            310,
+            240
+          ],
+          [
+            380,
+            240
+          ]
+        ]
+      },
+      {
+        "id": "w9",
+        "points": [
+          [
+            1080,
+            120
+          ],
+          [
+            1080,
+            240
+          ]
+        ]
+      },
+      {
+        "id": "w10",
+        "points": [
+          [
+            1010,
+            120
+          ],
+          [
+            1080,
+            120
+          ]
+        ]
+      },
+      {
+        "id": "w11",
+        "points": [
+          [
+            1010,
+            240
+          ],
+          [
+            1080,
+            240
+          ]
+        ]
+      },
+      {
+        "id": "w12",
+        "points": [
+          [
+            1320,
+            120
+          ],
+          [
+            1320,
+            240
+          ]
+        ]
+      },
+      {
+        "id": "w13",
+        "points": [
+          [
+            1250,
+            120
+          ],
+          [
+            1320,
+            120
+          ]
+        ]
+      },
+      {
+        "id": "w14",
+        "points": [
+          [
+            1250,
+            240
+          ],
+          [
+            1320,
+            240
+          ]
+        ]
+      },
+      {
+        "id": "w15",
+        "points": [
+          [
+            490,
+            140
+          ],
+          [
+            520,
+            140
+          ]
+        ]
+      },
+      {
+        "id": "w16",
+        "points": [
+          [
+            580,
+            140
+          ],
+          [
+            600,
+            140
+          ]
+        ]
+      },
+      {
+        "id": "w17",
+        "points": [
+          [
+            660,
+            140
+          ],
+          [
+            720,
+            140
+          ],
+          [
+            720,
+            180
+          ]
+        ]
+      },
+      {
+        "id": "w18",
+        "points": [
+          [
+            720,
+            240
+          ],
+          [
+            720,
+            270
+          ]
+        ]
+      },
+      {
+        "id": "w19",
+        "points": [
+          [
+            840,
+            180
+          ],
+          [
+            840,
+            140
+          ],
+          [
+            860,
+            140
+          ]
+        ]
+      },
+      {
+        "id": "w20",
+        "points": [
+          [
+            920,
+            140
+          ],
+          [
+            950,
+            140
+          ]
+        ]
+      },
+      {
+        "id": "w21",
+        "points": [
+          [
+            840,
+            240
+          ],
+          [
+            840,
+            270
+          ]
+        ]
+      },
+      {
+        "id": "w22",
+        "points": [
+          [
+            1010,
+            60
+          ],
+          [
+            1480,
+            60
+          ],
+          [
+            1480,
+            150
+          ]
+        ]
+      },
+      {
+        "id": "w23",
+        "points": [
+          [
+            1480,
+            250
+          ],
+          [
+            1480,
+            300
+          ],
+          [
+            1010,
+            300
+          ]
+        ]
+      },
+      {
+        "id": "w24",
+        "points": [
+          [
+            1480,
+            150
+          ],
+          [
+            1480,
+            190
+          ]
+        ]
+      }
+    ]
+  },
+  "analyses": {
+    "mode": "transient",
+    "periods": 2,
+    "measurements": [],
+    "sweep": null,
+    "sweepSignal": "",
+    "sweepMetric": "average"
+  }
+}

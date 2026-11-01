@@ -1,0 +1,785 @@
+{
+  "format": "volta-project",
+  "version": 1,
+  "document": {
+    "format": "volta-schematic",
+    "version": 73,
+    "title": "Active-Clamp Forward — PI Regulation",
+    "tran": "4m",
+    "fidelity": "ideal",
+    "counters": {
+      "V": 1,
+      "GND": 2,
+      "C": 3,
+      "S": 2,
+      "D": 4,
+      "L": 3,
+      "K": 1,
+      "R": 3,
+      "LBL": 5,
+      "PWM": 2
+    },
+    "components": [
+      {
+        "id": "fwd-vin",
+        "type": "vdc",
+        "refdes": "V1",
+        "x": 40,
+        "y": 220,
+        "rot": 0,
+        "props": {
+          "value": "200",
+          "rser": ""
+        }
+      },
+      {
+        "id": "fwd-ground",
+        "type": "ground",
+        "refdes": "GND1",
+        "x": 40,
+        "y": 340,
+        "rot": 0,
+        "props": {}
+      },
+      {
+        "id": "fwd-clamp-cap",
+        "type": "capacitor",
+        "refdes": "C2",
+        "x": 160,
+        "y": 100,
+        "rot": 0,
+        "props": {
+          "value": "100n",
+          "ic": "",
+          "pwl": "",
+          "lser": "",
+          "rser": "",
+          "rpar": "",
+          "cpar": ""
+        }
+      },
+      {
+        "id": "fwd-clamp",
+        "type": "gswitch",
+        "refdes": "S2",
+        "x": 160,
+        "y": 200,
+        "rot": 270,
+        "props": {
+          "ron": "10m",
+          "roff": "100meg",
+          "vt": "0.5",
+          "vh": "0"
+        },
+        "mir": true
+      },
+      {
+        "id": "fwd-clamp-gate",
+        "type": "gate_comp",
+        "refdes": "PWM2",
+        "x": 140,
+        "y": 170,
+        "rot": 270,
+        "props": {
+          "master": "S1",
+          "deadtime": "50n"
+        },
+        "mir": true
+      },
+      {
+        "id": "fwd-clamp-body",
+        "type": "diode",
+        "refdes": "D2",
+        "x": 220,
+        "y": 200,
+        "rot": 270,
+        "props": {
+          "vfwd": "0",
+          "ron": "10u",
+          "roff": "100meg",
+          "model": "ideal",
+          "is": "",
+          "n": "",
+          "tt": "",
+          "cjo": "",
+          "rs": "",
+          "bv": "",
+          "vj": "",
+          "m": "",
+          "ibv": "",
+          "nbv": "",
+          "ibvl": "",
+          "nbvl": "",
+          "ikf": "",
+          "isr": "",
+          "nr": "",
+          "itol": "",
+          "epsilon": "",
+          "nser": ""
+        }
+      },
+      {
+        "id": "fwd-primary",
+        "type": "inductor",
+        "refdes": "L2",
+        "x": 320,
+        "y": 200,
+        "rot": 270,
+        "props": {
+          "value": "100u",
+          "ic": "",
+          "pwl": "",
+          "rser": "10m",
+          "rpar": "",
+          "cpar": ""
+        }
+      },
+      {
+        "id": "fwd-switch",
+        "type": "gswitch",
+        "refdes": "S1",
+        "x": 320,
+        "y": 200,
+        "rot": 90,
+        "props": {
+          "ron": "10m",
+          "roff": "100meg",
+          "vt": "0.5",
+          "vh": "0"
+        }
+      },
+      {
+        "id": "fwd-switch-gate",
+        "type": "gate_pi",
+        "refdes": "PWM1",
+        "x": 340,
+        "y": 230,
+        "rot": 90,
+        "props": {
+          "fsw": "250k",
+          "duty0": "0.2",
+          "phase": "0",
+          "ref": "12",
+          "ref1": "",
+          "rtstep": "",
+          "kp": "1.6m",
+          "ki": "80",
+          "dmin": "0",
+          "dmax": "0.45",
+          "deadtime": "50n"
+        }
+      },
+      {
+        "id": "fwd-body",
+        "type": "diode",
+        "refdes": "D1",
+        "x": 270,
+        "y": 300,
+        "rot": 270,
+        "props": {
+          "vfwd": "0",
+          "ron": "10u",
+          "roff": "100meg",
+          "model": "ideal",
+          "is": "",
+          "n": "",
+          "tt": "",
+          "cjo": "",
+          "rs": "",
+          "bv": "",
+          "vj": "",
+          "m": "",
+          "ibv": "",
+          "nbv": "",
+          "ibvl": "",
+          "nbvl": "",
+          "ikf": "",
+          "isr": "",
+          "nr": "",
+          "itol": "",
+          "epsilon": "",
+          "nser": ""
+        }
+      },
+      {
+        "id": "fwd-transformer",
+        "type": "coupling",
+        "refdes": "K1",
+        "x": 380,
+        "y": 120,
+        "rot": 0,
+        "props": {
+          "la": "L2",
+          "lb": "L3",
+          "k": "0.995"
+        }
+      },
+      {
+        "id": "fwd-secondary",
+        "type": "inductor",
+        "refdes": "L3",
+        "x": 440,
+        "y": 270,
+        "rot": 270,
+        "props": {
+          "value": "10u",
+          "ic": "",
+          "pwl": "",
+          "rser": "1m",
+          "rpar": "",
+          "cpar": ""
+        }
+      },
+      {
+        "id": "fwd-ground-out",
+        "type": "ground",
+        "refdes": "GND2",
+        "x": 440,
+        "y": 340,
+        "rot": 0,
+        "props": {}
+      },
+      {
+        "id": "fwd-forward-diode",
+        "type": "diode",
+        "refdes": "D3",
+        "x": 480,
+        "y": 140,
+        "rot": 0,
+        "props": {
+          "vfwd": "1n",
+          "ron": "10m",
+          "roff": "1g",
+          "model": "ideal",
+          "is": "",
+          "n": "",
+          "tt": "",
+          "cjo": "",
+          "rs": "",
+          "bv": "",
+          "vj": "",
+          "m": "",
+          "ibv": "",
+          "nbv": "",
+          "ibvl": "",
+          "nbvl": "",
+          "ikf": "",
+          "isr": "",
+          "nr": "",
+          "itol": "",
+          "epsilon": "",
+          "nser": ""
+        }
+      },
+      {
+        "id": "fwd-freewheel",
+        "type": "diode",
+        "refdes": "D4",
+        "x": 560,
+        "y": 270,
+        "rot": 270,
+        "props": {
+          "vfwd": "1n",
+          "ron": "10m",
+          "roff": "1g",
+          "model": "ideal",
+          "is": "",
+          "n": "",
+          "tt": "",
+          "cjo": "",
+          "rs": "",
+          "bv": "",
+          "vj": "",
+          "m": "",
+          "ibv": "",
+          "nbv": "",
+          "ibvl": "",
+          "nbvl": "",
+          "ikf": "",
+          "isr": "",
+          "nr": "",
+          "itol": "",
+          "epsilon": "",
+          "nser": ""
+        }
+      },
+      {
+        "id": "fwd-inductor",
+        "type": "inductor",
+        "refdes": "L1",
+        "x": 600,
+        "y": 140,
+        "rot": 0,
+        "props": {
+          "value": "22u",
+          "ic": "",
+          "pwl": "",
+          "rser": "1m",
+          "rpar": "",
+          "cpar": ""
+        }
+      },
+      {
+        "id": "fwd-capacitor",
+        "type": "capacitor",
+        "refdes": "C1",
+        "x": 720,
+        "y": 220,
+        "rot": 0,
+        "props": {
+          "value": "22u",
+          "ic": "",
+          "pwl": "",
+          "lser": "",
+          "rser": "1m",
+          "rpar": "",
+          "cpar": ""
+        }
+      },
+      {
+        "id": "fwd-load",
+        "type": "resistor",
+        "refdes": "R1",
+        "x": 800,
+        "y": 210,
+        "rot": 90,
+        "props": {
+          "value": "4",
+          "pwl": ""
+        }
+      },
+      {
+        "id": "fwd-filter-r",
+        "type": "resistor",
+        "refdes": "R3",
+        "x": 840,
+        "y": 140,
+        "rot": 0,
+        "props": {
+          "value": "1k",
+          "pwl": ""
+        }
+      },
+      {
+        "id": "fwd-filter-c",
+        "type": "capacitor",
+        "refdes": "C3",
+        "x": 920,
+        "y": 260,
+        "rot": 0,
+        "props": {
+          "value": "47n",
+          "ic": "",
+          "pwl": "",
+          "lser": "",
+          "rser": "",
+          "rpar": "",
+          "cpar": ""
+        }
+      },
+      {
+        "id": "fwd-in-label",
+        "type": "netlabel",
+        "refdes": "LBL1",
+        "x": 220,
+        "y": 60,
+        "rot": 0,
+        "props": {
+          "name": "in",
+          "global": "",
+          "display": ""
+        }
+      },
+      {
+        "id": "fwd-sw-label",
+        "type": "netlabel",
+        "refdes": "LBL2",
+        "x": 240,
+        "y": 200,
+        "rot": 0,
+        "props": {
+          "name": "sw",
+          "global": "",
+          "display": ""
+        }
+      },
+      {
+        "id": "fwd-out-label",
+        "type": "netlabel",
+        "refdes": "LBL3",
+        "x": 680,
+        "y": 140,
+        "rot": 0,
+        "props": {
+          "name": "out",
+          "global": "",
+          "display": ""
+        }
+      },
+      {
+        "id": "fwd-fb-label",
+        "type": "netlabel",
+        "refdes": "LBL4",
+        "x": 900,
+        "y": 140,
+        "rot": 0,
+        "props": {
+          "name": "fb",
+          "global": "",
+          "display": ""
+        }
+      },
+      {
+        "id": "fwd-sense-label",
+        "type": "netlabel",
+        "refdes": "LBL5",
+        "x": 360,
+        "y": 230,
+        "rot": 0,
+        "props": {
+          "name": "fb",
+          "global": "",
+          "display": ""
+        }
+      }
+    ],
+    "wires": [
+      {
+        "id": "w1",
+        "points": [
+          [
+            40,
+            160
+          ],
+          [
+            40,
+            60
+          ],
+          [
+            320,
+            60
+          ]
+        ]
+      },
+      {
+        "id": "w2",
+        "points": [
+          [
+            160,
+            60
+          ],
+          [
+            160,
+            100
+          ]
+        ]
+      },
+      {
+        "id": "w3",
+        "points": [
+          [
+            160,
+            140
+          ],
+          [
+            220,
+            140
+          ]
+        ]
+      },
+      {
+        "id": "w4",
+        "points": [
+          [
+            160,
+            200
+          ],
+          [
+            320,
+            200
+          ]
+        ]
+      },
+      {
+        "id": "w5",
+        "points": [
+          [
+            320,
+            60
+          ],
+          [
+            320,
+            140
+          ]
+        ]
+      },
+      {
+        "id": "w6",
+        "points": [
+          [
+            40,
+            280
+          ],
+          [
+            40,
+            340
+          ],
+          [
+            320,
+            340
+          ]
+        ]
+      },
+      {
+        "id": "w7",
+        "points": [
+          [
+            270,
+            300
+          ],
+          [
+            270,
+            340
+          ]
+        ]
+      },
+      {
+        "id": "w8",
+        "points": [
+          [
+            320,
+            260
+          ],
+          [
+            320,
+            340
+          ]
+        ]
+      },
+      {
+        "id": "w9",
+        "points": [
+          [
+            440,
+            270
+          ],
+          [
+            440,
+            340
+          ],
+          [
+            920,
+            340
+          ]
+        ]
+      },
+      {
+        "id": "w10",
+        "points": [
+          [
+            440,
+            140
+          ],
+          [
+            480,
+            140
+          ]
+        ]
+      },
+      {
+        "id": "w11",
+        "points": [
+          [
+            540,
+            140
+          ],
+          [
+            600,
+            140
+          ]
+        ]
+      },
+      {
+        "id": "w12",
+        "points": [
+          [
+            560,
+            140
+          ],
+          [
+            560,
+            210
+          ]
+        ]
+      },
+      {
+        "id": "w13",
+        "points": [
+          [
+            560,
+            270
+          ],
+          [
+            560,
+            340
+          ]
+        ]
+      },
+      {
+        "id": "w14",
+        "points": [
+          [
+            660,
+            140
+          ],
+          [
+            840,
+            140
+          ]
+        ]
+      },
+      {
+        "id": "w15",
+        "points": [
+          [
+            720,
+            140
+          ],
+          [
+            720,
+            220
+          ]
+        ]
+      },
+      {
+        "id": "w16",
+        "points": [
+          [
+            720,
+            260
+          ],
+          [
+            720,
+            340
+          ]
+        ]
+      },
+      {
+        "id": "w17",
+        "points": [
+          [
+            800,
+            140
+          ],
+          [
+            800,
+            210
+          ]
+        ]
+      },
+      {
+        "id": "w18",
+        "points": [
+          [
+            800,
+            270
+          ],
+          [
+            800,
+            340
+          ]
+        ]
+      },
+      {
+        "id": "w19",
+        "points": [
+          [
+            900,
+            140
+          ],
+          [
+            920,
+            140
+          ],
+          [
+            920,
+            220
+          ]
+        ]
+      },
+      {
+        "id": "w20",
+        "points": [
+          [
+            920,
+            300
+          ],
+          [
+            920,
+            340
+          ]
+        ]
+      },
+      {
+        "id": "w21",
+        "points": [
+          [
+            40,
+            160
+          ],
+          [
+            40,
+            220
+          ]
+        ]
+      },
+      {
+        "id": "w22",
+        "points": [
+          [
+            270,
+            200
+          ],
+          [
+            270,
+            240
+          ]
+        ]
+      },
+      {
+        "id": "w23",
+        "points": [
+          [
+            440,
+            140
+          ],
+          [
+            440,
+            210
+          ]
+        ]
+      },
+      {
+        "id": "w24",
+        "points": [
+          [
+            920,
+            220
+          ],
+          [
+            920,
+            260
+          ]
+        ]
+      }
+    ]
+  },
+  "analyses": {
+    "mode": "transient",
+    "periods": 2,
+    "measurements": [],
+    "sweep": null,
+    "sweepSignal": "",
+    "sweepMetric": "average"
+  }
+}

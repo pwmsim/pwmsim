@@ -1,0 +1,56 @@
+name: Feature request
+description: Something the tool cannot do that you need it to do.
+title: "[feature] "
+labels:
+  - feature-request
+body:
+  - type: markdown
+    attributes:
+      value: |
+        If you are not sure yet whether this is a missing feature or an
+        existing one you have not found, start in
+        [Discussions](../../discussions) instead — it is a better place to
+        argue about shape, and it is searchable.
+
+        Check <https://pwmsim.com/boundaries/> first: some gaps are already
+        named there, and saying "this one, and here is why it blocks me" is
+        more useful than a new description of it.
+  - type: textarea
+    id: problem
+    attributes:
+      label: The engineering problem
+      description: >
+        What you are trying to design or verify, and where the tool stops you.
+        Lead with the problem rather than the solution — the workaround you are
+        using today is useful context.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: What you think it should do
+      description: Optional, but say so if you have a specific shape in mind.
+  - type: input
+    id: today
+    attributes:
+      label: What you use instead today
+      description: >
+        Which tool, and what it costs you in time or accuracy. This is the
+        single most useful line in the issue.
+      placeholder: LTspice, about 40 minutes per operating point
+  - type: dropdown
+    id: blocking
+    attributes:
+      label: How much this matters to you
+      options:
+        - Blocking — I cannot use the tool for my work without it
+        - Painful — I have a workaround but it costs me real time
+        - Nice to have
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        No promise is made that a request gets built, and there is no private
+        roadmap to add it to. Requests are ordered by how often the same
+        problem arrives with real circuits attached.

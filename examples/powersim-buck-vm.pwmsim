@@ -1,0 +1,508 @@
+{
+  "format": "volta-project",
+  "version": 1,
+  "document": {
+    "format": "volta-schematic",
+    "version": 73,
+    "title": "Synchronous Buck — PI Regulation",
+    "tran": "1m",
+    "fidelity": "ideal",
+    "counters": {
+      "V": 1,
+      "S": 2,
+      "D": 2,
+      "R": 3,
+      "L": 1,
+      "C": 1,
+      "GND": 1,
+      "LBL": 3,
+      "PWM": 2
+    },
+    "components": [
+      {
+        "id": "vmb-vin",
+        "type": "vdc",
+        "refdes": "V1",
+        "x": 60,
+        "y": 150,
+        "rot": 0,
+        "props": {
+          "value": "5",
+          "rser": ""
+        }
+      },
+      {
+        "id": "vmb-high",
+        "type": "gswitch",
+        "refdes": "S1",
+        "x": 140,
+        "y": 100,
+        "rot": 0,
+        "props": {
+          "ron": "10m",
+          "roff": "100meg",
+          "vt": "0.5",
+          "vh": "0"
+        }
+      },
+      {
+        "id": "vmb-high-gate",
+        "type": "gate_pi",
+        "refdes": "PWM1",
+        "x": 170,
+        "y": 80,
+        "rot": 0,
+        "props": {
+          "fsw": "2meg",
+          "duty0": "0.22",
+          "phase": "0",
+          "ref": "1",
+          "ref1": "",
+          "rtstep": "",
+          "kp": "0.02",
+          "ki": "1k",
+          "dmin": "0.02",
+          "dmax": "0.98",
+          "deadtime": "10n"
+        }
+      },
+      {
+        "id": "vmb-high-body",
+        "type": "diode",
+        "refdes": "D1",
+        "x": 200,
+        "y": 190,
+        "rot": 180,
+        "props": {
+          "vfwd": "0",
+          "ron": "10u",
+          "roff": "100meg",
+          "model": "ideal",
+          "is": "",
+          "n": "",
+          "tt": "",
+          "cjo": "",
+          "rs": "",
+          "bv": "",
+          "vj": "",
+          "m": "",
+          "ibv": "",
+          "nbv": "",
+          "ibvl": "",
+          "nbvl": "",
+          "ikf": "",
+          "isr": "",
+          "nr": "",
+          "itol": "",
+          "epsilon": "",
+          "nser": ""
+        }
+      },
+      {
+        "id": "vmb-low",
+        "type": "gswitch",
+        "refdes": "S2",
+        "x": 290,
+        "y": 100,
+        "rot": 90,
+        "props": {
+          "ron": "10m",
+          "roff": "100meg",
+          "vt": "0.5",
+          "vh": "0"
+        }
+      },
+      {
+        "id": "vmb-low-gate",
+        "type": "gate_comp",
+        "refdes": "PWM2",
+        "x": 310,
+        "y": 130,
+        "rot": 90,
+        "props": {
+          "master": "S1",
+          "deadtime": "10n"
+        }
+      },
+      {
+        "id": "vmb-low-body",
+        "type": "diode",
+        "refdes": "D2",
+        "x": 250,
+        "y": 210,
+        "rot": 270,
+        "props": {
+          "vfwd": "0",
+          "ron": "10u",
+          "roff": "100meg",
+          "model": "ideal",
+          "is": "",
+          "n": "",
+          "tt": "",
+          "cjo": "",
+          "rs": "",
+          "bv": "",
+          "vj": "",
+          "m": "",
+          "ibv": "",
+          "nbv": "",
+          "ibvl": "",
+          "nbvl": "",
+          "ikf": "",
+          "isr": "",
+          "nr": "",
+          "itol": "",
+          "epsilon": "",
+          "nser": ""
+        }
+      },
+      {
+        "id": "vmb-l-esr",
+        "type": "resistor",
+        "refdes": "R2",
+        "x": 380,
+        "y": 100,
+        "rot": 0,
+        "props": {
+          "value": "10m",
+          "pwl": ""
+        }
+      },
+      {
+        "id": "vmb-inductor",
+        "type": "inductor",
+        "refdes": "L1",
+        "x": 460,
+        "y": 100,
+        "rot": 0,
+        "props": {
+          "value": "10u",
+          "ic": "",
+          "pwl": "",
+          "rser": "",
+          "rpar": "",
+          "cpar": ""
+        }
+      },
+      {
+        "id": "vmb-capacitor",
+        "type": "capacitor",
+        "refdes": "C1",
+        "x": 580,
+        "y": 100,
+        "rot": 0,
+        "props": {
+          "value": "22u",
+          "ic": "1",
+          "pwl": "",
+          "lser": "",
+          "rser": "",
+          "rpar": "",
+          "cpar": ""
+        }
+      },
+      {
+        "id": "vmb-c-esr",
+        "type": "resistor",
+        "refdes": "R3",
+        "x": 580,
+        "y": 170,
+        "rot": 90,
+        "props": {
+          "value": "1m",
+          "pwl": ""
+        }
+      },
+      {
+        "id": "vmb-load",
+        "type": "resistor",
+        "refdes": "R1",
+        "x": 660,
+        "y": 150,
+        "rot": 90,
+        "props": {
+          "value": "1",
+          "pwl": ""
+        }
+      },
+      {
+        "id": "vmb-ground",
+        "type": "ground",
+        "refdes": "GND1",
+        "x": 60,
+        "y": 260,
+        "rot": 0,
+        "props": {}
+      },
+      {
+        "id": "vmb-in-label",
+        "type": "netlabel",
+        "refdes": "LBL1",
+        "x": 90,
+        "y": 100,
+        "rot": 0,
+        "props": {
+          "name": "in",
+          "global": "",
+          "display": ""
+        }
+      },
+      {
+        "id": "vmb-sw-label",
+        "type": "netlabel",
+        "refdes": "LBL2",
+        "x": 230,
+        "y": 100,
+        "rot": 0,
+        "props": {
+          "name": "sw",
+          "global": "",
+          "display": ""
+        }
+      },
+      {
+        "id": "vmb-out-label",
+        "type": "netlabel",
+        "refdes": "LBL3",
+        "x": 540,
+        "y": 100,
+        "rot": 0,
+        "props": {
+          "name": "out",
+          "global": "",
+          "display": ""
+        }
+      }
+    ],
+    "wires": [
+      {
+        "id": "w1",
+        "points": [
+          [
+            60,
+            100
+          ],
+          [
+            140,
+            100
+          ]
+        ]
+      },
+      {
+        "id": "w2",
+        "points": [
+          [
+            140,
+            100
+          ],
+          [
+            140,
+            190
+          ]
+        ]
+      },
+      {
+        "id": "w3",
+        "points": [
+          [
+            200,
+            100
+          ],
+          [
+            200,
+            190
+          ]
+        ]
+      },
+      {
+        "id": "w4",
+        "points": [
+          [
+            200,
+            100
+          ],
+          [
+            380,
+            100
+          ]
+        ]
+      },
+      {
+        "id": "w5",
+        "points": [
+          [
+            440,
+            100
+          ],
+          [
+            460,
+            100
+          ]
+        ]
+      },
+      {
+        "id": "w6",
+        "points": [
+          [
+            520,
+            100
+          ],
+          [
+            660,
+            100
+          ]
+        ]
+      },
+      {
+        "id": "w7",
+        "points": [
+          [
+            170,
+            60
+          ],
+          [
+            170,
+            20
+          ],
+          [
+            620,
+            20
+          ],
+          [
+            620,
+            100
+          ]
+        ]
+      },
+      {
+        "id": "w8",
+        "points": [
+          [
+            290,
+            160
+          ],
+          [
+            290,
+            260
+          ]
+        ]
+      },
+      {
+        "id": "w9",
+        "points": [
+          [
+            250,
+            210
+          ],
+          [
+            250,
+            260
+          ]
+        ]
+      },
+      {
+        "id": "w10",
+        "points": [
+          [
+            580,
+            230
+          ],
+          [
+            580,
+            260
+          ]
+        ]
+      },
+      {
+        "id": "w11",
+        "points": [
+          [
+            660,
+            210
+          ],
+          [
+            660,
+            260
+          ]
+        ]
+      },
+      {
+        "id": "w12",
+        "points": [
+          [
+            60,
+            210
+          ],
+          [
+            60,
+            260
+          ],
+          [
+            660,
+            260
+          ]
+        ]
+      },
+      {
+        "id": "w13",
+        "points": [
+          [
+            60,
+            100
+          ],
+          [
+            60,
+            150
+          ]
+        ]
+      },
+      {
+        "id": "w14",
+        "points": [
+          [
+            250,
+            100
+          ],
+          [
+            250,
+            150
+          ]
+        ]
+      },
+      {
+        "id": "w15",
+        "points": [
+          [
+            580,
+            140
+          ],
+          [
+            580,
+            170
+          ]
+        ]
+      },
+      {
+        "id": "w16",
+        "points": [
+          [
+            660,
+            100
+          ],
+          [
+            660,
+            150
+          ]
+        ]
+      }
+    ]
+  },
+  "analyses": {
+    "mode": "transient",
+    "periods": 2,
+    "measurements": [],
+    "sweep": null,
+    "sweepSignal": "",
+    "sweepMetric": "average"
+  }
+}

@@ -1,0 +1,518 @@
+{
+  "format": "volta-project",
+  "version": 1,
+  "document": {
+    "format": "volta-schematic",
+    "version": 73,
+    "title": "SEPIC — Peak Current Mode with PI Loop",
+    "tran": "1m",
+    "fidelity": "ideal",
+    "counters": {
+      "V": 1,
+      "R": 6,
+      "L": 2,
+      "S": 1,
+      "C": 2,
+      "D": 1,
+      "GND": 1,
+      "LBL": 5,
+      "PWM": 1
+    },
+    "components": [
+      {
+        "id": "sep-vin",
+        "type": "vdc",
+        "refdes": "V1",
+        "x": 60,
+        "y": 150,
+        "rot": 0,
+        "props": {
+          "value": "3",
+          "rser": ""
+        }
+      },
+      {
+        "id": "sep-l1-esr",
+        "type": "resistor",
+        "refdes": "R2",
+        "x": 140,
+        "y": 100,
+        "rot": 0,
+        "props": {
+          "value": "10m",
+          "pwl": ""
+        }
+      },
+      {
+        "id": "sep-input-inductor",
+        "type": "inductor",
+        "refdes": "L1",
+        "x": 220,
+        "y": 100,
+        "rot": 0,
+        "props": {
+          "value": "4.7u",
+          "ic": "",
+          "pwl": "",
+          "rser": "",
+          "rpar": "",
+          "cpar": ""
+        }
+      },
+      {
+        "id": "sep-switch",
+        "type": "gswitch",
+        "refdes": "S1",
+        "x": 360,
+        "y": 160,
+        "rot": 270,
+        "props": {
+          "ron": "10m",
+          "roff": "100meg",
+          "vt": "0.5",
+          "vh": "0"
+        }
+      },
+      {
+        "id": "sep-switch-gate",
+        "type": "gate_pcm_pi",
+        "refdes": "PWM1",
+        "x": 340,
+        "y": 130,
+        "rot": 270,
+        "props": {
+          "fsw": "500k",
+          "sense": "L1",
+          "icmd0": "0",
+          "mc": "364.6k",
+          "dmax": "0.95",
+          "ref": "5",
+          "kp": "3",
+          "ki": "18.85k",
+          "imin": "0",
+          "imax": "10",
+          "ref1": "",
+          "rtstep": "",
+          "phase": ""
+        }
+      },
+      {
+        "id": "sep-coupling-cap",
+        "type": "capacitor",
+        "refdes": "C2",
+        "x": 440,
+        "y": 100,
+        "rot": 270,
+        "props": {
+          "value": "1u",
+          "ic": "3",
+          "pwl": "",
+          "lser": "",
+          "rser": "",
+          "rpar": "",
+          "cpar": ""
+        }
+      },
+      {
+        "id": "sep-c2-esr",
+        "type": "resistor",
+        "refdes": "R5",
+        "x": 480,
+        "y": 100,
+        "rot": 0,
+        "props": {
+          "value": "1m",
+          "pwl": ""
+        }
+      },
+      {
+        "id": "sep-output-inductor",
+        "type": "inductor",
+        "refdes": "L2",
+        "x": 580,
+        "y": 100,
+        "rot": 90,
+        "props": {
+          "value": "33u",
+          "ic": "",
+          "pwl": "",
+          "rser": "",
+          "rpar": "",
+          "cpar": ""
+        }
+      },
+      {
+        "id": "sep-l2-esr",
+        "type": "resistor",
+        "refdes": "R6",
+        "x": 580,
+        "y": 180,
+        "rot": 90,
+        "props": {
+          "value": "10m",
+          "pwl": ""
+        }
+      },
+      {
+        "id": "sep-diode",
+        "type": "diode",
+        "refdes": "D1",
+        "x": 640,
+        "y": 100,
+        "rot": 0,
+        "props": {
+          "vfwd": "0",
+          "ron": "10m",
+          "roff": "1gig",
+          "model": "ideal",
+          "is": "",
+          "n": "",
+          "tt": "",
+          "cjo": "",
+          "rs": "",
+          "bv": "",
+          "vj": "",
+          "m": "",
+          "ibv": "",
+          "nbv": "",
+          "ibvl": "",
+          "nbvl": "",
+          "ikf": "",
+          "isr": "",
+          "nr": "",
+          "itol": "",
+          "epsilon": "",
+          "nser": ""
+        }
+      },
+      {
+        "id": "sep-capacitor",
+        "type": "capacitor",
+        "refdes": "C1",
+        "x": 800,
+        "y": 100,
+        "rot": 0,
+        "props": {
+          "value": "22u",
+          "ic": "",
+          "pwl": "",
+          "lser": "",
+          "rser": "",
+          "rpar": "",
+          "cpar": ""
+        }
+      },
+      {
+        "id": "sep-c1-esr",
+        "type": "resistor",
+        "refdes": "R3",
+        "x": 800,
+        "y": 170,
+        "rot": 90,
+        "props": {
+          "value": "1m",
+          "pwl": ""
+        }
+      },
+      {
+        "id": "sep-load",
+        "type": "resistor",
+        "refdes": "R1",
+        "x": 880,
+        "y": 150,
+        "rot": 90,
+        "props": {
+          "value": "10",
+          "pwl": ""
+        }
+      },
+      {
+        "id": "sep-ground",
+        "type": "ground",
+        "refdes": "GND1",
+        "x": 60,
+        "y": 260,
+        "rot": 0,
+        "props": {}
+      },
+      {
+        "id": "sep-in-label",
+        "type": "netlabel",
+        "refdes": "LBL1",
+        "x": 90,
+        "y": 100,
+        "rot": 0,
+        "props": {
+          "name": "in",
+          "global": "",
+          "display": ""
+        }
+      },
+      {
+        "id": "sep-sw1-label",
+        "type": "netlabel",
+        "refdes": "LBL2",
+        "x": 310,
+        "y": 100,
+        "rot": 0,
+        "props": {
+          "name": "sw1",
+          "global": "",
+          "display": ""
+        }
+      },
+      {
+        "id": "sep-sw2-label",
+        "type": "netlabel",
+        "refdes": "LBL3",
+        "x": 560,
+        "y": 100,
+        "rot": 0,
+        "props": {
+          "name": "sw2",
+          "global": "",
+          "display": ""
+        }
+      },
+      {
+        "id": "sep-out-label",
+        "type": "netlabel",
+        "refdes": "LBL4",
+        "x": 740,
+        "y": 100,
+        "rot": 0,
+        "props": {
+          "name": "out",
+          "global": "",
+          "display": ""
+        }
+      },
+      {
+        "id": "sep-fb-label",
+        "type": "netlabel",
+        "refdes": "LBL5",
+        "x": 300,
+        "y": 200,
+        "rot": 0,
+        "props": {
+          "name": "out",
+          "global": "",
+          "display": ""
+        }
+      }
+    ],
+    "wires": [
+      {
+        "id": "w1",
+        "points": [
+          [
+            60,
+            100
+          ],
+          [
+            140,
+            100
+          ]
+        ]
+      },
+      {
+        "id": "w2",
+        "points": [
+          [
+            200,
+            100
+          ],
+          [
+            220,
+            100
+          ]
+        ]
+      },
+      {
+        "id": "w3",
+        "points": [
+          [
+            280,
+            100
+          ],
+          [
+            440,
+            100
+          ]
+        ]
+      },
+      {
+        "id": "w4",
+        "points": [
+          [
+            540,
+            100
+          ],
+          [
+            640,
+            100
+          ]
+        ]
+      },
+      {
+        "id": "w5",
+        "points": [
+          [
+            700,
+            100
+          ],
+          [
+            880,
+            100
+          ]
+        ]
+      },
+      {
+        "id": "w6",
+        "points": [
+          [
+            320,
+            130
+          ],
+          [
+            300,
+            130
+          ],
+          [
+            300,
+            200
+          ]
+        ]
+      },
+      {
+        "id": "w7",
+        "points": [
+          [
+            360,
+            160
+          ],
+          [
+            360,
+            260
+          ]
+        ]
+      },
+      {
+        "id": "w8",
+        "points": [
+          [
+            580,
+            240
+          ],
+          [
+            580,
+            260
+          ]
+        ]
+      },
+      {
+        "id": "w9",
+        "points": [
+          [
+            800,
+            230
+          ],
+          [
+            800,
+            260
+          ]
+        ]
+      },
+      {
+        "id": "w10",
+        "points": [
+          [
+            880,
+            210
+          ],
+          [
+            880,
+            260
+          ]
+        ]
+      },
+      {
+        "id": "w11",
+        "points": [
+          [
+            60,
+            210
+          ],
+          [
+            60,
+            260
+          ],
+          [
+            880,
+            260
+          ]
+        ]
+      },
+      {
+        "id": "w12",
+        "points": [
+          [
+            60,
+            100
+          ],
+          [
+            60,
+            150
+          ]
+        ]
+      },
+      {
+        "id": "w13",
+        "points": [
+          [
+            580,
+            160
+          ],
+          [
+            580,
+            180
+          ]
+        ]
+      },
+      {
+        "id": "w14",
+        "points": [
+          [
+            800,
+            140
+          ],
+          [
+            800,
+            170
+          ]
+        ]
+      },
+      {
+        "id": "w15",
+        "points": [
+          [
+            880,
+            100
+          ],
+          [
+            880,
+            150
+          ]
+        ]
+      }
+    ]
+  },
+  "analyses": {
+    "mode": "transient",
+    "periods": 2,
+    "measurements": [],
+    "sweep": null,
+    "sweepSignal": "",
+    "sweepMetric": "average"
+  }
+}

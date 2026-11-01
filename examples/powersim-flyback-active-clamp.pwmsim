@@ -1,0 +1,723 @@
+{
+  "format": "volta-project",
+  "version": 1,
+  "document": {
+    "format": "volta-schematic",
+    "version": 73,
+    "title": "Active-Clamp Flyback — PI Regulation",
+    "tran": "3m",
+    "fidelity": "ideal",
+    "counters": {
+      "V": 1,
+      "GND": 2,
+      "R": 3,
+      "C": 3,
+      "S": 2,
+      "D": 3,
+      "L": 2,
+      "K": 1,
+      "LBL": 5,
+      "PWM": 2
+    },
+    "components": [
+      {
+        "id": "acf-vin",
+        "type": "vdc",
+        "refdes": "V1",
+        "x": 40,
+        "y": 220,
+        "rot": 0,
+        "props": {
+          "value": "24",
+          "rser": ""
+        }
+      },
+      {
+        "id": "acf-ground",
+        "type": "ground",
+        "refdes": "GND1",
+        "x": 40,
+        "y": 340,
+        "rot": 0,
+        "props": {}
+      },
+      {
+        "id": "acf-bleed",
+        "type": "resistor",
+        "refdes": "R1",
+        "x": 100,
+        "y": 80,
+        "rot": 90,
+        "props": {
+          "value": "220k",
+          "pwl": ""
+        }
+      },
+      {
+        "id": "acf-clamp-cap",
+        "type": "capacitor",
+        "refdes": "C2",
+        "x": 160,
+        "y": 100,
+        "rot": 0,
+        "props": {
+          "value": "10u",
+          "ic": "",
+          "pwl": "",
+          "lser": "",
+          "rser": "1m",
+          "rpar": "",
+          "cpar": ""
+        }
+      },
+      {
+        "id": "acf-clamp",
+        "type": "gswitch",
+        "refdes": "S2",
+        "x": 160,
+        "y": 200,
+        "rot": 270,
+        "props": {
+          "ron": "29m",
+          "roff": "100meg",
+          "vt": "0.5",
+          "vh": "0"
+        },
+        "mir": true
+      },
+      {
+        "id": "acf-clamp-gate",
+        "type": "gate_comp",
+        "refdes": "PWM2",
+        "x": 140,
+        "y": 170,
+        "rot": 270,
+        "props": {
+          "master": "S1",
+          "deadtime": "100n"
+        },
+        "mir": true
+      },
+      {
+        "id": "acf-clamp-body",
+        "type": "diode",
+        "refdes": "D2",
+        "x": 220,
+        "y": 200,
+        "rot": 270,
+        "props": {
+          "vfwd": "0.6",
+          "ron": "18m",
+          "roff": "100meg",
+          "model": "ideal",
+          "is": "",
+          "n": "",
+          "tt": "",
+          "cjo": "",
+          "rs": "",
+          "bv": "",
+          "vj": "",
+          "m": "",
+          "ibv": "",
+          "nbv": "",
+          "ibvl": "",
+          "nbvl": "",
+          "ikf": "",
+          "isr": "",
+          "nr": "",
+          "itol": "",
+          "epsilon": "",
+          "nser": ""
+        }
+      },
+      {
+        "id": "acf-primary",
+        "type": "inductor",
+        "refdes": "L1",
+        "x": 320,
+        "y": 140,
+        "rot": 90,
+        "props": {
+          "value": "10u",
+          "ic": "",
+          "pwl": "",
+          "rser": "10m",
+          "rpar": "",
+          "cpar": ""
+        }
+      },
+      {
+        "id": "acf-switch",
+        "type": "gswitch",
+        "refdes": "S1",
+        "x": 320,
+        "y": 200,
+        "rot": 90,
+        "props": {
+          "ron": "29m",
+          "roff": "100meg",
+          "vt": "0.5",
+          "vh": "0"
+        }
+      },
+      {
+        "id": "acf-switch-gate",
+        "type": "gate_pi",
+        "refdes": "PWM1",
+        "x": 340,
+        "y": 230,
+        "rot": 90,
+        "props": {
+          "fsw": "180k",
+          "duty0": "0.2",
+          "phase": "0",
+          "ref": "5",
+          "ref1": "",
+          "rtstep": "",
+          "kp": "1.5m",
+          "ki": "150",
+          "dmin": "0",
+          "dmax": "0.6",
+          "deadtime": "154.3n"
+        }
+      },
+      {
+        "id": "acf-body",
+        "type": "diode",
+        "refdes": "D1",
+        "x": 270,
+        "y": 300,
+        "rot": 270,
+        "props": {
+          "vfwd": "0.6",
+          "ron": "18m",
+          "roff": "100meg",
+          "model": "ideal",
+          "is": "",
+          "n": "",
+          "tt": "",
+          "cjo": "",
+          "rs": "",
+          "bv": "",
+          "vj": "",
+          "m": "",
+          "ibv": "",
+          "nbv": "",
+          "ibvl": "",
+          "nbvl": "",
+          "ikf": "",
+          "isr": "",
+          "nr": "",
+          "itol": "",
+          "epsilon": "",
+          "nser": ""
+        }
+      },
+      {
+        "id": "acf-transformer",
+        "type": "coupling",
+        "refdes": "K1",
+        "x": 380,
+        "y": 120,
+        "rot": 0,
+        "props": {
+          "la": "L1",
+          "lb": "L2",
+          "k": "0.98"
+        }
+      },
+      {
+        "id": "acf-secondary",
+        "type": "inductor",
+        "refdes": "L2",
+        "x": 440,
+        "y": 270,
+        "rot": 270,
+        "props": {
+          "value": "10u",
+          "ic": "",
+          "pwl": "",
+          "rser": "10m",
+          "rpar": "",
+          "cpar": ""
+        }
+      },
+      {
+        "id": "acf-ground-out",
+        "type": "ground",
+        "refdes": "GND2",
+        "x": 440,
+        "y": 340,
+        "rot": 0,
+        "props": {}
+      },
+      {
+        "id": "acf-diode",
+        "type": "diode",
+        "refdes": "D3",
+        "x": 480,
+        "y": 140,
+        "rot": 0,
+        "props": {
+          "vfwd": "1n",
+          "ron": "10m",
+          "roff": "1g",
+          "model": "ideal",
+          "is": "",
+          "n": "",
+          "tt": "",
+          "cjo": "",
+          "rs": "",
+          "bv": "",
+          "vj": "",
+          "m": "",
+          "ibv": "",
+          "nbv": "",
+          "ibvl": "",
+          "nbvl": "",
+          "ikf": "",
+          "isr": "",
+          "nr": "",
+          "itol": "",
+          "epsilon": "",
+          "nser": ""
+        }
+      },
+      {
+        "id": "acf-capacitor",
+        "type": "capacitor",
+        "refdes": "C1",
+        "x": 600,
+        "y": 220,
+        "rot": 0,
+        "props": {
+          "value": "22u",
+          "ic": "5",
+          "pwl": "",
+          "lser": "",
+          "rser": "1m",
+          "rpar": "",
+          "cpar": ""
+        }
+      },
+      {
+        "id": "acf-load",
+        "type": "resistor",
+        "refdes": "R2",
+        "x": 680,
+        "y": 210,
+        "rot": 90,
+        "props": {
+          "value": "10",
+          "pwl": ""
+        }
+      },
+      {
+        "id": "acf-filter-r",
+        "type": "resistor",
+        "refdes": "R3",
+        "x": 720,
+        "y": 140,
+        "rot": 0,
+        "props": {
+          "value": "1k",
+          "pwl": ""
+        }
+      },
+      {
+        "id": "acf-filter-c",
+        "type": "capacitor",
+        "refdes": "C3",
+        "x": 800,
+        "y": 260,
+        "rot": 0,
+        "props": {
+          "value": "47n",
+          "ic": "5",
+          "pwl": "",
+          "lser": "",
+          "rser": "",
+          "rpar": "",
+          "cpar": ""
+        }
+      },
+      {
+        "id": "acf-in-label",
+        "type": "netlabel",
+        "refdes": "LBL1",
+        "x": 220,
+        "y": 60,
+        "rot": 0,
+        "props": {
+          "name": "in",
+          "global": "",
+          "display": ""
+        }
+      },
+      {
+        "id": "acf-sw-label",
+        "type": "netlabel",
+        "refdes": "LBL2",
+        "x": 240,
+        "y": 200,
+        "rot": 0,
+        "props": {
+          "name": "sw",
+          "global": "",
+          "display": ""
+        }
+      },
+      {
+        "id": "acf-out-label",
+        "type": "netlabel",
+        "refdes": "LBL3",
+        "x": 560,
+        "y": 140,
+        "rot": 0,
+        "props": {
+          "name": "out",
+          "global": "",
+          "display": ""
+        }
+      },
+      {
+        "id": "acf-fb-label",
+        "type": "netlabel",
+        "refdes": "LBL4",
+        "x": 780,
+        "y": 140,
+        "rot": 0,
+        "props": {
+          "name": "fb",
+          "global": "",
+          "display": ""
+        }
+      },
+      {
+        "id": "acf-sense-label",
+        "type": "netlabel",
+        "refdes": "LBL5",
+        "x": 360,
+        "y": 230,
+        "rot": 0,
+        "props": {
+          "name": "fb",
+          "global": "",
+          "display": ""
+        }
+      }
+    ],
+    "wires": [
+      {
+        "id": "w1",
+        "points": [
+          [
+            40,
+            160
+          ],
+          [
+            40,
+            60
+          ],
+          [
+            320,
+            60
+          ]
+        ]
+      },
+      {
+        "id": "w2",
+        "points": [
+          [
+            100,
+            60
+          ],
+          [
+            100,
+            80
+          ]
+        ]
+      },
+      {
+        "id": "w3",
+        "points": [
+          [
+            160,
+            60
+          ],
+          [
+            160,
+            100
+          ]
+        ]
+      },
+      {
+        "id": "w4",
+        "points": [
+          [
+            100,
+            140
+          ],
+          [
+            220,
+            140
+          ]
+        ]
+      },
+      {
+        "id": "w5",
+        "points": [
+          [
+            160,
+            200
+          ],
+          [
+            320,
+            200
+          ]
+        ]
+      },
+      {
+        "id": "w6",
+        "points": [
+          [
+            320,
+            60
+          ],
+          [
+            320,
+            140
+          ]
+        ]
+      },
+      {
+        "id": "w7",
+        "points": [
+          [
+            40,
+            280
+          ],
+          [
+            40,
+            340
+          ],
+          [
+            320,
+            340
+          ]
+        ]
+      },
+      {
+        "id": "w8",
+        "points": [
+          [
+            270,
+            300
+          ],
+          [
+            270,
+            340
+          ]
+        ]
+      },
+      {
+        "id": "w9",
+        "points": [
+          [
+            320,
+            260
+          ],
+          [
+            320,
+            340
+          ]
+        ]
+      },
+      {
+        "id": "w10",
+        "points": [
+          [
+            440,
+            270
+          ],
+          [
+            440,
+            340
+          ],
+          [
+            800,
+            340
+          ]
+        ]
+      },
+      {
+        "id": "w11",
+        "points": [
+          [
+            440,
+            140
+          ],
+          [
+            480,
+            140
+          ]
+        ]
+      },
+      {
+        "id": "w12",
+        "points": [
+          [
+            540,
+            140
+          ],
+          [
+            720,
+            140
+          ]
+        ]
+      },
+      {
+        "id": "w13",
+        "points": [
+          [
+            600,
+            140
+          ],
+          [
+            600,
+            220
+          ]
+        ]
+      },
+      {
+        "id": "w14",
+        "points": [
+          [
+            600,
+            260
+          ],
+          [
+            600,
+            340
+          ]
+        ]
+      },
+      {
+        "id": "w15",
+        "points": [
+          [
+            680,
+            140
+          ],
+          [
+            680,
+            210
+          ]
+        ]
+      },
+      {
+        "id": "w16",
+        "points": [
+          [
+            680,
+            270
+          ],
+          [
+            680,
+            340
+          ]
+        ]
+      },
+      {
+        "id": "w17",
+        "points": [
+          [
+            780,
+            140
+          ],
+          [
+            800,
+            140
+          ],
+          [
+            800,
+            220
+          ]
+        ]
+      },
+      {
+        "id": "w18",
+        "points": [
+          [
+            800,
+            300
+          ],
+          [
+            800,
+            340
+          ]
+        ]
+      },
+      {
+        "id": "w19",
+        "points": [
+          [
+            40,
+            160
+          ],
+          [
+            40,
+            220
+          ]
+        ]
+      },
+      {
+        "id": "w20",
+        "points": [
+          [
+            270,
+            200
+          ],
+          [
+            270,
+            240
+          ]
+        ]
+      },
+      {
+        "id": "w21",
+        "points": [
+          [
+            440,
+            140
+          ],
+          [
+            440,
+            210
+          ]
+        ]
+      },
+      {
+        "id": "w22",
+        "points": [
+          [
+            800,
+            220
+          ],
+          [
+            800,
+            260
+          ]
+        ]
+      }
+    ]
+  },
+  "analyses": {
+    "mode": "transient",
+    "periods": 2,
+    "measurements": [],
+    "sweep": null,
+    "sweepSignal": "",
+    "sweepMetric": "average"
+  }
+}

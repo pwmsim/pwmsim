@@ -1,0 +1,1049 @@
+{
+  "format": "volta-project",
+  "version": 1,
+  "document": {
+    "format": "volta-schematic",
+    "version": 73,
+    "title": "Phase-Shifted Full Bridge — Fixed Phase",
+    "tran": "10m",
+    "fidelity": "ideal",
+    "counters": {
+      "V": 1,
+      "GND": 2,
+      "S": 4,
+      "D": 8,
+      "LBL": 9,
+      "L": 3,
+      "K": 1,
+      "C": 2,
+      "R": 1,
+      "PWM": 4
+    },
+    "components": [
+      {
+        "id": "psfb-vin",
+        "type": "vdc",
+        "refdes": "V1",
+        "x": 40,
+        "y": 200,
+        "rot": 0,
+        "props": {
+          "value": "400",
+          "rser": ""
+        }
+      },
+      {
+        "id": "psfb-ground",
+        "type": "ground",
+        "refdes": "GND1",
+        "x": 40,
+        "y": 360,
+        "rot": 0,
+        "props": {}
+      },
+      {
+        "id": "psfb-s1",
+        "type": "gswitch",
+        "refdes": "S1",
+        "x": 140,
+        "y": 60,
+        "rot": 90,
+        "props": {
+          "ron": "10m",
+          "roff": "100meg",
+          "vt": "0.5",
+          "vh": "0"
+        }
+      },
+      {
+        "id": "psfb-s1-gate",
+        "type": "gate_pwm",
+        "refdes": "PWM1",
+        "x": 160,
+        "y": 90,
+        "rot": 90,
+        "props": {
+          "fsw": "100k",
+          "duty": "0.5",
+          "phase": "0.3073",
+          "deadtime": "10n"
+        }
+      },
+      {
+        "id": "psfb-s2",
+        "type": "gswitch",
+        "refdes": "S2",
+        "x": 140,
+        "y": 240,
+        "rot": 90,
+        "props": {
+          "ron": "10m",
+          "roff": "100meg",
+          "vt": "0.5",
+          "vh": "0"
+        }
+      },
+      {
+        "id": "psfb-s2-gate",
+        "type": "gate_comp",
+        "refdes": "PWM2",
+        "x": 160,
+        "y": 270,
+        "rot": 90,
+        "props": {
+          "master": "S1",
+          "deadtime": "10n"
+        }
+      },
+      {
+        "id": "psfb-d1",
+        "type": "diode",
+        "refdes": "D1",
+        "x": 70,
+        "y": 120,
+        "rot": 270,
+        "props": {
+          "vfwd": "0",
+          "ron": "10u",
+          "roff": "100meg",
+          "model": "ideal",
+          "is": "",
+          "n": "",
+          "tt": "",
+          "cjo": "",
+          "rs": "",
+          "bv": "",
+          "vj": "",
+          "m": "",
+          "ibv": "",
+          "nbv": "",
+          "ibvl": "",
+          "nbvl": "",
+          "ikf": "",
+          "isr": "",
+          "nr": "",
+          "itol": "",
+          "epsilon": "",
+          "nser": ""
+        }
+      },
+      {
+        "id": "psfb-d2",
+        "type": "diode",
+        "refdes": "D2",
+        "x": 70,
+        "y": 330,
+        "rot": 270,
+        "props": {
+          "vfwd": "0",
+          "ron": "10u",
+          "roff": "100meg",
+          "model": "ideal",
+          "is": "",
+          "n": "",
+          "tt": "",
+          "cjo": "",
+          "rs": "",
+          "bv": "",
+          "vj": "",
+          "m": "",
+          "ibv": "",
+          "nbv": "",
+          "ibvl": "",
+          "nbvl": "",
+          "ikf": "",
+          "isr": "",
+          "nr": "",
+          "itol": "",
+          "epsilon": "",
+          "nser": ""
+        }
+      },
+      {
+        "id": "psfb-sw1-label",
+        "type": "netlabel",
+        "refdes": "LBL1",
+        "x": 140,
+        "y": 180,
+        "rot": 0,
+        "props": {
+          "name": "sw1",
+          "global": "",
+          "display": ""
+        }
+      },
+      {
+        "id": "psfb-s3",
+        "type": "gswitch",
+        "refdes": "S3",
+        "x": 380,
+        "y": 60,
+        "rot": 90,
+        "props": {
+          "ron": "10m",
+          "roff": "100meg",
+          "vt": "0.5",
+          "vh": "0"
+        }
+      },
+      {
+        "id": "psfb-s3-gate",
+        "type": "gate_pwm",
+        "refdes": "PWM3",
+        "x": 400,
+        "y": 90,
+        "rot": 90,
+        "props": {
+          "fsw": "100k",
+          "duty": "0.5",
+          "phase": "0",
+          "deadtime": "10n"
+        }
+      },
+      {
+        "id": "psfb-s4",
+        "type": "gswitch",
+        "refdes": "S4",
+        "x": 380,
+        "y": 240,
+        "rot": 90,
+        "props": {
+          "ron": "10m",
+          "roff": "100meg",
+          "vt": "0.5",
+          "vh": "0"
+        }
+      },
+      {
+        "id": "psfb-s4-gate",
+        "type": "gate_comp",
+        "refdes": "PWM4",
+        "x": 400,
+        "y": 270,
+        "rot": 90,
+        "props": {
+          "master": "S3",
+          "deadtime": "10n"
+        }
+      },
+      {
+        "id": "psfb-d3",
+        "type": "diode",
+        "refdes": "D3",
+        "x": 310,
+        "y": 120,
+        "rot": 270,
+        "props": {
+          "vfwd": "0",
+          "ron": "10u",
+          "roff": "100meg",
+          "model": "ideal",
+          "is": "",
+          "n": "",
+          "tt": "",
+          "cjo": "",
+          "rs": "",
+          "bv": "",
+          "vj": "",
+          "m": "",
+          "ibv": "",
+          "nbv": "",
+          "ibvl": "",
+          "nbvl": "",
+          "ikf": "",
+          "isr": "",
+          "nr": "",
+          "itol": "",
+          "epsilon": "",
+          "nser": ""
+        }
+      },
+      {
+        "id": "psfb-d4",
+        "type": "diode",
+        "refdes": "D4",
+        "x": 310,
+        "y": 330,
+        "rot": 270,
+        "props": {
+          "vfwd": "0",
+          "ron": "10u",
+          "roff": "100meg",
+          "model": "ideal",
+          "is": "",
+          "n": "",
+          "tt": "",
+          "cjo": "",
+          "rs": "",
+          "bv": "",
+          "vj": "",
+          "m": "",
+          "ibv": "",
+          "nbv": "",
+          "ibvl": "",
+          "nbvl": "",
+          "ikf": "",
+          "isr": "",
+          "nr": "",
+          "itol": "",
+          "epsilon": "",
+          "nser": ""
+        }
+      },
+      {
+        "id": "psfb-sw2-label",
+        "type": "netlabel",
+        "refdes": "LBL2",
+        "x": 380,
+        "y": 180,
+        "rot": 0,
+        "props": {
+          "name": "sw2",
+          "global": "",
+          "display": ""
+        }
+      },
+      {
+        "id": "psfb-primary",
+        "type": "inductor",
+        "refdes": "L1",
+        "x": 580,
+        "y": 140,
+        "rot": 90,
+        "props": {
+          "value": "1m",
+          "ic": "",
+          "pwl": "",
+          "rser": "1m",
+          "rpar": "",
+          "cpar": ""
+        }
+      },
+      {
+        "id": "psfb-transformer",
+        "type": "coupling",
+        "refdes": "K1",
+        "x": 620,
+        "y": 100,
+        "rot": 0,
+        "props": {
+          "la": "L1",
+          "lb": "L2",
+          "k": "0.998"
+        }
+      },
+      {
+        "id": "psfb-secondary",
+        "type": "inductor",
+        "refdes": "L2",
+        "x": 660,
+        "y": 140,
+        "rot": 90,
+        "props": {
+          "value": "2.5u",
+          "ic": "",
+          "pwl": "",
+          "rser": "1m",
+          "rpar": "",
+          "cpar": ""
+        }
+      },
+      {
+        "id": "psfb-wa-label",
+        "type": "netlabel",
+        "refdes": "LBL3",
+        "x": 500,
+        "y": 120,
+        "rot": 0,
+        "props": {
+          "name": "sw2",
+          "global": "",
+          "display": ""
+        }
+      },
+      {
+        "id": "psfb-wb-label",
+        "type": "netlabel",
+        "refdes": "LBL4",
+        "x": 500,
+        "y": 220,
+        "rot": 0,
+        "props": {
+          "name": "sw1",
+          "global": "",
+          "display": ""
+        }
+      },
+      {
+        "id": "psfb-wc-label",
+        "type": "netlabel",
+        "refdes": "LBL5",
+        "x": 700,
+        "y": 120,
+        "rot": 0,
+        "props": {
+          "name": "sw4",
+          "global": "",
+          "display": ""
+        }
+      },
+      {
+        "id": "psfb-wd-label",
+        "type": "netlabel",
+        "refdes": "LBL6",
+        "x": 700,
+        "y": 220,
+        "rot": 0,
+        "props": {
+          "name": "sw3",
+          "global": "",
+          "display": ""
+        }
+      },
+      {
+        "id": "psfb-d5",
+        "type": "diode",
+        "refdes": "D5",
+        "x": 840,
+        "y": 180,
+        "rot": 270,
+        "props": {
+          "vfwd": "1n",
+          "ron": "10m",
+          "roff": "1g",
+          "model": "ideal",
+          "is": "",
+          "n": "",
+          "tt": "",
+          "cjo": "",
+          "rs": "",
+          "bv": "",
+          "vj": "",
+          "m": "",
+          "ibv": "",
+          "nbv": "",
+          "ibvl": "",
+          "nbvl": "",
+          "ikf": "",
+          "isr": "",
+          "nr": "",
+          "itol": "",
+          "epsilon": "",
+          "nser": ""
+        }
+      },
+      {
+        "id": "psfb-d6",
+        "type": "diode",
+        "refdes": "D6",
+        "x": 840,
+        "y": 300,
+        "rot": 270,
+        "props": {
+          "vfwd": "1n",
+          "ron": "10m",
+          "roff": "1g",
+          "model": "ideal",
+          "is": "",
+          "n": "",
+          "tt": "",
+          "cjo": "",
+          "rs": "",
+          "bv": "",
+          "vj": "",
+          "m": "",
+          "ibv": "",
+          "nbv": "",
+          "ibvl": "",
+          "nbvl": "",
+          "ikf": "",
+          "isr": "",
+          "nr": "",
+          "itol": "",
+          "epsilon": "",
+          "nser": ""
+        }
+      },
+      {
+        "id": "psfb-d7",
+        "type": "diode",
+        "refdes": "D7",
+        "x": 960,
+        "y": 180,
+        "rot": 270,
+        "props": {
+          "vfwd": "1n",
+          "ron": "10m",
+          "roff": "1g",
+          "model": "ideal",
+          "is": "",
+          "n": "",
+          "tt": "",
+          "cjo": "",
+          "rs": "",
+          "bv": "",
+          "vj": "",
+          "m": "",
+          "ibv": "",
+          "nbv": "",
+          "ibvl": "",
+          "nbvl": "",
+          "ikf": "",
+          "isr": "",
+          "nr": "",
+          "itol": "",
+          "epsilon": "",
+          "nser": ""
+        }
+      },
+      {
+        "id": "psfb-d8",
+        "type": "diode",
+        "refdes": "D8",
+        "x": 960,
+        "y": 300,
+        "rot": 270,
+        "props": {
+          "vfwd": "1n",
+          "ron": "10m",
+          "roff": "1g",
+          "model": "ideal",
+          "is": "",
+          "n": "",
+          "tt": "",
+          "cjo": "",
+          "rs": "",
+          "bv": "",
+          "vj": "",
+          "m": "",
+          "ibv": "",
+          "nbv": "",
+          "ibvl": "",
+          "nbvl": "",
+          "ikf": "",
+          "isr": "",
+          "nr": "",
+          "itol": "",
+          "epsilon": "",
+          "nser": ""
+        }
+      },
+      {
+        "id": "psfb-sw3-label",
+        "type": "netlabel",
+        "refdes": "LBL7",
+        "x": 840,
+        "y": 210,
+        "rot": 0,
+        "props": {
+          "name": "sw3",
+          "global": "",
+          "display": ""
+        }
+      },
+      {
+        "id": "psfb-sw4-label",
+        "type": "netlabel",
+        "refdes": "LBL8",
+        "x": 960,
+        "y": 210,
+        "rot": 0,
+        "props": {
+          "name": "sw4",
+          "global": "",
+          "display": ""
+        }
+      },
+      {
+        "id": "psfb-ground-out",
+        "type": "ground",
+        "refdes": "GND2",
+        "x": 840,
+        "y": 360,
+        "rot": 0,
+        "props": {}
+      },
+      {
+        "id": "psfb-inductor",
+        "type": "inductor",
+        "refdes": "L3",
+        "x": 1040,
+        "y": 60,
+        "rot": 0,
+        "props": {
+          "value": "10u",
+          "ic": "",
+          "pwl": "",
+          "rser": "1m",
+          "rpar": "",
+          "cpar": ""
+        }
+      },
+      {
+        "id": "psfb-capacitor",
+        "type": "capacitor",
+        "refdes": "C2",
+        "x": 1160,
+        "y": 200,
+        "rot": 0,
+        "props": {
+          "value": "1000u",
+          "ic": "",
+          "pwl": "",
+          "lser": "",
+          "rser": "0.1",
+          "rpar": "",
+          "cpar": ""
+        }
+      },
+      {
+        "id": "psfb-load",
+        "type": "resistor",
+        "refdes": "R1",
+        "x": 1240,
+        "y": 240,
+        "rot": 90,
+        "props": {
+          "value": "1",
+          "pwl": ""
+        }
+      },
+      {
+        "id": "psfb-out-label",
+        "type": "netlabel",
+        "refdes": "LBL9",
+        "x": 1120,
+        "y": 60,
+        "rot": 0,
+        "props": {
+          "name": "out",
+          "global": "",
+          "display": ""
+        }
+      }
+    ],
+    "wires": [
+      {
+        "id": "w1",
+        "points": [
+          [
+            40,
+            200
+          ],
+          [
+            40,
+            60
+          ],
+          [
+            380,
+            60
+          ]
+        ]
+      },
+      {
+        "id": "w2",
+        "points": [
+          [
+            40,
+            260
+          ],
+          [
+            40,
+            360
+          ],
+          [
+            380,
+            360
+          ]
+        ]
+      },
+      {
+        "id": "w3",
+        "points": [
+          [
+            140,
+            300
+          ],
+          [
+            140,
+            360
+          ]
+        ]
+      },
+      {
+        "id": "w4",
+        "points": [
+          [
+            70,
+            330
+          ],
+          [
+            70,
+            360
+          ]
+        ]
+      },
+      {
+        "id": "w5",
+        "points": [
+          [
+            380,
+            300
+          ],
+          [
+            380,
+            360
+          ]
+        ]
+      },
+      {
+        "id": "w6",
+        "points": [
+          [
+            310,
+            330
+          ],
+          [
+            310,
+            360
+          ]
+        ]
+      },
+      {
+        "id": "w7",
+        "points": [
+          [
+            140,
+            120
+          ],
+          [
+            140,
+            240
+          ]
+        ]
+      },
+      {
+        "id": "w8",
+        "points": [
+          [
+            70,
+            120
+          ],
+          [
+            140,
+            120
+          ]
+        ]
+      },
+      {
+        "id": "w9",
+        "points": [
+          [
+            70,
+            240
+          ],
+          [
+            140,
+            240
+          ]
+        ]
+      },
+      {
+        "id": "w10",
+        "points": [
+          [
+            380,
+            120
+          ],
+          [
+            380,
+            240
+          ]
+        ]
+      },
+      {
+        "id": "w11",
+        "points": [
+          [
+            310,
+            120
+          ],
+          [
+            380,
+            120
+          ]
+        ]
+      },
+      {
+        "id": "w12",
+        "points": [
+          [
+            310,
+            240
+          ],
+          [
+            380,
+            240
+          ]
+        ]
+      },
+      {
+        "id": "w13",
+        "points": [
+          [
+            500,
+            120
+          ],
+          [
+            580,
+            120
+          ],
+          [
+            580,
+            140
+          ]
+        ]
+      },
+      {
+        "id": "w14",
+        "points": [
+          [
+            580,
+            200
+          ],
+          [
+            580,
+            220
+          ],
+          [
+            500,
+            220
+          ]
+        ]
+      },
+      {
+        "id": "w15",
+        "points": [
+          [
+            660,
+            140
+          ],
+          [
+            660,
+            120
+          ],
+          [
+            700,
+            120
+          ]
+        ]
+      },
+      {
+        "id": "w16",
+        "points": [
+          [
+            660,
+            200
+          ],
+          [
+            660,
+            220
+          ],
+          [
+            700,
+            220
+          ]
+        ]
+      },
+      {
+        "id": "w17",
+        "points": [
+          [
+            840,
+            120
+          ],
+          [
+            840,
+            60
+          ],
+          [
+            1040,
+            60
+          ]
+        ]
+      },
+      {
+        "id": "w18",
+        "points": [
+          [
+            960,
+            120
+          ],
+          [
+            960,
+            60
+          ]
+        ]
+      },
+      {
+        "id": "w19",
+        "points": [
+          [
+            840,
+            180
+          ],
+          [
+            840,
+            240
+          ]
+        ]
+      },
+      {
+        "id": "w20",
+        "points": [
+          [
+            960,
+            180
+          ],
+          [
+            960,
+            240
+          ]
+        ]
+      },
+      {
+        "id": "w21",
+        "points": [
+          [
+            840,
+            300
+          ],
+          [
+            840,
+            360
+          ],
+          [
+            1240,
+            360
+          ]
+        ]
+      },
+      {
+        "id": "w22",
+        "points": [
+          [
+            960,
+            300
+          ],
+          [
+            960,
+            360
+          ]
+        ]
+      },
+      {
+        "id": "w23",
+        "points": [
+          [
+            1100,
+            60
+          ],
+          [
+            1240,
+            60
+          ],
+          [
+            1240,
+            180
+          ]
+        ]
+      },
+      {
+        "id": "w24",
+        "points": [
+          [
+            1160,
+            60
+          ],
+          [
+            1160,
+            200
+          ]
+        ]
+      },
+      {
+        "id": "w25",
+        "points": [
+          [
+            1160,
+            240
+          ],
+          [
+            1160,
+            360
+          ]
+        ]
+      },
+      {
+        "id": "w26",
+        "points": [
+          [
+            1240,
+            300
+          ],
+          [
+            1240,
+            360
+          ]
+        ]
+      },
+      {
+        "id": "w27",
+        "points": [
+          [
+            70,
+            240
+          ],
+          [
+            70,
+            270
+          ]
+        ]
+      },
+      {
+        "id": "w28",
+        "points": [
+          [
+            310,
+            240
+          ],
+          [
+            310,
+            270
+          ]
+        ]
+      },
+      {
+        "id": "w29",
+        "points": [
+          [
+            1240,
+            180
+          ],
+          [
+            1240,
+            240
+          ]
+        ]
+      }
+    ]
+  },
+  "analyses": {
+    "mode": "transient",
+    "periods": 2,
+    "measurements": [],
+    "sweep": null,
+    "sweepSignal": "",
+    "sweepMetric": "average"
+  }
+}

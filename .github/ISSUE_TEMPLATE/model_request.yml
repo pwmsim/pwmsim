@@ -1,0 +1,87 @@
+name: Device model request
+description: Ask for a publisher-provided device model to be evaluated — link only, never the model itself.
+title: "[model request] "
+labels:
+  - model-request
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Publisher models carry their own licence terms and are **not**
+        redistributed here. Give the publisher's own links and enough fixture
+        detail for a checksum-pinned, metadata-only evaluation.
+
+        **Do not attach or paste model files, subcircuit text, or any part of a
+        vendor model.** An issue that contains one will be closed and deleted.
+  - type: input
+    id: device
+    attributes:
+      label: Manufacturer and device
+      description: The exact orderable part number, and the model revision if you know it.
+      placeholder: STMicroelectronics SCTW70N120G2V, model V2
+    validations:
+      required: true
+  - type: input
+    id: product-url
+    attributes:
+      label: Publisher product page
+      placeholder: https://publisher.example/device
+    validations:
+      required: true
+  - type: input
+    id: artifact-url
+    attributes:
+      label: Publisher model download page
+      description: >
+        Link to the publisher-controlled page or archive. A link, not the file.
+      placeholder: https://publisher.example/models/device.zip
+    validations:
+      required: true
+  - type: dropdown
+    id: behavior
+    attributes:
+      label: Behaviour you need
+      multiple: true
+      options:
+        - DC operating point
+        - Capacitance or charge
+        - Switching transient
+        - Reverse recovery
+        - Thermal behaviour
+        - Gate-driver logic or timing
+        - Import compatibility only
+    validations:
+      required: true
+  - type: textarea
+    id: fixture
+    attributes:
+      label: Operating conditions and fixture
+      description: >
+        Voltages, currents, temperatures, drive, load and timing, plus the
+        reference values or datasheet plots the result should be compared
+        against. Without this there is nothing to gate the evaluation on.
+    validations:
+      required: true
+  - type: textarea
+    id: current-result
+    attributes:
+      label: What happens today
+      description: >
+        Optional. A minimal netlist of your own, a share link, or the exact
+        import or runtime message you get. Your own circuit only — no vendor
+        model text.
+      render: text
+  - type: checkboxes
+    id: rights
+    attributes:
+      label: Before you submit
+      options:
+        - label: >
+            I linked to a publisher-controlled source and did not attach or
+            paste any third-party model content.
+          required: true
+        - label: >
+            I understand the published result may be metadata and numeric
+            evidence only, bounded to the fixture above, and that it does not
+            claim datasheet or silicon equivalence.
+          required: true

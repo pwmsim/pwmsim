@@ -1,0 +1,409 @@
+{
+  "format": "volta-project",
+  "version": 1,
+  "document": {
+    "format": "volta-schematic",
+    "version": 73,
+    "title": "Boost — Peak Current Mode with PI Loop",
+    "tran": "1m",
+    "fidelity": "ideal",
+    "counters": {
+      "V": 1,
+      "R": 3,
+      "L": 1,
+      "S": 1,
+      "D": 1,
+      "C": 1,
+      "GND": 1,
+      "LBL": 4,
+      "PWM": 1
+    },
+    "components": [
+      {
+        "id": "pco-vin",
+        "type": "vdc",
+        "refdes": "V1",
+        "x": 60,
+        "y": 150,
+        "rot": 0,
+        "props": {
+          "value": "3",
+          "rser": ""
+        }
+      },
+      {
+        "id": "pco-l-esr",
+        "type": "resistor",
+        "refdes": "R2",
+        "x": 140,
+        "y": 100,
+        "rot": 0,
+        "props": {
+          "value": "10m",
+          "pwl": ""
+        }
+      },
+      {
+        "id": "pco-inductor",
+        "type": "inductor",
+        "refdes": "L1",
+        "x": 220,
+        "y": 100,
+        "rot": 0,
+        "props": {
+          "value": "10u",
+          "ic": "",
+          "pwl": "",
+          "rser": "",
+          "rpar": "",
+          "cpar": ""
+        }
+      },
+      {
+        "id": "pco-switch",
+        "type": "gswitch",
+        "refdes": "S1",
+        "x": 360,
+        "y": 160,
+        "rot": 270,
+        "props": {
+          "ron": "10m",
+          "roff": "100meg",
+          "vt": "0.5",
+          "vh": "0"
+        }
+      },
+      {
+        "id": "pco-switch-gate",
+        "type": "gate_pcm_pi",
+        "refdes": "PWM1",
+        "x": 340,
+        "y": 130,
+        "rot": 270,
+        "props": {
+          "fsw": "1meg",
+          "sense": "L1",
+          "icmd0": "0",
+          "mc": "20k",
+          "dmax": "0.95",
+          "ref": "5",
+          "kp": "4",
+          "ki": "25.13k",
+          "imin": "0",
+          "imax": "10",
+          "ref1": "",
+          "rtstep": "",
+          "phase": ""
+        }
+      },
+      {
+        "id": "pco-diode",
+        "type": "diode",
+        "refdes": "D1",
+        "x": 440,
+        "y": 100,
+        "rot": 0,
+        "props": {
+          "vfwd": "0",
+          "ron": "10u",
+          "roff": "100meg",
+          "model": "ideal",
+          "is": "",
+          "n": "",
+          "tt": "",
+          "cjo": "",
+          "rs": "",
+          "bv": "",
+          "vj": "",
+          "m": "",
+          "ibv": "",
+          "nbv": "",
+          "ibvl": "",
+          "nbvl": "",
+          "ikf": "",
+          "isr": "",
+          "nr": "",
+          "itol": "",
+          "epsilon": "",
+          "nser": ""
+        }
+      },
+      {
+        "id": "pco-capacitor",
+        "type": "capacitor",
+        "refdes": "C1",
+        "x": 600,
+        "y": 100,
+        "rot": 0,
+        "props": {
+          "value": "22u",
+          "ic": "",
+          "pwl": "",
+          "lser": "",
+          "rser": "",
+          "rpar": "",
+          "cpar": ""
+        }
+      },
+      {
+        "id": "pco-c-esr",
+        "type": "resistor",
+        "refdes": "R3",
+        "x": 600,
+        "y": 170,
+        "rot": 90,
+        "props": {
+          "value": "1m",
+          "pwl": ""
+        }
+      },
+      {
+        "id": "pco-load",
+        "type": "resistor",
+        "refdes": "R1",
+        "x": 680,
+        "y": 150,
+        "rot": 90,
+        "props": {
+          "value": "10",
+          "pwl": ""
+        }
+      },
+      {
+        "id": "pco-ground",
+        "type": "ground",
+        "refdes": "GND1",
+        "x": 60,
+        "y": 260,
+        "rot": 0,
+        "props": {}
+      },
+      {
+        "id": "pco-in-label",
+        "type": "netlabel",
+        "refdes": "LBL1",
+        "x": 90,
+        "y": 100,
+        "rot": 0,
+        "props": {
+          "name": "in",
+          "global": "",
+          "display": ""
+        }
+      },
+      {
+        "id": "pco-sw-label",
+        "type": "netlabel",
+        "refdes": "LBL2",
+        "x": 310,
+        "y": 100,
+        "rot": 0,
+        "props": {
+          "name": "sw",
+          "global": "",
+          "display": ""
+        }
+      },
+      {
+        "id": "pco-out-label",
+        "type": "netlabel",
+        "refdes": "LBL3",
+        "x": 530,
+        "y": 100,
+        "rot": 0,
+        "props": {
+          "name": "out",
+          "global": "",
+          "display": ""
+        }
+      },
+      {
+        "id": "pco-fb-label",
+        "type": "netlabel",
+        "refdes": "LBL4",
+        "x": 300,
+        "y": 200,
+        "rot": 0,
+        "props": {
+          "name": "out",
+          "global": "",
+          "display": ""
+        }
+      }
+    ],
+    "wires": [
+      {
+        "id": "w1",
+        "points": [
+          [
+            60,
+            100
+          ],
+          [
+            140,
+            100
+          ]
+        ]
+      },
+      {
+        "id": "w2",
+        "points": [
+          [
+            200,
+            100
+          ],
+          [
+            220,
+            100
+          ]
+        ]
+      },
+      {
+        "id": "w3",
+        "points": [
+          [
+            280,
+            100
+          ],
+          [
+            440,
+            100
+          ]
+        ]
+      },
+      {
+        "id": "w4",
+        "points": [
+          [
+            500,
+            100
+          ],
+          [
+            680,
+            100
+          ]
+        ]
+      },
+      {
+        "id": "w5",
+        "points": [
+          [
+            320,
+            130
+          ],
+          [
+            300,
+            130
+          ],
+          [
+            300,
+            200
+          ]
+        ]
+      },
+      {
+        "id": "w6",
+        "points": [
+          [
+            360,
+            160
+          ],
+          [
+            360,
+            260
+          ]
+        ]
+      },
+      {
+        "id": "w7",
+        "points": [
+          [
+            600,
+            230
+          ],
+          [
+            600,
+            260
+          ]
+        ]
+      },
+      {
+        "id": "w8",
+        "points": [
+          [
+            680,
+            210
+          ],
+          [
+            680,
+            260
+          ]
+        ]
+      },
+      {
+        "id": "w9",
+        "points": [
+          [
+            60,
+            210
+          ],
+          [
+            60,
+            260
+          ],
+          [
+            680,
+            260
+          ]
+        ]
+      },
+      {
+        "id": "w10",
+        "points": [
+          [
+            60,
+            100
+          ],
+          [
+            60,
+            150
+          ]
+        ]
+      },
+      {
+        "id": "w11",
+        "points": [
+          [
+            600,
+            140
+          ],
+          [
+            600,
+            170
+          ]
+        ]
+      },
+      {
+        "id": "w12",
+        "points": [
+          [
+            680,
+            100
+          ],
+          [
+            680,
+            150
+          ]
+        ]
+      }
+    ]
+  },
+  "analyses": {
+    "mode": "transient",
+    "periods": 2,
+    "measurements": [],
+    "sweep": null,
+    "sweepSignal": "",
+    "sweepMetric": "average"
+  }
+}

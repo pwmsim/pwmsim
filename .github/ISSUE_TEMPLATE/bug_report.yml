@@ -1,0 +1,78 @@
+name: Bug report
+description: A wrong result, a crash, a hang, or a broken import.
+title: "[bug] "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        A reproducer is required. A wrong-answer report that cannot be
+        reproduced cannot be confirmed, and an unconfirmed report cannot be
+        fixed.
+
+        If this is an exploitable security problem, **stop** and report it
+        privately instead — see [SECURITY.md](../blob/main/SECURITY.md).
+  - type: textarea
+    id: reproducer
+    attributes:
+      label: Reproducer
+      description: >
+        Paste the netlist, or give a share link. Keep it as small as it can be
+        while still showing the problem.
+      render: text
+    validations:
+      required: true
+  - type: textarea
+    id: expected-observed
+    attributes:
+      label: Expected versus observed
+      description: >
+        Give the number and the measurement you used to get it — "output ripple
+        reads 63 mV; volt-second balance says 9 mV" beats "the waveform looks
+        wrong". For a crash or hang, say what you did and what happened.
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: App version
+      description: Shown at the bottom of the app's Help menu.
+      placeholder: PWMSim 0.3.0
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Browser and operating system
+      placeholder: Firefox 141 on Windows 11
+    validations:
+      required: true
+  - type: dropdown
+    id: surface
+    attributes:
+      label: Which copy
+      options:
+        - Hosted app (app.pwmsim.com)
+        - Simulation embedded in a web page
+    validations:
+      required: true
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: Diagnostics
+      description: >
+        Optional. The solver report line under the toolbar, any error or status
+        code shown, and the import report if this is an import problem.
+  - type: checkboxes
+    id: consent
+    attributes:
+      label: Before you submit
+      options:
+        - label: >
+            The reproducer above is mine to share publicly, and contains no
+            content I am not free to publish.
+          required: true
+        - label: >
+            I understand a reproducer becomes a regression test only if I agree
+            to it separately.

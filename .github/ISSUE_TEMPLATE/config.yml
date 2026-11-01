@@ -1,0 +1,17 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Question, or "can it do this circuit?"
+    url: https://github.com/pwmsim/pwmsim/discussions
+    about: >
+      Ask in Discussions. Answers there are searchable and help the next
+      person; this is the most useful kind of question you can ask.
+  - name: Security vulnerability
+    url: https://github.com/pwmsim/pwmsim/security/advisories/new
+    about: >
+      Report privately, never as a public issue. The security report form at
+      pwmsim.com/contact/security/ is the equivalent route.
+  - name: Anything else
+    url: https://pwmsim.com/contact/
+    about: >
+      Licensing, commercial questions, or anything that does not belong in
+      public. Solo project — expect a reply within a few days.

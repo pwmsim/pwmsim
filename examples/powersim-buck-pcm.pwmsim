@@ -1,0 +1,388 @@
+{
+  "format": "volta-project",
+  "version": 1,
+  "document": {
+    "format": "volta-schematic",
+    "version": 73,
+    "title": "Buck — Peak Current Mode with PI Loop",
+    "tran": "300u",
+    "fidelity": "ideal",
+    "counters": {
+      "V": 1,
+      "S": 1,
+      "D": 1,
+      "L": 1,
+      "C": 1,
+      "R": 3,
+      "GND": 1,
+      "LBL": 3,
+      "PWM": 1
+    },
+    "components": [
+      {
+        "id": "pcb-vin",
+        "type": "vdc",
+        "refdes": "V1",
+        "x": 60,
+        "y": 150,
+        "rot": 0,
+        "props": {
+          "value": "5",
+          "rser": ""
+        }
+      },
+      {
+        "id": "pcb-switch",
+        "type": "gswitch",
+        "refdes": "S1",
+        "x": 140,
+        "y": 100,
+        "rot": 0,
+        "props": {
+          "ron": "10m",
+          "roff": "100meg",
+          "vt": "0.5",
+          "vh": "0"
+        }
+      },
+      {
+        "id": "pcb-switch-gate",
+        "type": "gate_pcm_pi",
+        "refdes": "PWM1",
+        "x": 170,
+        "y": 80,
+        "rot": 0,
+        "props": {
+          "fsw": "1meg",
+          "sense": "L1",
+          "icmd0": "0",
+          "mc": "40k",
+          "dmax": "0.95",
+          "ref": "1",
+          "kp": "6",
+          "ki": "188.5k",
+          "imin": "0",
+          "imax": "5",
+          "ref1": "",
+          "rtstep": "",
+          "phase": ""
+        }
+      },
+      {
+        "id": "pcb-diode",
+        "type": "diode",
+        "refdes": "D1",
+        "x": 250,
+        "y": 210,
+        "rot": 270,
+        "props": {
+          "vfwd": "0",
+          "ron": "10u",
+          "roff": "100meg",
+          "model": "ideal",
+          "is": "",
+          "n": "",
+          "tt": "",
+          "cjo": "",
+          "rs": "",
+          "bv": "",
+          "vj": "",
+          "m": "",
+          "ibv": "",
+          "nbv": "",
+          "ibvl": "",
+          "nbvl": "",
+          "ikf": "",
+          "isr": "",
+          "nr": "",
+          "itol": "",
+          "epsilon": "",
+          "nser": ""
+        }
+      },
+      {
+        "id": "pcb-inductor",
+        "type": "inductor",
+        "refdes": "L1",
+        "x": 300,
+        "y": 100,
+        "rot": 0,
+        "props": {
+          "value": "10u",
+          "ic": "",
+          "pwl": "",
+          "rser": "",
+          "rpar": "",
+          "cpar": ""
+        }
+      },
+      {
+        "id": "pcb-capacitor",
+        "type": "capacitor",
+        "refdes": "C1",
+        "x": 450,
+        "y": 100,
+        "rot": 0,
+        "props": {
+          "value": "22u",
+          "ic": "",
+          "pwl": "",
+          "lser": "",
+          "rser": "",
+          "rpar": "",
+          "cpar": ""
+        }
+      },
+      {
+        "id": "pcb-c-esr",
+        "type": "resistor",
+        "refdes": "R3",
+        "x": 450,
+        "y": 170,
+        "rot": 90,
+        "props": {
+          "value": "1m",
+          "pwl": ""
+        }
+      },
+      {
+        "id": "pcb-load",
+        "type": "resistor",
+        "refdes": "R1",
+        "x": 530,
+        "y": 150,
+        "rot": 90,
+        "props": {
+          "value": "1",
+          "pwl": ""
+        }
+      },
+      {
+        "id": "pcb-ground",
+        "type": "ground",
+        "refdes": "GND1",
+        "x": 60,
+        "y": 260,
+        "rot": 0,
+        "props": {}
+      },
+      {
+        "id": "pcb-in-label",
+        "type": "netlabel",
+        "refdes": "LBL1",
+        "x": 90,
+        "y": 100,
+        "rot": 0,
+        "props": {
+          "name": "in",
+          "global": "",
+          "display": ""
+        }
+      },
+      {
+        "id": "pcb-sw-label",
+        "type": "netlabel",
+        "refdes": "LBL2",
+        "x": 230,
+        "y": 100,
+        "rot": 0,
+        "props": {
+          "name": "sw",
+          "global": "",
+          "display": ""
+        }
+      },
+      {
+        "id": "pcb-out-label",
+        "type": "netlabel",
+        "refdes": "LBL3",
+        "x": 400,
+        "y": 100,
+        "rot": 0,
+        "props": {
+          "name": "out",
+          "global": "",
+          "display": ""
+        }
+      }
+    ],
+    "wires": [
+      {
+        "id": "w1",
+        "points": [
+          [
+            60,
+            100
+          ],
+          [
+            140,
+            100
+          ]
+        ]
+      },
+      {
+        "id": "w2",
+        "points": [
+          [
+            200,
+            100
+          ],
+          [
+            300,
+            100
+          ]
+        ]
+      },
+      {
+        "id": "w3",
+        "points": [
+          [
+            360,
+            100
+          ],
+          [
+            530,
+            100
+          ]
+        ]
+      },
+      {
+        "id": "w4",
+        "points": [
+          [
+            170,
+            60
+          ],
+          [
+            170,
+            20
+          ],
+          [
+            490,
+            20
+          ],
+          [
+            490,
+            100
+          ]
+        ]
+      },
+      {
+        "id": "w5",
+        "points": [
+          [
+            250,
+            210
+          ],
+          [
+            250,
+            260
+          ]
+        ]
+      },
+      {
+        "id": "w6",
+        "points": [
+          [
+            450,
+            230
+          ],
+          [
+            450,
+            260
+          ]
+        ]
+      },
+      {
+        "id": "w7",
+        "points": [
+          [
+            530,
+            210
+          ],
+          [
+            530,
+            260
+          ]
+        ]
+      },
+      {
+        "id": "w8",
+        "points": [
+          [
+            60,
+            210
+          ],
+          [
+            60,
+            260
+          ],
+          [
+            530,
+            260
+          ]
+        ]
+      },
+      {
+        "id": "w9",
+        "points": [
+          [
+            60,
+            100
+          ],
+          [
+            60,
+            150
+          ]
+        ]
+      },
+      {
+        "id": "w10",
+        "points": [
+          [
+            250,
+            100
+          ],
+          [
+            250,
+            150
+          ]
+        ]
+      },
+      {
+        "id": "w11",
+        "points": [
+          [
+            450,
+            140
+          ],
+          [
+            450,
+            170
+          ]
+        ]
+      },
+      {
+        "id": "w12",
+        "points": [
+          [
+            530,
+            100
+          ],
+          [
+            530,
+            150
+          ]
+        ]
+      }
+    ]
+  },
+  "analyses": {
+    "mode": "transient",
+    "periods": 2,
+    "measurements": [],
+    "sweep": null,
+    "sweepSignal": "",
+    "sweepMetric": "average"
+  }
+}

@@ -1,0 +1,616 @@
+{
+  "format": "volta-project",
+  "version": 1,
+  "document": {
+    "format": "volta-schematic",
+    "version": 73,
+    "title": "Flyback — Peak Current Mode with PI Loop",
+    "tran": "1m",
+    "fidelity": "ideal",
+    "counters": {
+      "V": 1,
+      "GND": 2,
+      "R": 2,
+      "C": 2,
+      "D": 3,
+      "L": 2,
+      "S": 1,
+      "K": 1,
+      "LBL": 4,
+      "PWM": 1
+    },
+    "components": [
+      {
+        "id": "fpc-vin",
+        "type": "vdc",
+        "refdes": "V1",
+        "x": 40,
+        "y": 220,
+        "rot": 0,
+        "props": {
+          "value": "24",
+          "rser": ""
+        }
+      },
+      {
+        "id": "fpc-ground",
+        "type": "ground",
+        "refdes": "GND1",
+        "x": 40,
+        "y": 340,
+        "rot": 0,
+        "props": {}
+      },
+      {
+        "id": "fpc-clamp-r",
+        "type": "resistor",
+        "refdes": "R1",
+        "x": 100,
+        "y": 80,
+        "rot": 90,
+        "props": {
+          "value": "1k",
+          "pwl": ""
+        }
+      },
+      {
+        "id": "fpc-clamp-c",
+        "type": "capacitor",
+        "refdes": "C2",
+        "x": 160,
+        "y": 100,
+        "rot": 0,
+        "props": {
+          "value": "10u",
+          "ic": "",
+          "pwl": "",
+          "lser": "",
+          "rser": "1m",
+          "rpar": "",
+          "cpar": ""
+        }
+      },
+      {
+        "id": "fpc-clamp-d",
+        "type": "diode",
+        "refdes": "D2",
+        "x": 220,
+        "y": 200,
+        "rot": 270,
+        "props": {
+          "vfwd": "1n",
+          "ron": "10m",
+          "roff": "1g",
+          "model": "ideal",
+          "is": "",
+          "n": "",
+          "tt": "",
+          "cjo": "",
+          "rs": "",
+          "bv": "",
+          "vj": "",
+          "m": "",
+          "ibv": "",
+          "nbv": "",
+          "ibvl": "",
+          "nbvl": "",
+          "ikf": "",
+          "isr": "",
+          "nr": "",
+          "itol": "",
+          "epsilon": "",
+          "nser": ""
+        }
+      },
+      {
+        "id": "fpc-primary",
+        "type": "inductor",
+        "refdes": "L1",
+        "x": 320,
+        "y": 140,
+        "rot": 90,
+        "props": {
+          "value": "10u",
+          "ic": "",
+          "pwl": "",
+          "rser": "10m",
+          "rpar": "",
+          "cpar": ""
+        }
+      },
+      {
+        "id": "fpc-switch",
+        "type": "gswitch",
+        "refdes": "S1",
+        "x": 320,
+        "y": 200,
+        "rot": 90,
+        "props": {
+          "ron": "7.5m",
+          "roff": "100meg",
+          "vt": "0.5",
+          "vh": "0"
+        }
+      },
+      {
+        "id": "fpc-switch-gate",
+        "type": "gate_pcm_pi",
+        "refdes": "PWM1",
+        "x": 340,
+        "y": 230,
+        "rot": 90,
+        "props": {
+          "fsw": "465k",
+          "sense": "L1",
+          "icmd0": "1.4",
+          "mc": "240k",
+          "dmax": "0.95",
+          "ref": "5",
+          "kp": "4",
+          "ki": "25.13k",
+          "imin": "0",
+          "imax": "5",
+          "ref1": "",
+          "rtstep": "",
+          "phase": ""
+        }
+      },
+      {
+        "id": "fpc-body",
+        "type": "diode",
+        "refdes": "D1",
+        "x": 270,
+        "y": 300,
+        "rot": 270,
+        "props": {
+          "vfwd": "0.7",
+          "ron": "10m",
+          "roff": "100meg",
+          "model": "ideal",
+          "is": "",
+          "n": "",
+          "tt": "",
+          "cjo": "",
+          "rs": "",
+          "bv": "",
+          "vj": "",
+          "m": "",
+          "ibv": "",
+          "nbv": "",
+          "ibvl": "",
+          "nbvl": "",
+          "ikf": "",
+          "isr": "",
+          "nr": "",
+          "itol": "",
+          "epsilon": "",
+          "nser": ""
+        }
+      },
+      {
+        "id": "fpc-transformer",
+        "type": "coupling",
+        "refdes": "K1",
+        "x": 380,
+        "y": 120,
+        "rot": 0,
+        "props": {
+          "la": "L1",
+          "lb": "L2",
+          "k": "0.99"
+        }
+      },
+      {
+        "id": "fpc-secondary",
+        "type": "inductor",
+        "refdes": "L2",
+        "x": 440,
+        "y": 270,
+        "rot": 270,
+        "props": {
+          "value": "10u",
+          "ic": "",
+          "pwl": "",
+          "rser": "10m",
+          "rpar": "",
+          "cpar": ""
+        }
+      },
+      {
+        "id": "fpc-ground-out",
+        "type": "ground",
+        "refdes": "GND2",
+        "x": 440,
+        "y": 340,
+        "rot": 0,
+        "props": {}
+      },
+      {
+        "id": "fpc-diode",
+        "type": "diode",
+        "refdes": "D3",
+        "x": 480,
+        "y": 140,
+        "rot": 0,
+        "props": {
+          "vfwd": "1n",
+          "ron": "10m",
+          "roff": "1g",
+          "model": "ideal",
+          "is": "",
+          "n": "",
+          "tt": "",
+          "cjo": "",
+          "rs": "",
+          "bv": "",
+          "vj": "",
+          "m": "",
+          "ibv": "",
+          "nbv": "",
+          "ibvl": "",
+          "nbvl": "",
+          "ikf": "",
+          "isr": "",
+          "nr": "",
+          "itol": "",
+          "epsilon": "",
+          "nser": ""
+        }
+      },
+      {
+        "id": "fpc-capacitor",
+        "type": "capacitor",
+        "refdes": "C1",
+        "x": 600,
+        "y": 220,
+        "rot": 0,
+        "props": {
+          "value": "22u",
+          "ic": "5",
+          "pwl": "",
+          "lser": "",
+          "rser": "1m",
+          "rpar": "",
+          "cpar": ""
+        }
+      },
+      {
+        "id": "fpc-load",
+        "type": "resistor",
+        "refdes": "R2",
+        "x": 680,
+        "y": 240,
+        "rot": 90,
+        "props": {
+          "value": "10",
+          "pwl": ""
+        }
+      },
+      {
+        "id": "fpc-in-label",
+        "type": "netlabel",
+        "refdes": "LBL1",
+        "x": 220,
+        "y": 60,
+        "rot": 0,
+        "props": {
+          "name": "in",
+          "global": "",
+          "display": ""
+        }
+      },
+      {
+        "id": "fpc-sw-label",
+        "type": "netlabel",
+        "refdes": "LBL2",
+        "x": 240,
+        "y": 200,
+        "rot": 0,
+        "props": {
+          "name": "sw",
+          "global": "",
+          "display": ""
+        }
+      },
+      {
+        "id": "fpc-out-label",
+        "type": "netlabel",
+        "refdes": "LBL3",
+        "x": 560,
+        "y": 140,
+        "rot": 0,
+        "props": {
+          "name": "out",
+          "global": "",
+          "display": ""
+        }
+      },
+      {
+        "id": "fpc-fb-label",
+        "type": "netlabel",
+        "refdes": "LBL4",
+        "x": 360,
+        "y": 230,
+        "rot": 0,
+        "props": {
+          "name": "out",
+          "global": "",
+          "display": ""
+        }
+      }
+    ],
+    "wires": [
+      {
+        "id": "w1",
+        "points": [
+          [
+            40,
+            160
+          ],
+          [
+            40,
+            60
+          ],
+          [
+            320,
+            60
+          ]
+        ]
+      },
+      {
+        "id": "w2",
+        "points": [
+          [
+            100,
+            60
+          ],
+          [
+            100,
+            80
+          ]
+        ]
+      },
+      {
+        "id": "w3",
+        "points": [
+          [
+            160,
+            60
+          ],
+          [
+            160,
+            100
+          ]
+        ]
+      },
+      {
+        "id": "w4",
+        "points": [
+          [
+            100,
+            140
+          ],
+          [
+            220,
+            140
+          ]
+        ]
+      },
+      {
+        "id": "w5",
+        "points": [
+          [
+            220,
+            200
+          ],
+          [
+            320,
+            200
+          ]
+        ]
+      },
+      {
+        "id": "w6",
+        "points": [
+          [
+            320,
+            60
+          ],
+          [
+            320,
+            140
+          ]
+        ]
+      },
+      {
+        "id": "w7",
+        "points": [
+          [
+            40,
+            280
+          ],
+          [
+            40,
+            340
+          ],
+          [
+            320,
+            340
+          ]
+        ]
+      },
+      {
+        "id": "w8",
+        "points": [
+          [
+            270,
+            300
+          ],
+          [
+            270,
+            340
+          ]
+        ]
+      },
+      {
+        "id": "w9",
+        "points": [
+          [
+            320,
+            260
+          ],
+          [
+            320,
+            340
+          ]
+        ]
+      },
+      {
+        "id": "w10",
+        "points": [
+          [
+            440,
+            270
+          ],
+          [
+            440,
+            340
+          ],
+          [
+            680,
+            340
+          ]
+        ]
+      },
+      {
+        "id": "w11",
+        "points": [
+          [
+            440,
+            140
+          ],
+          [
+            480,
+            140
+          ]
+        ]
+      },
+      {
+        "id": "w12",
+        "points": [
+          [
+            540,
+            140
+          ],
+          [
+            680,
+            140
+          ],
+          [
+            680,
+            200
+          ]
+        ]
+      },
+      {
+        "id": "w13",
+        "points": [
+          [
+            600,
+            140
+          ],
+          [
+            600,
+            220
+          ]
+        ]
+      },
+      {
+        "id": "w14",
+        "points": [
+          [
+            600,
+            260
+          ],
+          [
+            600,
+            340
+          ]
+        ]
+      },
+      {
+        "id": "w15",
+        "points": [
+          [
+            680,
+            300
+          ],
+          [
+            680,
+            340
+          ]
+        ]
+      },
+      {
+        "id": "w16",
+        "points": [
+          [
+            40,
+            160
+          ],
+          [
+            40,
+            220
+          ]
+        ]
+      },
+      {
+        "id": "w17",
+        "points": [
+          [
+            270,
+            200
+          ],
+          [
+            270,
+            240
+          ]
+        ]
+      },
+      {
+        "id": "w18",
+        "points": [
+          [
+            440,
+            140
+          ],
+          [
+            440,
+            210
+          ]
+        ]
+      },
+      {
+        "id": "w19",
+        "points": [
+          [
+            680,
+            200
+          ],
+          [
+            680,
+            240
+          ]
+        ]
+      }
+    ]
+  },
+  "analyses": {
+    "mode": "transient",
+    "periods": 2,
+    "measurements": [],
+    "sweep": null,
+    "sweepSignal": "",
+    "sweepMetric": "average"
+  }
+}
